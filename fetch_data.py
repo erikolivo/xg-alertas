@@ -76,8 +76,19 @@ def _extraer_evento(evento, liga_slug):
             tid = tid[0] if tid else None
         return str(tid) if tid else "0"
 
+    # Extraer hora del partido (UTC)
+    fecha_str = evento.get("date", "")
+    hora_utc = ""
+    if fecha_str:
+        try:
+            from datetime import datetime, timezone
+            dt = datetime.fromisoformat(fecha_str.replace("Z", "+00:00"))
+            hora_utc = dt.strftime("%H:%M")
+        except Exception:
+            pass
+
     return {
-        "fixture": {"id": str(evento["id"]), "date": evento.get("date")},
+        "fixture": {"id": str(evento["id"]), "date": fecha_str},
         "teams": {
             "home": {"id": _safe_team_id(home["team"]), "name": home["team"].get("displayName")},
             "away": {"id": _safe_team_id(away["team"]), "name": away["team"].get("displayName")},
@@ -90,7 +101,7 @@ def _extraer_evento(evento, liga_slug):
         "_estado": estado,
         "_goles_local": _goles(home),
         "_goles_visitante": _goles(away),
-        "_hora_local": "",
+        "_hora_utc": hora_utc,
     }
 
 
@@ -143,6 +154,9 @@ def obtener_fixtures_por_fecha(fecha_iso, ligas=None):
                     new_country = fx["league"]["country"]
                     if new_country and not existing["league"]["country"]:
                         existing["league"]["country"] = new_country
+                    # Actualizar hora si estaba vacia
+                    if not existing.get("hora_utc") and fx.get("hora_utc"):
+                        existing["hora_utc"] = fx["hora_utc"]
                 else:
                     fixtures_por_id[eid] = fx
                     nuevos += 1

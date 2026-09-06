@@ -200,6 +200,51 @@ def _ajustar_intervalo(partidos_en_vivo):
         return INTERVALO_MAX
 
 
+def _hora_utc_a_minutos(hora_utc):
+    """Convierte 'HH:MM' a minutos desde medianoche UTC."""
+    if not hora_utc:
+        return None
+    try:
+        h, m = hora_utc.split(":")
+        return int(h) * 60 + int(m)
+    except (ValueError, AttributeError):
+        return None
+
+
+def _partido_ya_empezo(partido):
+    """Verifica si el partido ya empezo segun su hora_utc."""
+    hora_utc = partido.get("hora_utc", "")
+    if not hora_utc:
+        return True  # Sin hora, asumir que ya empezo
+
+    ahora = datetime.datetime.now(datetime.timezone.utc)
+    minutos_ahora = ahora.hour * 60 + ahora.minute
+    minutos_partido = _hora_utc_a_minutos(hora_utc)
+
+    if minutos_partido is None:
+        return True
+
+    # Empezo si ya paso la hora (con margen de -30 min para precalentar)
+    return minutos_ahora >= (minutos_partido - 30)
+
+
+def _partido_en_ventana(partido):
+    """Verifica si el partido esta en ventana de +/- 2 horas de su hora."""
+    hora_utc = partido.get("hora_utc", "")
+    if not hora_utc:
+        return True
+
+    ahora = datetime.datetime.now(datetime.timezone.utc)
+    minutos_ahora = ahora.hour * 60 + ahora.minute
+    minutos_partido = _hora_utc_a_minutos(hora_utc)
+
+    if minutos_partido is None:
+        return True
+
+    # Ventana: desde 30 min antes hasta 2.5 horas despues
+    return (minutos_ahora >= minutos_partido - 30) and (minutos_partido <= minutos_ahora + 150)
+
+
 def vigilar():
     print("[monitor] Iniciando vigilancia de partidos EN VIVO (ESPN)...")
 
@@ -217,20 +262,21 @@ def vigilar():
         data = _cargar()
         partidos = data.get("partidos", [])
 
-        partidos_activos = [p for p in partidos if not _esta_terminado(p)]
+        # Filtrar: solo partidos en ventana (ya empezaron o estan proximos)
+        partidos_en_ventana = [p for p in partidos if _partido_en_ventana(p) and not _esta_terminado(p)]
         partidos_terminados = [p for p in partidos if _esta_terminado(p)]
 
-        if not partidos_activos:
-            print(f"[monitor] No hay partidos activos. ({len(partidos_terminados)} terminados)")
+        if not partidos_en_ventana:
+            print(f"[monitor] No hay partidos en ventana. ({len(partidos_terminados)} terminados)")
             if len(partidos_terminados) >= len(partidos):
                 print("[monitor] Todos los partidos terminaron. Saliendo.")
                 break
             time.sleep(INTERVALO_MAX)
             continue
 
-        print(f"[monitor] {len(partidos_activos)} partido(s) activo(s), {len(partidos_terminados)} terminado(s).")
+        print(f"[monitor] {len(partidos_en_ventana)} partido(s) en ventana, {len(partidos_terminados)} terminado(s).")
 
-        for partido in partidos_activos:
+        for partido in partidos_en_ventana:
             try:
                 _procesar_partido(partido)
             except Exception as e:
@@ -239,7 +285,7 @@ def vigilar():
 
         _guardar(data)
 
-        intervalo = _ajustar_intervalo(partidos_activos)
+        intervalo = _ajustar_intervalo(partidos_en_ventana)
         print(f"[monitor] Proximo ciclo en {intervalo // 60} min...")
         time.sleep(intervalo)
 

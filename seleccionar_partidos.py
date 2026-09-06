@@ -31,7 +31,7 @@ def _partido_para_vigilar(fx):
         "visitante": fx["teams"]["away"]["name"],
         "home_id": fx["teams"]["home"]["id"],
         "away_id": fx["teams"]["away"]["id"],
-        "hora": fx.get("_hora_local", ""),
+        "hora_utc": fx.get("_hora_utc", ""),
         "favorito": "",
         "favorito_es_local": None,
         "tipo_pronostico": "monitoreo_automatico",
@@ -72,6 +72,11 @@ def seleccionar(forzar=False):
     if ids_existentes and not forzar:
         print(f"[seleccion] Ya hay {len(ids_existentes)} partidos seleccionados hoy. Use --forzar para complementar.")
         return partidos_existentes
+
+    # Si se fuerza, empezar de cero para capturar horas actualizadas
+    if forzar:
+        partidos_existentes = []
+        ids_existentes = set()
 
     print(f"[seleccion] Buscando partidos del dia {fecha_iso} en ESPN...")
     fixtures = obtener_fixtures_por_fecha(fecha_iso)
