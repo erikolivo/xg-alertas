@@ -74,8 +74,11 @@ def _guardar_snapshot(partido, minuto, xg_home, xg_away, goles_home, goles_away,
     })
 
 
-def _mensaje_con_stats(alerta, stats, goles_home, goles_away):
+def _mensaje_con_stats(alerta, stats, goles_home, goles_away, local, visitante):
     lineas = [alerta["mensaje"]]
+
+    # Insertar nombres de equipos despues del emoji y tipo
+    lineas.insert(1, f"{local} vs {visitante}")
 
     if stats:
         lineas.append("")
@@ -96,7 +99,7 @@ def _mensaje_con_stats(alerta, stats, goles_home, goles_away):
         lineas.append(f"Faltas:         {_fmt(f.get('home', 0))} vs {_fmt(f.get('away', 0))}")
 
     lineas.append("")
-    lineas.append(f"⚽ Marcador real: {goles_home} - {goles_away}")
+    lineas.append(f"⚽ {local} {goles_home} - {goles_away} {visitante}")
 
     return "\n".join(lineas)
 
@@ -176,7 +179,7 @@ def _procesar_partido(partido):
             minuto_int = 0
 
         if not _ya_se_envio_reciente(partido.get("alertas_enviadas", []), alerta["tipo"], minuto_int):
-            mensaje_completo = _mensaje_con_stats(alerta, stats, goles_home, goles_away)
+            mensaje_completo = _mensaje_con_stats(alerta, stats, goles_home, goles_away, local, visitante)
             alerta["mensaje"] = mensaje_completo
 
             exito = enviar_mensaje_telegram(mensaje_completo)

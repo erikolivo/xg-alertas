@@ -157,7 +157,7 @@ def _construir_alerta(tipo, emoji, texto, xg_home, xg_away,
     mensaje = (
         f"{emoji} {texto} — min {minuto}'\n"
         f"\n"
-        f"xG: {xg_home:.2f} vs {xg_away:.2f} (diff: {diff_display})\n"
+        f"▸ xG: {xg_home:.2f} vs {xg_away:.2f} (diff: {diff_display})\n"
         f"Marcador real: {goles_home} - {goles_away}"
     )
 
