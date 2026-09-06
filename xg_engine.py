@@ -189,7 +189,7 @@ def descripcion_xg(xg_home, xg_away, goles_home, goles_away):
     diff = calcular_diferencia_xg(xg_home, xg_away)
     zona = calcular_zona_xg(diff)
 
-   Luck = ""
+    luck = ""
     if goles_home is not None and goles_away is not None:
         if diff > 0.5 and goles_home <= goles_away:
             luck = " (suerte favorable al visitante)"

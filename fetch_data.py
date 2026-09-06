@@ -1,231 +1,268 @@
 """
 fetch_data.py
 -------------
-Obtencion de datos de partidos desde FotMob.
+Obtencion de datos de partidos usando EXCLUSIVAMENTE ESPN.
 
-Endpoints usados:
-  - /api/matches?date=YYYYMMDD    -> fixtures del dia
-  - /api/matchDetails?matchId=X   -> datos completos de un partido (xG, stats, eventos)
-  - /api/data/match-score?matchId=X -> marcador ligero (polling rapido)
-  - /api/teams?id=X               -> forma del equipo (ultimos resultados)
+ESPN provee:
+  - Fixtures del dia (scoreboard)
+  - xG (Expected Goals) por equipo (summary -> leaders -> expectedGoals)
+  - xGC (Expected Goals Conceded) por equipo
+  - Estadisticas del partido (keyStats)
+  - Marcador en vivo
 
-Formato interno de fixture:
-  {
-    "fixture": {"id": "<fotmob_match_id>", "date": "<UTC ISO>"},
-    "teams": {
-      "home": {"id": "<fotmob_team_id>", "name": "<nombre>"},
-      "away": {"id": "<fotmob_team_id>", "name": "<nombre>"},
-    },
-    "league": {"name": "<nombre_liga>", "country": "<pais>"},
-    "_fotmob_league_id": "<league_id>",
-    "_estado": "pre"|"in"|"post",
-    "_goles_local": int|None,
-    "_goles_visitante": int|None,
-    "_hora_local": "HH:MM",
-  }
+No se usa FotMob (endpoints rotos / sin API publica).
 """
 
 import re
 from datetime import datetime
 
-from fotmob_client import api_get, next_data_get
+import requests
 
-# =====================================================================
-# Ligas de FotMob que se monitorean.
-# Key: fotmob league ID, Value: (nombre, pais).
-# Para agregar una liga, buscar su ID en /api/allLeagues.
-# =====================================================================
+TIMEOUT = 20
 
-LIGAS_FOTMOB = {
-    "47": ("Premier League", "England"),
-    "87": ("La Liga", "Spain"),
-    "55": ("Bundesliga", "Germany"),
-    "53": ("Serie A", "Italy"),
-    "54": ("Ligue 1", "France"),
-    "88": ("Eredivisie", "Netherlands"),
-    "61": ("Liga Portugal", "Portugal"),
-    "94": ("Primeira Liga", "Brazil"),
-    "71": ("Superliga Argentina", "Argentina"),
-    "119": ("Liga Pro Ecuador", "Ecuador"),
-    "79": ("Liga BetPlay", "Colombia"),
-    "210": ("Superliga Turca", "Turkey"),
-    "43": ("Jupiler Pro League", "Belgium"),
-    "46": ("Scottish Premiership", "Scotland"),
-    "168": ("Allsvenskan", "Sweden"),
-    "132": ("Eliteserien", "Norway"),
-    "239": ("Liga MX", "Mexico"),
-    "242": ("MLS", "USA"),
+BASE_ESPN_SITE = "https://site.api.espn.com/apis/site/v2/sports/soccer"
+
+LIGAS_ESPN = {
+    "eng.1": ("Premier League", "England"),
+    "esp.1": ("La Liga", "Spain"),
+    "ger.1": ("Bundesliga", "Germany"),
+    "ita.1": ("Serie A", "Italy"),
+    "fra.1": ("Ligue 1", "France"),
+    "ned.1": ("Eredivisie", "Netherlands"),
+    "por.1": ("Liga Portugal", "Portugal"),
+    "bra.1": ("Brasileirao", "Brazil"),
+    "arg.1": ("Liga Argentina", "Argentina"),
+    "ecu.1": ("Liga Pro Ecuador", "Ecuador"),
+    "col.1": ("Liga BetPlay", "Colombia"),
+    "tur.1": ("Superliga Turca", "Turkey"),
+    "bel.1": ("Jupiler Pro League", "Belgium"),
+    "sco.1": ("Scottish Premiership", "Scotland"),
+    "usa.1": ("MLS", "USA"),
+    "mex.1": ("Liga MX", "Mexico"),
 }
 
+# =====================================================================
+# ESPN -- fixtures y resultados
+# =====================================================================
 
-def _extraer_estado(match):
-    """Extrae el estado del partido desde el formato de FotMob."""
-    status = match.get("status", {})
-    if status.get("finished"):
-        return "post"
-    if status.get("started"):
-        return "in"
-    return "pre"
+def _fecha_espn(fecha_iso):
+    return fecha_iso.replace("-", "")
 
 
-def _extraer_hora_local(match):
-    """Extrae la hora local del partido."""
-    status = match.get("status", {})
-    utc_time = status.get("utcTime", "")
-    if not utc_time:
-        return ""
+def _extraer_evento(evento, liga_slug):
     try:
-        dt = datetime.fromisoformat(utc_time.replace("Z", "+00:00"))
-        return dt.strftime("%H:%M")
-    except Exception:
-        return ""
+        comp = evento["competitions"][0]
+        home = next(c for c in comp["competitors"] if c["homeAway"] == "home")
+        away = next(c for c in comp["competitors"] if c["homeAway"] == "away")
+    except (KeyError, IndexError, StopIteration):
+        return None
 
+    liga = evento.get("league", {})
+    status = comp.get("status", {}) or evento.get("status", {})
+    estado = status.get("type", {}).get("state")
 
-def _normalizar_fixture(match, liga_info):
-    """Convierte un match crudo de FotMob al formato interno."""
-    home = match.get("home", {})
-    away = match.get("away", {})
-    status = match.get("status", {})
-    score_str = status.get("scoreStr", "")
+    # ESPN no retorna league.name en scoreboard, usar LIGAS_ESPN
+    liga_info = LIGAS_ESPN.get(liga_slug, ("Desconocida", ""))
 
-    goles_home = None
-    goles_away = None
-    if score_str and " - " in score_str:
-        partes = score_str.split(" - ")
+    def _goles(competitor):
         try:
-            goles_home = int(partes[0].strip())
-            goles_away = int(partes[1].strip())
-        except (ValueError, IndexError):
-            pass
+            return int(competitor.get("score", 0))
+        except (TypeError, ValueError):
+            return None
+
+    def _safe_team_id(team_obj):
+        tid = team_obj.get("id")
+        if isinstance(tid, list):
+            tid = tid[0] if tid else None
+        return str(tid) if tid else "0"
 
     return {
-        "fixture": {
-            "id": str(match.get("id", "")),
-            "date": status.get("utcTime", ""),
-        },
+        "fixture": {"id": str(evento["id"]), "date": evento.get("date")},
         "teams": {
-            "home": {
-                "id": str(home.get("id", "")),
-                "name": home.get("name", ""),
-            },
-            "away": {
-                "id": str(away.get("id", "")),
-                "name": away.get("name", ""),
-            },
+            "home": {"id": _safe_team_id(home["team"]), "name": home["team"].get("displayName")},
+            "away": {"id": _safe_team_id(away["team"]), "name": away["team"].get("displayName")},
         },
         "league": {
-            "name": liga_info[0],
-            "country": liga_info[1],
+            "country": liga.get("country") or liga_info[1],
+            "name": liga.get("name") or liga_info[0],
         },
-        "_fotmob_league_id": str(match.get("leagueId", "")),
-        "_estado": _extraer_estado(match),
-        "_goles_local": goles_home,
-        "_goles_visitante": goles_away,
-        "_hora_local": _extraer_hora_local(match),
+        "_liga_slug": liga_slug,
+        "_estado": estado,
+        "_goles_local": _goles(home),
+        "_goles_visitante": _goles(away),
+        "_hora_local": "",
     }
 
 
-def obtener_fixtures_por_fecha(fecha_iso, ligas_ids=None):
-    """
-    Obtiene todos los partidos de una fecha desde FotMob.
-
-    'fecha_iso': "YYYY-MM-DD"
-    'ligas_ids': lista de IDs de liga a filtrar (None = todas las de LIGAS_FOTMOB)
-
-    Devuelve lista de fixtures en formato interno.
-    """
-    fecha_fmt = fecha_iso.replace("-", "")
-    data = api_get("matches", params={"date": fecha_fmt})
-
-    if not data:
-        print(f"[fetch] No se pudieron obtener fixtures de FotMob para {fecha_iso}")
-        return []
-
-    fixtures = []
-    for liga in data.get("leagues", []):
-        liga_id = str(liga.get("primaryId", ""))
-        if liga_id not in LIGAS_FOTMOB:
-            continue
-        if ligas_ids and liga_id not in ligas_ids:
-            continue
-
-        liga_info = LIGAS_FOTMOB[liga_id]
-        for match in liga.get("matches", []):
-            fx = _normalizar_fixture(match, liga_info)
-            fixtures.append(fx)
-
-    print(f"[fetch] FotMob ({fecha_iso}): {len(fixtures)} fixtures encontrados.")
-    return fixtures
+def _consultar_scoreboard(slug, fecha_iso):
+    url = f"{BASE_ESPN_SITE}/{slug}/scoreboard?dates={_fecha_espn(fecha_iso)}"
+    r = requests.get(url, timeout=TIMEOUT)
+    r.raise_for_status()
+    return r.json()
 
 
-def obtener_detalles_partido(match_id):
-    """
-    Obtiene los detalles completos de un partido: xG, stats, eventos, etc.
-    Devuelve el dict raw de FotMob o None si falla.
-    """
-    data = api_get("matchDetails", params={"matchId": match_id})
-    if not data:
-        print(f"[fetch] No se pudieron obtener detalles del partido {match_id}")
-        return None
-    return data
+def obtener_fixtures_por_fecha(fecha_iso, ligas=None):
+    if ligas is None:
+        ligas = list(LIGAS_ESPN.keys())
 
-
-def _extraer_stats_grupo(stats_raw, titulo):
-    """Extrae un grupo de stats por titulo (ej. 'Top stats', 'Shots')."""
-    for grupo in stats_raw:
-        if grupo.get("title", "").lower() == titulo.lower():
-            return grupo.get("stats", [])
-    return []
-
-
-def _parsear_stat_value(valor):
-    """Parsea un valor de stat que puede ser int, float, string o None."""
-    if valor is None:
-        return 0.0
-    if isinstance(valor, (int, float)):
-        return float(valor)
-    if isinstance(valor, str):
-        valor = valor.replace("%", "").replace("'", "").strip()
-        try:
-            return float(valor)
-        except ValueError:
-            return 0.0
-    return 0.0
-
-
-def extraer_xg(detalles):
-    """
-    Extrae xG home y away desde los detalles del partido.
-    Devuelve (xg_home, xg_away) o (None, None).
-    """
-    if not detalles:
-        return None, None
+    fixtures_por_id = {}
 
     try:
-        content = detalles.get("content", {})
-        stats = content.get("stats", {})
-        periods = stats.get("Periods", {})
-        all_stats = periods.get("All", {}).get("stats", [])
-
-        for grupo in all_stats:
-            if "expected" in grupo.get("title", "").lower():
-                for stat in grupo.get("stats", []):
-                    if "xg" in stat.get("title", "").lower() or "expected goals" in stat.get("title", "").lower():
-                        vals = stat.get("stats", [])
-                        if len(vals) >= 2:
-                            return _parsear_stat_value(vals[0]), _parsear_stat_value(vals[1])
+        data = _consultar_scoreboard("all", fecha_iso)
+        for evento in data.get("events", []):
+            fx = _extraer_evento(evento, "all")
+            if fx:
+                fixtures_por_id[fx["fixture"]["id"]] = fx
+        print(f"[ESPN] global ({fecha_iso}): {len(fixtures_por_id)} fixtures.")
     except Exception as e:
-        print(f"[fetch] Error extrayendo xG: {e}")
+        print(f"[AVISO] ESPN global fallo para {fecha_iso}: {e}")
 
-    return None, None
+    nuevos = 0
+    fallidas = []
+    for slug in ligas:
+        try:
+            data = _consultar_scoreboard(slug, fecha_iso)
+        except Exception as e:
+            fallidas.append(slug)
+            continue
+
+        for evento in data.get("events", []):
+            eid = str(evento["id"])
+            fx = _extraer_evento(evento, slug)
+            if fx:
+                if eid in fixtures_por_id:
+                    # Actualizar slug y liga si el anterior era "all"
+                    if fixtures_por_id[eid].get("_liga_slug") == "all":
+                        fixtures_por_id[eid]["_liga_slug"] = slug
+                    # Actualizar nombre de liga si estaba vacio o era "Desconocida"
+                    existing = fixtures_por_id[eid]
+                    old_name = existing["league"]["name"]
+                    new_name = fx["league"]["name"]
+                    if new_name and (not old_name or old_name == "Desconocida"):
+                        existing["league"]["name"] = new_name
+                    new_country = fx["league"]["country"]
+                    if new_country and not existing["league"]["country"]:
+                        existing["league"]["country"] = new_country
+                else:
+                    fixtures_por_id[eid] = fx
+                    nuevos += 1
+
+    print(f"[ESPN] {len(ligas)} liga(s), {nuevos} adicionales.")
+    if fallidas:
+        print(f"[AVISO] {len(fallidas)} liga(s) fallaron: {fallidas[:5]}")
+
+    return list(fixtures_por_id.values())
 
 
-def extraer_stats_partido(detalles):
+# =====================================================================
+# ESPN -- xG, stats y datos detallados
+# =====================================================================
+
+def extraer_xg_y_stats(match_id):
     """
-    Extrae estadisticas clave del partido: posesion, tiros, corners, etc.
-    Devuelve dict con home/away para cada stat.
+    Obtiene xG y stats en una sola llamada a ESPN summary.
+
+    ESPN structure:
+      leaders[0] = home team leaders
+        leaders[0].leaders[0] = best player
+          .statistics[2] = expectedGoals (xG)
+      leaders[1] = away team leaders
+        leaders[1].leaders[0].statistics[2] = expectedGoals (xG)
     """
-    resultado = {
+    slug = _detectar_slug_para_match(match_id)
+    if not slug:
+        return None, None, _stats_vacias()
+
+    url = f"{BASE_ESPN_SITE}/{slug}/summary?event={match_id}"
+    try:
+        r = requests.get(url, timeout=TIMEOUT)
+        r.raise_for_status()
+        data = r.json()
+    except Exception as e:
+        print(f"[ESPN] Error summary {match_id}: {e}")
+        return None, None, _stats_vacias()
+
+    xg_home, xg_away = _extraer_xg_de_leaders(data)
+    stats = _extraer_stats_de_boxscore(data)
+
+    return xg_home, xg_away, stats
+
+
+def _extraer_xg_de_leaders(data):
+    """Extrae xG home/away desde leaders de ESPN."""
+    xg_home = None
+    xg_away = None
+
+    leaders = data.get("leaders", [])
+    for i, team_leaders in enumerate(leaders[:2]):
+        for cat in team_leaders.get("leaders", []):
+            for leader in cat.get("leaders", []):
+                for stat in leader.get("statistics", []):
+                    if stat.get("abbreviation") == "xG":
+                        try:
+                            val = float(stat.get("displayValue", 0))
+                            if i == 0:
+                                xg_home = val
+                            else:
+                                xg_away = val
+                        except (ValueError, TypeError):
+                            pass
+
+    return xg_home, xg_away
+
+
+def _extraer_stats_de_boxscore(data):
+    """Extrae estadisticas del partido desde ESPN boxscore."""
+    stats = _stats_vacias()
+
+    boxscore = data.get("boxscore", {})
+    teams = boxscore.get("teams", [])
+
+    if len(teams) < 2:
+        return stats
+
+    for i, team_data in enumerate(teams[:2]):
+        side = "home" if i == 0 else "away"
+        for stat in team_data.get("statistics", []):
+            name = stat.get("name", "").lower()
+            display = stat.get("displayValue", "0")
+
+            try:
+                val = float(display.replace("%", "").strip())
+            except (ValueError, TypeError):
+                val = 0.0
+
+            if name == "possession" or "possession" in name:
+                stats["posesion"][side] = val
+            elif name == "total shots" or "shots total" in name:
+                stats["tiros_totales"][side] = int(val)
+            elif name == "shots on goal" or "shots on target" in name or "sog" in name:
+                stats["tiros_puerta"][side] = int(val)
+            elif name == "corner kicks" or "corners" in name:
+                stats["corners"][side] = int(val)
+            elif name == "fouls" or "foul" in name:
+                stats["faltas"][side] = int(val)
+
+    return stats
+
+
+def _detectar_slug_para_match(match_id):
+    """Prueba cada slug de liga para encontrar el match."""
+    for slug in LIGAS_ESPN:
+        try:
+            url = f"{BASE_ESPN_SITE}/{slug}/summary?event={match_id}"
+            r = requests.get(url, timeout=10)
+            if r.status_code == 200:
+                data = r.json()
+                if data.get("header", {}).get("competitions"):
+                    return slug
+        except Exception:
+            continue
+    return None
+
+
+def _stats_vacias():
+    return {
         "posesion": {"home": 50.0, "away": 50.0},
         "tiros_totales": {"home": 0, "away": 0},
         "tiros_puerta": {"home": 0, "away": 0},
@@ -233,121 +270,100 @@ def extraer_stats_partido(detalles):
         "faltas": {"home": 0, "away": 0},
     }
 
-    if not detalles:
-        return resultado
-
-    try:
-        content = detalles.get("content", {})
-        stats = content.get("stats", {})
-        periods = stats.get("Periods", {})
-        all_stats = periods.get("All", {}).get("stats", [])
-
-        mapa_stats = {
-            "ball possession": "posesion",
-            "total shots": "tiros_totales",
-            "shots on target": "tiros_puerta",
-            "corner kicks": "corners",
-            "fouls": "faltas",
-        }
-
-        for grupo in all_stats:
-            for stat in grupo.get("stats", []):
-                titulo = stat.get("title", "").lower()
-                clave = mapa_stats.get(titulo)
-                if clave:
-                    vals = stat.get("stats", [])
-                    if len(vals) >= 2:
-                        h = _parsear_stat_value(vals[0])
-                        a = _parsear_stat_value(vals[1])
-                        if clave == "posesion":
-                            resultado[clave] = {"home": h, "away": a}
-                        else:
-                            resultado[clave] = {"home": int(h), "away": int(a)}
-    except Exception as e:
-        print(f"[fetch] Error extrayendo stats: {e}")
-
-    return resultado
-
-
-def extraer_eventos(detalles):
-    """
-    Extrae eventos del partido (goles, tarjetas, cambios).
-    Devuelve lista de eventos chronologicos.
-    """
-    eventos = []
-    if not detalles:
-        return eventos
-
-    try:
-        content = detalles.get("content", {})
-        match_facts = content.get("matchFacts", {})
-        incidents = match_facts.get("events", {}).get("incidents", [])
-
-        for inc in incidents:
-            evento = {
-                "tipo": inc.get("type", ""),
-                "minuto": inc.get("minuteLabel", ""),
-                "equipo": "home" if inc.get("isHome") else "away",
-                "jugador": inc.get("playerName", ""),
-                "detalle": inc.get("card") or inc.get("goalType") or "",
-            }
-            eventos.append(evento)
-    except Exception as e:
-        print(f"[fetch] Error extrayendo eventos: {e}")
-
-    return eventos
-
 
 def extraer_forma_equipo(team_id):
-    """
-    Obtiene la forma reciente de un equipo (ultimos W/D/L).
-    Devuelve lista de dicts con resultado, marcador y rival.
-    """
-    data = api_get("teams", params={"id": team_id})
-    if not data:
+    """Forma reciente del equipo (ultimos W/D/L)."""
+    try:
+        url = f"{BASE_ESPN_SITE}/teams/{team_id}/schedule"
+        r = requests.get(url, timeout=TIMEOUT)
+        r.raise_for_status()
+        data = r.json()
+
+        forma = []
+        for evento in data.get("events", [])[-5:]:
+            try:
+                comp = evento["competitions"][0]
+                status = comp.get("status", {})
+                if status.get("type", {}).get("state") != "post":
+                    continue
+                home = next(c for c in comp["competitors"] if c["homeAway"] == "home")
+                away = next(c for c in comp["competitors"] if c["homeAway"] == "away")
+                gh = int(home.get("score", 0))
+                ga = int(away.get("score", 0))
+                if gh > ga:
+                    forma.append("W")
+                elif gh < ga:
+                    forma.append("L")
+                else:
+                    forma.append("D")
+            except Exception:
+                continue
+
+        return forma[-5:]
+    except Exception:
         return []
 
-    forma = []
-    try:
-        overview = data.get("overview", {})
-        for item in overview.get("form", []):
-            forma.append({
-                "resultado": item.get("result", ""),
-                "score": item.get("score", ""),
-                "rival": item.get("opponent", ""),
-            })
-    except Exception as e:
-        print(f"[fetch] Error extrayendo forma del equipo {team_id}: {e}")
 
-    return forma
-
-
-def obtener_resultado_final(match_id):
-    """
-    Obtiene el resultado final de un partido terminado.
-    Devuelve dict con goles_home, goles_away, estado o None.
-    """
-    data = api_get("matchDetails", params={"matchId": match_id})
-    if not data:
+def obtener_resultado_final(fixture_id, liga_slug):
+    """Obtiene el resultado final de un partido terminado."""
+    if not liga_slug or liga_slug == "all":
         return None
 
+    url = f"{BASE_ESPN_SITE}/{liga_slug}/summary?event={fixture_id}"
     try:
-        header = data.get("header", {})
-        teams = header.get("teams", [])
-        status = header.get("status", {})
+        r = requests.get(url, timeout=TIMEOUT)
+        r.raise_for_status()
+        data = r.json()
 
-        if len(teams) < 2:
+        header = data.get("header", {})
+        competitions = header.get("competitions", [{}])
+        if not competitions:
+            return None
+        comp = competitions[0]
+        competitors = comp.get("competitors", [])
+        if len(competitors) < 2:
             return None
 
-        goles_home = teams[0].get("score")
-        goles_away = teams[1].get("score")
+        comp_status = comp.get("status", {})
+        terminado = comp_status.get("type", {}).get("state") == "post"
 
         return {
-            "goles_home": int(goles_home) if goles_home is not None else None,
-            "goles_away": int(goles_away) if goles_away is not None else None,
-            "terminado": status.get("finished", False),
-            "score_str": status.get("scoreStr", ""),
+            "goles_home": int(competitors[0].get("score", 0)),
+            "goles_away": int(competitors[1].get("score", 0)),
+            "terminado": terminado,
         }
     except Exception as e:
-        print(f"[fetch] Error obteniendo resultado final {match_id}: {e}")
+        print(f"[ESPN] Error resultado {fixture_id}: {e}")
         return None
+
+
+def obtener_score_en_vivo(fixture_id, liga_slug):
+    """Obtiene marcador en vivo y estado desde ESPN."""
+    if not liga_slug or liga_slug == "all":
+        return None, None, None
+
+    url = f"{BASE_ESPN_SITE}/{liga_slug}/summary?event={fixture_id}"
+    try:
+        r = requests.get(url, timeout=TIMEOUT)
+        r.raise_for_status()
+        data = r.json()
+
+        header = data.get("header", {})
+        competitions = header.get("competitions", [{}])
+        if not competitions:
+            return None, None, None
+        comp = competitions[0]
+        competitors = comp.get("competitors", [])
+        if len(competitors) < 2:
+            return None, None, None
+
+        goles_home = int(competitors[0].get("score", 0))
+        goles_away = int(competitors[1].get("score", 0))
+
+        # El estado esta en competitions[0].status, NO en header.status
+        comp_status = comp.get("status", {})
+        estado = comp_status.get("type", {}).get("state")
+
+        return goles_home, goles_away, estado
+    except Exception:
+        return None, None, None

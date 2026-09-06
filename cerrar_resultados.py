@@ -8,7 +8,7 @@ import json
 import datetime
 from pathlib import Path
 
-from fetch_data import obtener_resultado_final, obtener_detalles_partido, extraer_xg
+from fetch_data import obtener_resultado_final, extraer_xg_y_stats
 from estado_diario import ya_se_hizo, marcar_hecho
 from telegram_utils import enviar_mensaje_telegram, escapar_html
 
