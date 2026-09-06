@@ -4,8 +4,8 @@ seleccionar_partidos.py
 FASE 1: Obtiene TODOS los partidos del dia desde ESPN y prepara
 partidos_hoy.json para vigilancia automatica.
 
-Ya no depende de Google Sheets / Excel.
-ESPN cubre ~16 ligas principales con xG disponible.
+Si ya existen partidos seleccionados del dia, los COMPLEMENTA
+(nuevos fixtures) sin borrar los existentes ni su historial.
 """
 
 import datetime
@@ -17,7 +17,7 @@ from fetch_data import obtener_fixtures_por_fecha
 DATA_DIR = Path(__file__).parent / "data"
 DATA_DIR.mkdir(exist_ok=True)
 ARCHIVO_SALIDA = DATA_DIR / "partidos_hoy.json"
-VERSION_SELECCION = 2
+VERSION_SELECCION = 3
 
 
 def _partido_para_vigilar(fx):
@@ -46,54 +46,66 @@ def _partido_para_vigilar(fx):
     }
 
 
-def ya_se_completo_hoy():
+def _cargar_existentes():
+    """Carga partidos existentes del dia si el archivo es de hoy."""
     if not ARCHIVO_SALIDA.exists():
-        return False
+        return None, []
     try:
         data = json.loads(ARCHIVO_SALIDA.read_text(encoding="utf-8"))
         fecha_archivo = data.get("fecha", "")
         hoy = datetime.date.today().isoformat()
-        return fecha_archivo == hoy
+        if fecha_archivo == hoy:
+            return data, data.get("partidos", [])
     except Exception:
-        return False
+        pass
+    return None, []
 
 
 def seleccionar(forzar=False):
-    if ya_se_completo_hoy() and not forzar:
-        print("[seleccion] Ya se completo la seleccion de hoy.")
-        return []
-
     hoy = datetime.date.today()
     fecha_iso = hoy.isoformat()
+
+    # Cargar existentes del dia
+    data_existente, partidos_existentes = _cargar_existentes()
+    ids_existentes = {p["fixture_id"] for p in partidos_existentes}
+
+    if ids_existentes and not forzar:
+        print(f"[seleccion] Ya hay {len(ids_existentes)} partidos seleccionados hoy. Use --forzar para complementar.")
+        return partidos_existentes
 
     print(f"[seleccion] Buscando partidos del dia {fecha_iso} en ESPN...")
     fixtures = obtener_fixtures_por_fecha(fecha_iso)
     if not fixtures:
         print("[seleccion] No se encontraron fixtures en ESPN para hoy.")
-        return []
+        return partidos_existentes
 
-    partidos = []
+    # Complementar: agregar nuevos sin borrar existentes
+    nuevos = 0
     for fx in fixtures:
-        partido = _partido_para_vigilar(fx)
-        partidos.append(partido)
+        fid = fx["fixture"]["id"]
+        if fid not in ids_existentes:
+            partido = _partido_para_vigilar(fx)
+            partidos_existentes.append(partido)
+            ids_existentes.add(fid)
+            nuevos += 1
 
     # Guardar
     DATA_DIR.mkdir(exist_ok=True)
     salida = {
         "fecha": fecha_iso,
         "generado": datetime.datetime.now(datetime.timezone.utc).isoformat(),
-        "total": len(partidos),
-        "partidos": partidos,
+        "total": len(partidos_existentes),
+        "partidos": partidos_existentes,
     }
     ARCHIVO_SALIDA.write_text(json.dumps(salida, ensure_ascii=False, indent=2), encoding="utf-8")
 
-    ligas = set(p["liga"] for p in partidos)
-    print(f"\n[seleccion] {len(partidos)} partidos de {len(ligas)} liga(s) listos para vigilancia.")
+    ligas = set(p["liga"] for p in partidos_existentes)
+    print(f"\n[seleccion] {len(partidos_existentes)} partidos total ({nuevos} nuevos) de {len(ligas)} liga(s).")
     for liga in sorted(ligas):
-        count = sum(1 for p in partidos if p["liga"] == liga)
+        count = sum(1 for p in partidos_existentes if p["liga"] == liga)
         print(f"  - {liga}: {count}")
 
-    return partidos
+    return partidos_existentes
 
 
 if __name__ == "__main__":

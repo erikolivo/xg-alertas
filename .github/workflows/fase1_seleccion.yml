@@ -1,9 +1,12 @@
-name: Fase 1 - Seleccion
+name: Fase 1 - Seleccion + Complementar
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 9 * * *'  # 09:00 UTC = 04:00 Ecuador
+    - cron: '0 9 * * *'   # 09:00 UTC = 04:00 Ecuador (manana)
+    - cron: '0 12 * * *'  # 12:00 UTC = 07:00 Ecuador (medio dia)
+    - cron: '0 16 * * *'  # 16:00 UTC = 11:00 Ecuador (tarde)
+    - cron: '0 20 * * *'  # 20:00 UTC = 15:00 Ecuador (noche)
 
 jobs:
   seleccion:
@@ -17,9 +20,16 @@ jobs:
 
       - run: pip install -r requirements.txt
 
-      - run: python seleccionar_partidos.py --forzar
+      - name: Seleccionar y complementar partidos
+        run: python seleccionar_partidos.py --forzar
 
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "seleccion: partidos del dia"
+          commit_message: "seleccion: complemento del dia"
           file_pattern: "data/"
+
+  # Despues de seleccionar, lanzar fase 3 automaticamente
+  vigilancia:
+    needs: seleccion
+    uses: ./.github/workflows/fase3_vigilancia.yml
+    secrets: inherit

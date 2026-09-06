@@ -2,6 +2,7 @@ name: Fase 3 - Vigilancia
 
 on:
   workflow_dispatch:
+  workflow_call:
   schedule:
     - cron: '0 14 * * *'   # 14:00 UTC = 09:00 Ecuador
     - cron: '0 18 * * *'   # 18:00 UTC = 13:00 Ecuador
