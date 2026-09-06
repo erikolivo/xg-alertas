@@ -1,0 +1,23 @@
+name: Reporte Diario
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 11 * * *'  # 11:00 UTC = 06:00 Ecuador
+
+jobs:
+  reporte:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - run: pip install -r requirements.txt
+
+      - run: python reporte_diario.py
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}

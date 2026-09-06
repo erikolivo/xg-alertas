@@ -1,0 +1,33 @@
+name: Fase 3 - Vigilancia
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 14 * * *'   # 14:00 UTC = 09:00 Ecuador
+    - cron: '0 18 * * *'   # 18:00 UTC = 13:00 Ecuador
+    - cron: '0 22 * * *'   # 22:00 UTC = 17:00 Ecuador
+    - cron: '0 1 * * *'    # 01:00 UTC = 20:00 Ecuador (noche)
+
+jobs:
+  vigilar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - run: pip install -r requirements.txt
+
+      - run: python monitor.py
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        if: always()
+        with:
+          commit_message: "vigilancia: snapshots y alertas"
+          file_pattern: "data/"
