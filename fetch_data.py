@@ -116,53 +116,19 @@ def obtener_fixtures_por_fecha(fecha_iso, ligas=None):
 
     fixtures_por_id = {}
 
-    try:
-        data = _consultar_scoreboard("all", fecha_iso)
-        for evento in data.get("events", []):
-            fx = _extraer_evento(evento, "all")
-            if fx:
-                fixtures_por_id[fx["fixture"]["id"]] = fx
-        print(f"[ESPN] global ({fecha_iso}): {len(fixtures_por_id)} fixtures.")
-    except Exception as e:
-        print(f"[AVISO] ESPN global fallo para {fecha_iso}: {e}")
-
-    nuevos = 0
-    fallidas = []
     for slug in ligas:
         try:
             data = _consultar_scoreboard(slug, fecha_iso)
         except Exception as e:
-            fallidas.append(slug)
+            print(f"[AVISO] ESPN {slug} fallo: {e}")
             continue
 
         for evento in data.get("events", []):
-            eid = str(evento["id"])
             fx = _extraer_evento(evento, slug)
             if fx:
-                if eid in fixtures_por_id:
-                    # Actualizar slug y liga si el anterior era "all"
-                    if fixtures_por_id[eid].get("_liga_slug") == "all":
-                        fixtures_por_id[eid]["_liga_slug"] = slug
-                    # Actualizar nombre de liga si estaba vacio o era "Desconocida"
-                    existing = fixtures_por_id[eid]
-                    old_name = existing["league"]["name"]
-                    new_name = fx["league"]["name"]
-                    if new_name and (not old_name or old_name == "Desconocida"):
-                        existing["league"]["name"] = new_name
-                    new_country = fx["league"]["country"]
-                    if new_country and not existing["league"]["country"]:
-                        existing["league"]["country"] = new_country
-                    # Actualizar hora si estaba vacia
-                    if not existing.get("hora_utc") and fx.get("hora_utc"):
-                        existing["hora_utc"] = fx["hora_utc"]
-                else:
-                    fixtures_por_id[eid] = fx
-                    nuevos += 1
+                fixtures_por_id[fx["fixture"]["id"]] = fx
 
-    print(f"[ESPN] {len(ligas)} liga(s), {nuevos} adicionales.")
-    if fallidas:
-        print(f"[AVISO] {len(fallidas)} liga(s) fallaron: {fallidas[:5]}")
-
+    print(f"[ESPN] {len(fixtures_por_id)} fixtures de {len(ligas)} liga(s).")
     return list(fixtures_por_id.values())
 
 

@@ -125,7 +125,7 @@ def _procesar_partido(partido):
     goles_home, goles_away, estado, clock = obtener_score_en_vivo(match_id, liga_slug)
 
     if estado is None:
-        print(f"  [!] No se pudieron obtener datos de {local} vs {visitante}")
+        print(f"  [!] {local} vs {visitante}: sin datos ESPN")
         return
 
     if estado == "post":
@@ -138,6 +138,8 @@ def _procesar_partido(partido):
 
     if estado != "in":
         return
+
+    print(f"  [LIVE] {local} vs {visitante} ({clock}) - {goles_home}-{goles_away}")
 
     # 2. Obtener xG (estimado) y stats desde ESPN
     xg_home, xg_away, stats = extraer_xg_y_stats(match_id)
@@ -251,15 +253,22 @@ def vigilar():
         print("[monitor] No hay partidos para vigilar.")
         return
 
-    print(f"[monitor] {len(partidos)} partido(s) en cola.")
+    # Filtrar: solo partidos con slug valido (no "all")
+    partidos = [p for p in partidos if p.get("liga_slug") and p.get("liga_slug") != "all"]
+    print(f"[monitor] {len(partidos)} partido(s) con slug valido.")
+
+    if not partidos:
+        print("[monitor] No hay partidos con slug valido. Saliendo.")
+        return
 
     inicio = time.time()
 
     while (time.time() - inicio) < DURACION_CICLO:
         data = _cargar()
         partidos = data.get("partidos", [])
+        partidos = [p for p in partidos if p.get("liga_slug") and p.get("liga_slug") != "all"]
 
-        # Filtrar: solo partidos en ventana (ya empezaron o estan proximos)
+        # Filtrar: solo partidos en ventana y no terminados
         partidos_en_ventana = [p for p in partidos if _partido_en_ventana(p) and not _esta_terminado(p)]
         partidos_terminados = [p for p in partidos if _esta_terminado(p)]
 
