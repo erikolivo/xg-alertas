@@ -206,13 +206,13 @@ def cerrar():
         match_id = p["fixture_id"]
         local = p["local"]
         visitante = p["visitante"]
+        liga_slug = p.get("liga_slug", "")
 
-        resultado = obtener_resultado_final(match_id)
+        resultado = obtener_resultado_final(match_id, liga_slug)
         if resultado and resultado.get("terminado"):
             p["resultado_final"] = {
                 "goles_home": resultado["goles_home"],
                 "goles_away": resultado["goles_away"],
-                "score_str": resultado["score_str"],
             }
 
             # Auditar cada alerta

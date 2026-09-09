@@ -122,7 +122,7 @@ def _procesar_partido(partido):
     liga_slug = partido.get("liga_slug", "")
 
     # 1. Obtener marcador en vivo desde ESPN
-    goles_home, goles_away, estado = obtener_score_en_vivo(match_id, liga_slug)
+    goles_home, goles_away, estado, clock = obtener_score_en_vivo(match_id, liga_slug)
 
     if estado is None:
         print(f"  [!] No se pudieron obtener datos de {local} vs {visitante}")
@@ -139,7 +139,7 @@ def _procesar_partido(partido):
     if estado != "in":
         return
 
-    # 2. Obtener xG y stats desde ESPN
+    # 2. Obtener xG (estimado) y stats desde ESPN
     xg_home, xg_away, stats = extraer_xg_y_stats(match_id)
     if xg_home is None:
         xg_home = 0.0
@@ -150,11 +150,8 @@ def _procesar_partido(partido):
     if goles_away is None:
         goles_away = 0
 
-    # 3. Minuto estimado desde snapshots
-    minuto = "?"
-    snapshots = partido.get("snapshots", [])
-    if snapshots:
-        minuto = snapshots[-1].get("minuto", "?")
+    # 3. Minuto desde el reloj de ESPN
+    minuto = clock if clock else "?"
 
     # 4. Guardar snapshot
     _guardar_snapshot(partido, minuto, xg_home, xg_away, goles_home, goles_away, stats)

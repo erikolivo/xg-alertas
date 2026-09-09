@@ -5,12 +5,10 @@ Obtencion de datos de partidos usando EXCLUSIVAMENTE ESPN.
 
 ESPN provee:
   - Fixtures del dia (scoreboard)
-  - xG (Expected Goals) por equipo (summary -> leaders -> expectedGoals)
-  - xGC (Expected Goals Conceded) por equipo
-  - Estadisticas del partido (keyStats)
+  - Stats por equipo: totalShots, shotsOnTarget, blockedShots, possessionPct, etc.
   - Marcador en vivo
 
-No se usa FotMob (endpoints rotos / sin API publica).
+xG se estima desde tiros a puerta (SOT, off-target, blocked).
 """
 
 import re
@@ -174,14 +172,11 @@ def obtener_fixtures_por_fecha(fecha_iso, ligas=None):
 
 def extraer_xg_y_stats(match_id):
     """
-    Obtiene xG y stats en una sola llamada a ESPN summary.
+    Obtiene xG (estimado) y stats en una sola llamada a ESPN summary.
 
-    ESPN structure:
-      leaders[0] = home team leaders
-        leaders[0].leaders[0] = best player
-          .statistics[2] = expectedGoals (xG)
-      leaders[1] = away team leaders
-        leaders[1].leaders[0].statistics[2] = expectedGoals (xG)
+    ESPN boxscore provee:
+      totalShots, shotsOnTarget, blockedShots, possessionPct, etc.
+    xG se estima desde los tiros.
     """
     slug = _detectar_slug_para_match(match_id)
     if not slug:
@@ -196,33 +191,30 @@ def extraer_xg_y_stats(match_id):
         print(f"[ESPN] Error summary {match_id}: {e}")
         return None, None, _stats_vacias()
 
-    xg_home, xg_away = _extraer_xg_de_leaders(data)
     stats = _extraer_stats_de_boxscore(data)
+
+    xg_home = _estimar_xg(stats, "home")
+    xg_away = _estimar_xg(stats, "away")
 
     return xg_home, xg_away, stats
 
 
-def _extraer_xg_de_leaders(data):
-    """Extrae xG home/away desde leaders de ESPN."""
-    xg_home = None
-    xg_away = None
+def _estimar_xg(stats, side):
+    """
+    Estima xG desde tiros a puerta.
+    Promedios historicos:
+      - SOT (shot on target): ~0.10 xG por tiro
+      - Off-target: ~0.03 xG por tiro
+      - Bloqueado: ~0.02 xG por tiro
+    """
+    sot = stats.get("tiros_puerta", {}).get(side, 0)
+    total = stats.get("tiros_totales", {}).get(side, 0)
+    blocked = stats.get("tiros_bloqueados", {}).get(side, 0)
 
-    leaders = data.get("leaders", [])
-    for i, team_leaders in enumerate(leaders[:2]):
-        for cat in team_leaders.get("leaders", []):
-            for leader in cat.get("leaders", []):
-                for stat in leader.get("statistics", []):
-                    if stat.get("abbreviation") == "xG":
-                        try:
-                            val = float(stat.get("displayValue", 0))
-                            if i == 0:
-                                xg_home = val
-                            else:
-                                xg_away = val
-                        except (ValueError, TypeError):
-                            pass
+    off_target = max(0, total - sot - blocked)
 
-    return xg_home, xg_away
+    xg = (sot * 0.10) + (off_target * 0.03) + (blocked * 0.02)
+    return round(xg, 2)
 
 
 def _extraer_stats_de_boxscore(data):
@@ -246,22 +238,29 @@ def _extraer_stats_de_boxscore(data):
             except (ValueError, TypeError):
                 val = 0.0
 
-            if name == "possession" or "possession" in name:
+            if name == "possessionpct" or "possession" in name:
                 stats["posesion"][side] = val
-            elif name == "total shots" or "shots total" in name:
+            elif name == "totals" or "total shots" in name or "shots total" in name:
                 stats["tiros_totales"][side] = int(val)
-            elif name == "shots on goal" or "shots on target" in name or "sog" in name:
+            elif name == "shotsontarget" or "shots on target" in name or "sog" in name:
                 stats["tiros_puerta"][side] = int(val)
-            elif name == "corner kicks" or "corners" in name:
+            elif name == "blockedshots" or "blocked" in name:
+                stats["tiros_bloqueados"][side] = int(val)
+            elif name == "woncorners" or "corners" in name:
                 stats["corners"][side] = int(val)
-            elif name == "fouls" or "foul" in name:
+            elif name == "foulscommitted" or "foul" in name:
                 stats["faltas"][side] = int(val)
 
     return stats
 
 
+_slug_cache = {}
+
 def _detectar_slug_para_match(match_id):
-    """Prueba cada slug de liga para encontrar el match."""
+    """Prueba cada slug de liga para encontrar el match. Usa cache."""
+    if match_id in _slug_cache:
+        return _slug_cache[match_id]
+
     for slug in LIGAS_ESPN:
         try:
             url = f"{BASE_ESPN_SITE}/{slug}/summary?event={match_id}"
@@ -269,6 +268,7 @@ def _detectar_slug_para_match(match_id):
             if r.status_code == 200:
                 data = r.json()
                 if data.get("header", {}).get("competitions"):
+                    _slug_cache[match_id] = slug
                     return slug
         except Exception:
             continue
@@ -280,6 +280,7 @@ def _stats_vacias():
         "posesion": {"home": 50.0, "away": 50.0},
         "tiros_totales": {"home": 0, "away": 0},
         "tiros_puerta": {"home": 0, "away": 0},
+        "tiros_bloqueados": {"home": 0, "away": 0},
         "corners": {"home": 0, "away": 0},
         "faltas": {"home": 0, "away": 0},
     }
@@ -352,9 +353,9 @@ def obtener_resultado_final(fixture_id, liga_slug):
 
 
 def obtener_score_en_vivo(fixture_id, liga_slug):
-    """Obtiene marcador en vivo y estado desde ESPN."""
+    """Obtiene marcador en vivo, estado y minuto desde ESPN."""
     if not liga_slug or liga_slug == "all":
-        return None, None, None
+        return None, None, None, None
 
     url = f"{BASE_ESPN_SITE}/{liga_slug}/summary?event={fixture_id}"
     try:
@@ -365,19 +366,19 @@ def obtener_score_en_vivo(fixture_id, liga_slug):
         header = data.get("header", {})
         competitions = header.get("competitions", [{}])
         if not competitions:
-            return None, None, None
+            return None, None, None, None
         comp = competitions[0]
         competitors = comp.get("competitors", [])
         if len(competitors) < 2:
-            return None, None, None
+            return None, None, None, None
 
         goles_home = int(competitors[0].get("score", 0))
         goles_away = int(competitors[1].get("score", 0))
 
-        # El estado esta en competitions[0].status, NO en header.status
         comp_status = comp.get("status", {})
         estado = comp_status.get("type", {}).get("state")
+        clock = comp_status.get("displayClock", None)
 
-        return goles_home, goles_away, estado
+        return goles_home, goles_away, estado, clock
     except Exception:
-        return None, None, None
+        return None, None, None, None
