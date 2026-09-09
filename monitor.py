@@ -21,7 +21,7 @@ ARCHIVO_PARTIDOS = DATA_DIR / "partidos_hoy.json"
 
 INTERVALO_BASE = 5 * 60
 INTERVALO_MAX = 15 * 60
-DURACION_CICLO = 6 * 60 * 60
+DURACION_CICLO = 3 * 60 * 60
 
 
 def _cargar():
@@ -151,6 +151,8 @@ def _procesar_partido(partido):
         goles_home = 0
     if goles_away is None:
         goles_away = 0
+
+    print(f"    xG: {xg_home:.2f} vs {xg_away:.2f} (diff: {xg_home - xg_away:+.2f})")
 
     # 3. Minuto desde el reloj de ESPN
     minuto = clock if clock else "?"
