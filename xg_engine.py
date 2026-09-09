@@ -25,11 +25,14 @@ VENTANA_DEDUPLICACION = 15     # minutos para no repetir alerta del mismo tipo
 
 
 def _minuto_a_entero(minuto):
-    """Convierte '52' o '45+2' a entero."""
+    """Convierte '45'+4' o '52' o '45+2' a entero."""
     if minuto is None:
         return None
     try:
-        return int(str(minuto).rstrip("'").split("+")[0])
+        import re
+        limpio = re.sub(r"[^0-9+]", "", str(minuto))
+        partes = limpio.split("+")
+        return int(partes[0]) if partes[0] else None
     except (TypeError, ValueError):
         return None
 
