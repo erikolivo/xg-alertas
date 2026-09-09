@@ -240,11 +240,11 @@ def _extraer_stats_de_boxscore(data):
 
             if name == "possessionpct" or "possession" in name:
                 stats["posesion"][side] = val
-            elif name == "totals" or "total shots" in name or "shots total" in name:
+            elif name == "totalshots":
                 stats["tiros_totales"][side] = int(val)
-            elif name == "shotsontarget" or "shots on target" in name or "sog" in name:
+            elif name == "shotsontarget":
                 stats["tiros_puerta"][side] = int(val)
-            elif name == "blockedshots" or "blocked" in name:
+            elif name == "blockedshots":
                 stats["tiros_bloqueados"][side] = int(val)
             elif name == "woncorners" or "corners" in name:
                 stats["corners"][side] = int(val)
