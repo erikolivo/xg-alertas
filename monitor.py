@@ -174,8 +174,10 @@ def _procesar_partido(partido):
     )
 
     if alerta:
+        import re
         try:
-            minuto_int = int(str(minuto).rstrip("'").split("+")[0])
+            limpio = re.sub(r"[^0-9+]", "", str(minuto))
+            minuto_int = int(limpio.split("+")[0]) if limpio else 0
         except (ValueError, TypeError):
             minuto_int = 0
 

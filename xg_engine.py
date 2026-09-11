@@ -17,9 +17,9 @@ Tipos de alerta:
 
 
 # --- Umbrales (configurables) ---
-UMBRAL_XG_DOMINANCIA = 0.8     # xG diff minimo para alertar dominancia
-UMBRAL_XG_FUERTE = 1.2         # dominancia fuerte
-UMBRAL_XG_CIERRE = 0.8         # para alertas de cierre (min 75+)
+UMBRAL_XG_DOMINANCIA = 0.5     # xG diff minimo para alertar dominancia
+UMBRAL_XG_FUERTE = 0.8         # dominancia fuerte
+UMBRAL_XG_CIERRE = 0.5         # para alertas de cierre (min 75+)
 MINUTOS_MINIMOS_XG = 15        # minutos minimos para que xG sea significativo
 VENTANA_DEDUPLICACION = 15     # minutos para no repetir alerta del mismo tipo
 
