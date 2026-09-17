@@ -1,6 +1,6 @@
 {
   "fecha": "2026-09-17",
-  "generado": "2026-09-17T16:36:31.541617+00:00",
+  "generado": "2026-09-17T19:20:59.936244+00:00",
   "total": 3,
   "partidos": [
     {
@@ -19,7 +19,7 @@
       "confianza": "",
       "cuota_local": null,
       "cuota_visitante": null,
-      "seleccionado_en": "2026-09-17T16:36:31.541545+00:00",
+      "seleccionado_en": "2026-09-17T19:20:59.936165+00:00",
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
@@ -41,7 +41,7 @@
       "confianza": "",
       "cuota_local": null,
       "cuota_visitante": null,
-      "seleccionado_en": "2026-09-17T16:36:31.541567+00:00",
+      "seleccionado_en": "2026-09-17T19:20:59.936194+00:00",
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
@@ -63,7 +63,7 @@
       "confianza": "",
       "cuota_local": null,
       "cuota_visitante": null,
-      "seleccionado_en": "2026-09-17T16:36:31.541574+00:00",
+      "seleccionado_en": "2026-09-17T19:20:59.936201+00:00",
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
