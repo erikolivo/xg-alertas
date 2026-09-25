@@ -17,15 +17,14 @@ Tipos de alerta:
 
 
 # --- Umbrales (configurables) ---
-UMBRAL_XG_DOMINANCIA = 0.45    # xG diff minimo para alertar dominancia
+UMBRAL_XG_DOMINANCIA = 0.50    # xG diff minimo para alertar dominancia
 UMBRAL_XG_FUERTE = 0.7         # dominancia fuerte
-UMBRAL_XG_CIERRE = 0.45        # para alertas de cierre
+UMBRAL_XG_CIERRE = 0.50        # para alertas de cierre
 MINUTOS_MINIMOS_XG = 15        # minutos minimos para que xG sea significativo
 VENTANA_DEDUPLICACION = 15     # minutos para no repetir alerta del mismo tipo
 
-# Limites de minutos por tipo de alerta
-LIMITE_ALERTAS_NORMALES = 80   # alertas normales hasta min 80
-LIMITE_ALERTA_CIERRE = 85      # gol de cierre hasta min 85
+# Limite unico: TODAS las alertas hasta minuto 80
+LIMITE_ALERTAS = 80            # mas alla del min 80 no se envia nada
 
 
 def _minuto_a_entero(minuto):
@@ -67,6 +66,10 @@ def evaluar_alertas(xg_home, xg_away, goles_home, goles_away,
     if minuto_int is None or minuto_int < MINUTOS_MINIMOS_XG:
         return None
 
+    # Limite unico: ninguna alerta mas alla del minuto 80
+    if minuto_int > LIMITE_ALERTAS:
+        return None
+
     xg_diff = calcular_diferencia_xg(xg_home, xg_away)
     xg_diff_abs = abs(xg_diff)
 
@@ -96,8 +99,8 @@ def evaluar_alertas(xg_home, xg_away, goles_home, goles_away,
         dominante_va_perdiendo = goles_away < goles_home
         dominante_va_empatando = goles_away == goles_home
 
-    # --- ALERTA 4: Cierre (min 75-85) ---
-    if minuto_int >= 75 and minuto_int <= LIMITE_ALERTA_CIERRE and xg_diff_abs >= UMBRAL_XG_CIERRE:
+    # --- ALERTA 4: Cierre (min 75-80) ---
+    if minuto_int >= 75 and xg_diff_abs >= UMBRAL_XG_CIERRE:
         if dominante_va_ganando or dominante_va_empatando:
             return _construir_alerta(
                 tipo="cierre",
@@ -107,10 +110,6 @@ def evaluar_alertas(xg_home, xg_away, goles_home, goles_away,
                 goles_home=goles_home, goles_away=goles_away,
                 minuto=minuto, xg_diff=xg_diff
             )
-
-    # --- ALERTAS NORMALES: solo hasta min 80 ---
-    if minuto_int > LIMITE_ALERTAS_NORMALES:
-        return None
 
     # --- ALERTA 5: Ampliación ---
     if dominante_va_ganando and dominante_es_favorito and xg_diff_abs >= UMBRAL_XG_DOMINANCIA:

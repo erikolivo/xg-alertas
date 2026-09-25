@@ -38,25 +38,42 @@ def _guardar(data):
     ARCHIVO_PARTIDOS.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
+def _minuto_a_int(minuto):
+    """Convierte '45'+4' o '52' a entero limpio."""
+    import re
+    try:
+        limpio = re.sub(r"[^0-9+]", "", str(minuto))
+        return int(limpio.split("+")[0]) if limpio else 0
+    except (ValueError, TypeError):
+        return 0
+
+
 def _ya_se_envio_reciente(alertas_enviadas, tipo_alerta, minuto_actual):
     for a in reversed(alertas_enviadas):
-        if a.get("tipo") == tipo_alerta:
-            try:
-                minuto_anterior = int(str(a.get("minuto", "0")).rstrip("'").split("+")[0])
-                if abs(minuto_actual - minuto_anterior) < VENTANA_DEDUPLICACION:
-                    return True
-            except (ValueError, TypeError):
-                pass
+        if a.get("tipo") == tipo_alerta and not a.get("resuelta"):
+            minuto_anterior = _minuto_a_int(a.get("minuto", "0"))
+            if abs(minuto_actual - minuto_anterior) < VENTANA_DEDUPLICACION:
+                return True
     return False
 
 
-def _registrar_alerta(partido, tipo_alerta, minuto):
+def _registrar_alerta(partido, tipo_alerta, minuto, xg_home, xg_away, goles_home, goles_away):
     if "alertas_enviadas" not in partido:
         partido["alertas_enviadas"] = []
+
+    equipo_dominante = "home" if xg_home >= xg_away else "away"
+
     partido["alertas_enviadas"].append({
         "tipo": tipo_alerta,
         "minuto": minuto,
+        "xg_home": xg_home,
+        "xg_away": xg_away,
+        "equipo_dominante": equipo_dominante,
+        "goles_home_envio": goles_home,
+        "goles_away_envio": goles_away,
         "enviada_en": datetime.datetime.utcnow().isoformat() + "Z",
+        "resuelta": False,
+        "resultado": None,
     })
 
 
@@ -115,6 +132,79 @@ def _esta_terminado(partido):
     return partido.get("resultado_final") is not None
 
 
+def _verificar_alertas(partido, goles_home, goles_away, estado):
+    """
+    Verifica si las alertas enviadas resultaron en gol del equipo dominante.
+    - Dominante marcó -> ACIERTO
+    - Rival marcó o terminó sin gol del dominante -> FALLO
+    """
+    alertas = partido.get("alertas_enviadas", [])
+    sin_resolver = [a for a in alertas if not a.get("resuelta")]
+    if not sin_resolver:
+        return
+
+    local = partido.get("local", "?")
+    visitante = partido.get("visitante", "?")
+    partido_terminado = estado == "post"
+
+    for alerta in sin_resolver:
+        dom = alerta.get("equipo_dominante", "home")
+        goles_envio_h = alerta.get("goles_home_envio", 0)
+        goles_envio_a = alerta.get("goles_away_envio", 0)
+
+        if dom == "home":
+            equipo_dom = local
+            equipo_rival = visitante
+            marcó_dominante = goles_home > goles_envio_h
+            marco_rival = goles_away > goles_envio_a
+        else:
+            equipo_dom = visitante
+            equipo_rival = local
+            marcó_dominante = goles_away > goles_envio_a
+            marco_rival = goles_home > goles_envio_h
+
+        # Caso 1: Dominante marcó -> ACIERTO
+        if marcó_dominante:
+            alerta["resuelta"] = True
+            alerta["resultado"] = "acierto"
+            msg = (
+                f"✅ ACIERTO\n"
+                f"{equipo_dom} marcó gol después de la alerta\n"
+                f"Alerta: {alerta['tipo']} (min {alerta['minuto']})\n"
+                f"⚽ {local} {goles_home} - {goles_away} {visitante}"
+            )
+            enviar_mensaje_telegram(msg)
+            print(f"    [ACIERTO] {alerta['tipo']} -> {equipo_dom} marcó")
+            continue
+
+        # Caso 2: Rival marcó -> FALLO
+        if marco_rival:
+            alerta["resuelta"] = True
+            alerta["resultado"] = "fallo_rival"
+            msg = (
+                f"❌ FALLO\n"
+                f"{equipo_rival} (rival) marcó gol\n"
+                f"Alerta: {alerta['tipo']} (min {alerta['minuto']})\n"
+                f"⚽ {local} {goles_home} - {goles_away} {visitante}"
+            )
+            enviar_mensaje_telegram(msg)
+            print(f"    [FALLO] {alerta['tipo']} -> {equipo_rival} (rival) marcó")
+            continue
+
+        # Caso 3: Partido terminó sin gol del dominante -> FALLO
+        if partido_terminado:
+            alerta["resuelta"] = True
+            alerta["resultado"] = "fallo_sin_gol"
+            msg = (
+                f"❌ FALLO\n"
+                f"Partido terminó sin gol de {equipo_dom}\n"
+                f"Alerta: {alerta['tipo']} (min {alerta['minuto']})\n"
+                f"⚽ {local} {goles_home} - {goles_away} {visitante}"
+            )
+            enviar_mensaje_telegram(msg)
+            print(f"    [FALLO] {alerta['tipo']} -> sin gol de {equipo_dom}")
+
+
 def _procesar_partido(partido):
     match_id = partido["fixture_id"]
     local = partido["local"]
@@ -130,6 +220,8 @@ def _procesar_partido(partido):
 
     if estado == "post":
         if goles_home is not None and goles_away is not None:
+            # Verificar si las alertas existentes resultaron en gol
+            _verificar_alertas(partido, goles_home, goles_away, "post")
             partido["resultado_final"] = {
                 "goles_home": goles_home,
                 "goles_away": goles_away,
@@ -140,6 +232,10 @@ def _procesar_partido(partido):
         return
 
     print(f"  [LIVE] {local} vs {visitante} ({clock}) - {goles_home}-{goles_away}")
+
+    # Verificar si alertas previas se resolvieron (gol del dominante o rival)
+    if goles_home is not None and goles_away is not None:
+        _verificar_alertas(partido, goles_home, goles_away, "in")
 
     # 2. Obtener xG (estimado) y stats desde ESPN
     xg_home, xg_away, stats = extraer_xg_y_stats(match_id)
@@ -187,7 +283,7 @@ def _procesar_partido(partido):
 
             exito = enviar_mensaje_telegram(mensaje_completo)
             if exito:
-                _registrar_alerta(partido, alerta["tipo"], minuto)
+                _registrar_alerta(partido, alerta["tipo"], minuto, xg_home, xg_away, goles_home, goles_away)
                 print(f"  [ALERTA] {alerta['emoji']} {alerta['tipo']} enviada para {local} vs {visitante}")
         else:
             print(f"  [skip] {alerta['tipo']} ya enviada recientemente para {local} vs {visitante}")
