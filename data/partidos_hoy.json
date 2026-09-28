@@ -1660,7 +1660,10 @@
           "timestamp": "2026-09-28T03:12:56.944040Z"
         }
       ],
-      "resultado_final": null
+      "resultado_final": {
+        "goles_home": 2,
+        "goles_away": 4
+      }
     }
   ]
 }
