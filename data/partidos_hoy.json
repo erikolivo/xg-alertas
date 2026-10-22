@@ -1,6 +1,6 @@
 {
   "fecha": "2026-10-22",
-  "generado": "2026-10-22T14:27:55.995879+00:00",
+  "generado": "2026-10-22T16:54:44.425990+00:00",
   "total": 1,
   "partidos": [
     {
@@ -19,7 +19,7 @@
       "confianza": "",
       "cuota_local": null,
       "cuota_visitante": null,
-      "seleccionado_en": "2026-10-22T14:27:55.995811+00:00",
+      "seleccionado_en": "2026-10-22T16:54:44.425933+00:00",
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
