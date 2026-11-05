@@ -1,12 +1,14 @@
-# fotmob-xg-alertas
+# xg-alertas
 
-Alertas de dominancia por xG en vivo desde FotMob. Sistema automatizado que monitorea partidos seleccionados y avisa por Telegram cuando un equipo domina en Expected Goals.
+Alertas de dominancia por xG en vivo desde **ESPN**. Sistema automatizado que
+monitorea partidos de 16 ligas y avisa por Telegram cuando un equipo domina en
+Expected Goals.
 
 ## Las 5 fases
 
 | Fase | Cuándo | Qué hace |
 |------|--------|----------|
-| 1. Selección | 04:00 | Lee favoritos de Google Sheets, busca fixtures en FotMob |
+| 1. Selección | 04:00 | Busca fixtures del día en ESPN |
 | 2. Resumen | 07:00 | Envía lista de partidos del día por Telegram |
 | 3. Vigilancia | 09:00-20:00 | Cada 5-15 min: obtiene xG + stats, evalúa alertas |
 | 4. Cierre | 23:30 | Obtiene resultados, audita alertas, archiva día |
@@ -16,76 +18,83 @@ Alertas de dominancia por xG en vivo desde FotMob. Sistema automatizado que moni
 
 | Emoji | Tipo | Cuándo |
 |-------|------|--------|
-| 🟠 | Dominancia xG | xG diff ≥ 0.8, va empatado o perdiendo |
-| 🔴 | No favorito domina | El no-favorito tiene mayor xG |
-| 🎯 | xG vs Marcador | Domina en xG pero va perdiendo/empatando |
-| ⏰ | Cierre | Min 75+, mismo equipo dominando |
-| 🔵 | Ampliación | Favorito ganando y sigue dominando en xG |
+| 🟠 | Dominancia xG | xG diff ≥ 0.50 y va empatando |
+| 🔴 | No favorito domina | El no-favorito domina en xG y no gana |
+| 🎯 | xG vs Marcador | Domina en xG pero va perdiendo |
+| ⏰ | Cierre | Min 75-80, sigue dominando y va empatando/ganando |
+| 🔵 | Ampliación | El favorito gana y sigue dominando en xG |
 
-## Datos de cada alerta
+**Ninguna alerta se envía después del minuto 80.**
 
-Cada alerta incluye:
-- xG de ambos equipos
-- Diferencia de xG
-- Marcador real
-- Estadísticas completas (posesión, tiros, corners, faltas)
+## Cómo se calcula el xG
 
-## Cómo ponerlo en línea
+ESPN no publica xG, pero sí las coordenadas de cada tiro en el play-by-play.
+El sistema aplica un modelo logístico de distancia y ángulo al arco:
 
-### 1. Crear repositorio
-```bash
-cd fotmob-xg-alertas
-git init
-git add .
-git commit -m "v1: alertas xG desde FotMob"
-git branch -M main
-git remote add origin https://github.com/TU-USUARIO/fotmob-xg-alertas.git
-git push -u origin main
+```
+xG = sigmoid(-1.85 - 0.08·distancia_m + 2.40·ángulo_rad)
 ```
 
-### 2. Permisos de escritura
-`Settings → Actions → Workflow permissions → Read and write permissions`
+- Cabezazos: ×0.65
+- Penales: 0.78
+- Si el play-by-play está incompleto (<60% de los tiros del boxscore) se usa
+  una estimación por volumen (SOT/off-target/bloqueados) para ambos equipos.
 
-### 3. Secrets
-`Settings → Secrets and variables → Actions`
+## Filtros anti-falsos positivos
 
-| Nombre | Valor |
-|--------|-------|
-| `TELEGRAM_BOT_TOKEN` | Token de tu bot (@BotFather) |
-| `TELEGRAM_CHAT_ID` | Tu chat ID |
+- **Favorito real** desde las cuotas de ESPN (`pickcenter`). Si no hay cuotas,
+  no se emiten 🔴 ni 🔵 (antes se asumía local favorito y se etiquetaba mal).
+- **Dominio reciente**: el diff de los últimos 15 min debe ser ≥ 0.08, salvo
+  que el diff acumulado sea ≥ 0.75 (dominancia fuerte).
+- **Confirmación**: una señal marginal debe repetirse en dos lecturas seguidas.
+- **Contexto**: se descarta la alerta si el dominante juega con un expulsado
+  o no acumula al menos 2 tiros a puerta.
+- **Anti-repetición**: mínimo 6 min entre alertas del mismo partido y 15 min
+  para el mismo tipo, salvo que el xG crezca ≥ 0.30.
 
-### 4. Probar
-`Actions → Fase 1 - Seleccion → Run workflow`
+## Seguimiento de acierto
+
+Cada alerta guarda el equipo dominante y el marcador al momento del envío.
+Después:
+
+- ✅ **ACIERTO** si el dominante marca.
+- ❌ **FALLO** si marca el rival o el partido termina sin gol del dominante.
 
 ## Estructura
 
 ```
-fotmob_client.py        -> conexión HTTP a FotMob (sesión, buildId)
 xg_engine.py            -> motor de alertas basado en xG
-fetch_data.py           -> obtención de fixtures, xG, stats, eventos
-seleccionar_partidos.py -> Fase 1: favoritos + fixtures
+fetch_data.py           -> fixtures, xG por coordenadas, stats, cuotas
+seleccionar_partidos.py -> Fase 1: fixtures del día
 resumen.py              -> Fase 2: resumen pre-partido
-monitor.py              -> Fase 3: vigilancia en vivo + alertas
-cerrar_resultados.py    -> Fase 4: resultados + auditoría + Excel
+monitor.py              -> Fase 3: vigilancia en vivo + alertas + ACIERTO/FALLO
+cerrar_resultados.py    -> Fase 4: resultados + auditoría
 reporte_diario.py       -> Reporte de las 6am
-google_favoritos.py     -> lectura de Google Sheets
 telegram_utils.py       -> envío de mensajes Telegram
 estado_diario.py        -> control de "ya se hizo hoy"
-storage.py              -> utilidad JSON
 ```
 
 ## Configuración
 
 Umbrales en `xg_engine.py`:
-- `UMBRAL_XG_DOMINANCIA = 0.8` — xG diff mínimo para alertar
-- `UMBRAL_XG_FUERTE = 1.2` — dominancia fuerte
-- `MINUTOS_MINIMOS_XG = 15` — mínimo de minutos para que xG sea significativo
-- `VENTANA_DEDUPLICACION = 15` — minutos para no repetir alerta
 
-Ligas en `fetch_data.py` → `LIGAS_FOTMOB`: agregar el ID de FotMob.
+- `UMBRAL_XG_DOMINANCIA = 0.50` — xG diff mínimo para alertar
+- `UMBRAL_XG_FUERTE = 0.75` — dominancia fuerte (se salta filtros)
+- `UMBRAL_XG_RECIENTE = 0.08` — xG diff mínimo en los últimos 15 min
+- `LIMITE_ALERTAS = 80` — minuto máximo para cualquier alerta
+- `VENTANA_DEDUPLICACION = 15` — minutos para no repetir el mismo tipo
+
+Ligas en `fetch_data.py` → `LIGAS_ESPN`.
 
 ## Requisitos
 
 - Python 3.12+
 - `requests>=2.31.0`
 - `openpyxl>=3.1.0`
+
+## Secrets de GitHub Actions
+
+| Nombre | Valor |
+|--------|-------|
+| `TELEGRAM_BOT_TOKEN` | Token de tu bot (@BotFather) |
+| `TELEGRAM_CHAT_ID` | Tu chat ID |

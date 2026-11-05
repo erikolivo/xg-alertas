@@ -22,6 +22,14 @@ VERSION_SELECCION = 3
 
 def _partido_para_vigilar(fx):
     """Construye el registro del partido para partidos_hoy.json."""
+    fav = fx.get("_favorito_es_local")
+    if fav is True:
+        nombre_fav = fx["teams"]["home"]["name"]
+    elif fav is False:
+        nombre_fav = fx["teams"]["away"]["name"]
+    else:
+        nombre_fav = ""
+
     return {
         "fixture_id": fx["fixture"]["id"],
         "liga_slug": fx.get("_liga_slug", ""),
@@ -32,8 +40,8 @@ def _partido_para_vigilar(fx):
         "home_id": fx["teams"]["home"]["id"],
         "away_id": fx["teams"]["away"]["id"],
         "hora_utc": fx.get("_hora_utc", ""),
-        "favorito": "",
-        "favorito_es_local": None,
+        "favorito": nombre_fav,
+        "favorito_es_local": fav,
         "tipo_pronostico": "monitoreo_automatico",
         "confianza": "",
         "cuota_local": None,

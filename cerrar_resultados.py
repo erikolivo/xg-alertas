@@ -20,50 +20,25 @@ ARCHIVO_EXCEL = DATA_DIR / "estadisticas.xlsx"
 VENTANA_ACIERTO_MINUTOS = 15
 
 
-def calcular_acierto(alerta, goles_local, goles_visitante, favorito_es_local):
+def calcular_acierto(alerta, goles_local, goles_visitante):
     """
     Determina si una alerta fue acertada.
-    Criterio: el equipo que dominaba en xG debio anotar o mantener ventaja.
+
+    Criterio (mismo que usa el monitor en vivo): el equipo que dominaba en xG
+    debia marcar despues del envio de la alerta.
     """
-    tipo = alerta.get("tipo", "")
+    dom = alerta.get("equipo_dominante")
+    if dom not in ("home", "away"):
+        return None
 
-    if tipo == "dominancia_xg":
-        # Acierto si el equipo dominante eventualmente anota o gana
-        if favorito_es_local:
-            return goles_local >= goles_visitante
-        else:
-            return goles_visitante >= goles_local
+    goles_home_envio = alerta.get("goles_home_envio")
+    goles_away_envio = alerta.get("goles_away_envio")
+    if goles_home_envio is None or goles_away_envio is None:
+        return None
 
-    elif tipo == "no_fav_domina":
-        # Acierto si el no-favorito anota o empata
-        if favorito_es_local:
-            return goles_visitante >= goles_local
-        else:
-            return goles_local >= goles_visitante
-
-    elif tipo == "xg_vs_marcador":
-        # Acierto si el equipo con mejor xG termina ganando
-        # (la "justicia" estadistica se cumple)
-        if favorito_es_local:
-            return goles_local > goles_visitante
-        else:
-            return goles_visitante > goles_local
-
-    elif tipo == "cierre":
-        # Acierto si el equipo dominante marca en los ultimos minutos
-        if favorito_es_local:
-            return goles_local > goles_visitante
-        else:
-            return goles_visitante > goles_local
-
-    elif tipo == "ampliacion":
-        # Acierto si el favorito efectivamente amplia o mantiene
-        if favorito_es_local:
-            return goles_local > goles_visitante
-        else:
-            return goles_visitante > goles_local
-
-    return None
+    if dom == "home":
+        return goles_local > goles_home_envio
+    return goles_visitante > goles_away_envio
 
 
 def _guardar_historial_dia(fecha, partidos):
@@ -150,7 +125,7 @@ def _actualizar_excel(fecha, partidos):
 
         alertas = p.get("alertas_enviadas", [])
         total_alertas = len(alertas)
-        aciertos = sum(1 for a in alertas if a.get("acierto"))
+        aciertos = sum(1 for a in alertas if a.get("acierto") or a.get("resultado") == "acierto")
 
         ws.append([
             fecha, p.get("liga", ""), p.get("local", ""), p.get("visitante", ""),
@@ -169,7 +144,7 @@ def _actualizar_excel(fecha, partidos):
     aciertos_dia = sum(
         1 for p in partidos
         for a in p.get("alertas_enviadas", [])
-        if a.get("acierto")
+        if a.get("acierto") or a.get("resultado") == "acierto"
     )
     pct = round(aciertos_dia / total_alertas_dia * 100, 1) if total_alertas_dia > 0 else 0
 
@@ -218,10 +193,9 @@ def cerrar():
             # Auditar cada alerta
             goles_h = resultado["goles_home"]
             goles_a = resultado["goles_away"]
-            fav_es_local = p.get("favorito_es_local", True)
 
             for alerta in p.get("alertas_enviadas", []):
-                acierto = calcular_acierto(alerta, goles_h, goles_a, fav_es_local)
+                acierto = calcular_acierto(alerta, goles_h, goles_a)
                 alerta["acierto"] = acierto
 
             print(f"  OK: {local} {goles_h} - {goles_a} {visitante}")

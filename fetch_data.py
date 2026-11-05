@@ -7,10 +7,14 @@ ESPN provee:
   - Fixtures del dia (scoreboard)
   - Stats por equipo: totalShots, shotsOnTarget, blockedShots, possessionPct, etc.
   - Marcador en vivo
+  - Coordenadas de cada tiro en el play-by-play (commentary)
 
-xG se estima desde tiros a puerta (SOT, off-target, blocked).
+xG se calcula con un modelo logistico de distancia y angulo al arco usando
+las coordenadas de cada tiro. Si el partido no tiene coordenadas se cae a
+una estimacion por volumen de tiros.
 """
 
+import math
 import re
 from datetime import datetime
 
@@ -45,6 +49,25 @@ LIGAS_ESPN = {
 
 def _fecha_espn(fecha_iso):
     return fecha_iso.replace("-", "")
+
+
+def _favorito_de_odds(odds):
+    """
+    Devuelve True si el local es favorito, False si lo es el visitante,
+    None si no hay cuotas disponibles.
+    """
+    for entry in odds or []:
+        if not isinstance(entry, dict):
+            continue
+        home = entry.get("homeTeamOdds") or {}
+        away = entry.get("awayTeamOdds") or {}
+        h = home.get("favorite")
+        a = away.get("favorite")
+        if h and not a:
+            return True
+        if a and not h:
+            return False
+    return None
 
 
 def _extraer_evento(evento, liga_slug):
@@ -100,6 +123,7 @@ def _extraer_evento(evento, liga_slug):
         "_goles_local": _goles(home),
         "_goles_visitante": _goles(away),
         "_hora_utc": hora_utc,
+        "_favorito_es_local": _favorito_de_odds(comp.get("odds")),
     }
 
 
@@ -136,15 +160,163 @@ def obtener_fixtures_por_fecha(fecha_iso, ligas=None):
 # ESPN -- xG, stats y datos detallados
 # =====================================================================
 
-def extraer_xg_y_stats(match_id):
-    """
-    Obtiene xG (estimado) y stats en una sola llamada a ESPN summary.
+# --- Modelo de xG por coordenadas -------------------------------------
+# ESPN ubica el arco atacado en x=100, y=50 (porcentaje de largo y ancho).
+# Se convierte a metros y se aplica un modelo logistico:
+#     xG = sigmoid(B0 + B1 * distancia + B2 * angulo)
+# calibrado contra una tabla de xG por distancia/angulo de juego abierto.
 
-    ESPN boxscore provee:
-      totalShots, shotsOnTarget, blockedShots, possessionPct, etc.
-    xG se estima desde los tiros.
+LARGO_CANCHA_M = 105.0
+ANCHO_CANCHA_M = 68.0
+MEDIO_ARCO_M = 3.66          # medio ancho del arco (7.32 m)
+
+XG_B0 = -1.85
+XG_B1 = -0.08                # penaliza distancia
+XG_B2 = 2.40                 # premia angulo
+FACTOR_CABEZAZO = 0.65
+XG_PENAL = 0.78
+XG_MIN = 0.01
+XG_MAX = 0.95
+
+# Un gol de ESPN NO se duplica como "shot-on-target": el play de gol es la
+# unica evidencia del tiro, por eso los tipos de gol tambien cuentan como tiro.
+TIPOS_TIRO = {
+    "shot-on-target",
+    "shot-blocked",
+    "shot-off-target",
+    "shot-hit-woodwork",
+    "goal",
+    "goal---header",
+    "goal---volley",
+    "goal---free-kick",
+}
+TIPOS_PENAL = {"penalty---scored", "penalty---saved", "penalty---missed"}
+
+
+def _xg_de_tiro(x, y, texto=""):
+    """xG de un tiro segun su ubicacion en la cancha."""
+    if "penalty" in (texto or "").lower():
+        return XG_PENAL
+
+    try:
+        dx = (100.0 - float(x)) / 100.0 * LARGO_CANCHA_M
+        dy = (float(y) - 50.0) / 100.0 * ANCHO_CANCHA_M
+    except (TypeError, ValueError):
+        return 0.05
+
+    distancia = max(0.5, math.hypot(dx, dy))
+    angulo = abs(math.atan2(MEDIO_ARCO_M - dy, dx) - math.atan2(-MEDIO_ARCO_M - dy, dx))
+    z = XG_B0 + XG_B1 * distancia + XG_B2 * angulo
+    xg = 1.0 / (1.0 + math.exp(-z))
+
+    if "header" in (texto or "").lower():
+        xg *= FACTOR_CABEZAZO
+
+    return max(XG_MIN, min(XG_MAX, xg))
+
+
+def _minuto_a_segundos(minuto):
+    """Convierte '45'+4'' o '67'' a segundos."""
+    if minuto is None:
+        return None
+    limpio = re.sub(r"[^0-9+]", "", str(minuto))
+    if not limpio:
+        return None
+    partes = limpio.split("+")
+    try:
+        base = int(partes[0])
+        extra = int(partes[1]) if len(partes) > 1 and partes[1] else 0
+    except (ValueError, IndexError):
+        return None
+    return (base + extra) * 60
+
+
+def _mapa_equipos(data):
+    """Mapea displayName/shortDisplayName -> 'home'/'away'."""
+    mapa = {}
+    header = data.get("header", {}) or {}
+    comps = header.get("competitions") or [{}]
+    for comp in comps:
+        for c in comp.get("competitors", []) or []:
+            side = c.get("homeAway")
+            team = c.get("team") or {}
+            for key in ("displayName", "shortDisplayName", "name", "abbreviation", "location"):
+                if team.get(key):
+                    mapa[team[key]] = side
+    return mapa
+
+
+def _extraer_tiros(data):
+    """Lista de tiros (con xG) por equipo desde el play-by-play de ESPN."""
+    mapa = _mapa_equipos(data)
+    tiros = {"home": [], "away": []}
+
+    for entry in data.get("commentary", []) or []:
+        play = entry.get("play") or {}
+        tipo = str((play.get("type") or {}).get("type") or "").lower()
+        es_penal = tipo in TIPOS_PENAL
+        if tipo not in TIPOS_TIRO and not es_penal:
+            continue
+
+        side = mapa.get((play.get("team") or {}).get("displayName"))
+        if side is None:
+            continue
+
+        texto = play.get("text") or ""
+        if es_penal:
+            xg = XG_PENAL
+        else:
+            x = play.get("fieldPositionX")
+            y = play.get("fieldPositionY")
+            xg = 0.05 if x is None or y is None else _xg_de_tiro(x, y, texto)
+
+        reloj = (play.get("clock") or {}).get("value")
+        if reloj is None:
+            reloj = (entry.get("time") or {}).get("value")
+
+        tiros[side].append({
+            "xg": xg,
+            "segundo": float(reloj) if reloj is not None else None,
+            "tipo": tipo,
+        })
+
+    return tiros
+
+
+def _resumen_tiros(tiros, minuto_actual=None, ventana_reciente=15):
+    """Agrega xG total, xG de los ultimos N minutos y grandes ocasiones."""
+    res = {
+        "xg": {"home": 0.0, "away": 0.0},
+        "xg_reciente": {"home": 0.0, "away": 0.0},
+        "grandes": {"home": 0, "away": 0},
+        "n": {"home": 0, "away": 0},
+    }
+
+    limite = None
+    seg_actual = _minuto_a_segundos(minuto_actual)
+    if seg_actual is not None:
+        limite = seg_actual - ventana_reciente * 60
+
+    for side in ("home", "away"):
+        for t in tiros.get(side, []):
+            res["xg"][side] += t["xg"]
+            res["n"][side] += 1
+            if t["xg"] >= 0.30:
+                res["grandes"][side] += 1
+            if limite is not None and t["segundo"] is not None and t["segundo"] >= limite:
+                res["xg_reciente"][side] += t["xg"]
+
+    return res
+
+
+def extraer_xg_y_stats(match_id, liga_slug=None, minuto_actual=None):
     """
-    slug = _detectar_slug_para_match(match_id)
+    Obtiene xG, stats y favorito en una sola llamada a ESPN summary.
+
+    xG principal: modelo por coordenadas de cada tiro.
+    Fallback: estimacion por volumen (SOT/off/blocked) si no hay play-by-play.
+    """
+    slug = liga_slug or _detectar_slug_para_match(match_id)
     if not slug:
         return None, None, _stats_vacias()
 
@@ -159,16 +331,51 @@ def extraer_xg_y_stats(match_id):
 
     stats = _extraer_stats_de_boxscore(data)
 
-    xg_home = _estimar_xg(stats, "home")
-    xg_away = _estimar_xg(stats, "away")
+    tiros = _extraer_tiros(data)
+    resumen = _resumen_tiros(tiros, minuto_actual)
+
+    # El play-by-play de ESPN no siempre esta completo (algunas ligas solo
+    # publican goles). Si faltan tiros respecto al boxscore, se usa la
+    # estimacion por volumen para AMBOS equipos y asi no mezclar escalas.
+    tiros_coord = resumen["n"]["home"] + resumen["n"]["away"]
+    tiros_box = stats["tiros_totales"]["home"] + stats["tiros_totales"]["away"]
+    coords_confiables = tiros_coord > 0 and (
+        tiros_box == 0 or tiros_coord >= tiros_box * 0.6
+    )
+
+    if coords_confiables:
+        xg_home = round(resumen["xg"]["home"], 2)
+        xg_away = round(resumen["xg"]["away"], 2)
+        stats["fuente_xg"] = "coordenadas"
+        stats["xg_reciente"] = {
+            "home": round(resumen["xg_reciente"]["home"], 2),
+            "away": round(resumen["xg_reciente"]["away"], 2),
+        }
+        stats["grandes_ocasiones"] = resumen["grandes"]
+    else:
+        xg_home = _estimar_xg(stats, "home")
+        xg_away = _estimar_xg(stats, "away")
+        stats["fuente_xg"] = "estimado"
+        # Sin play-by-play fiable no hay xG reciente ni grandes ocasiones
+        stats["xg_reciente"] = None
+        stats["grandes_ocasiones"] = None
+
+    stats["favorito_es_local"] = _extraer_favorito(data)
 
     return xg_home, xg_away, stats
 
 
+def _extraer_favorito(data):
+    """Favorito real del partido segun las cuotas de ESPN."""
+    fav = _favorito_de_odds(data.get("pickcenter"))
+    if fav is not None:
+        return fav
+    return _favorito_de_odds(data.get("odds"))
+
+
 def _estimar_xg(stats, side):
     """
-    Estima xG desde tiros a puerta.
-    Promedios historicos:
+    Fallback: estima xG desde volumen de tiros cuando no hay coordenadas.
       - SOT (shot on target): ~0.10 xG por tiro
       - Off-target: ~0.03 xG por tiro
       - Bloqueado: ~0.02 xG por tiro
@@ -214,6 +421,8 @@ def _extraer_stats_de_boxscore(data):
                 stats["tiros_bloqueados"][side] = int(val)
             elif name == "woncorners" or "corners" in name:
                 stats["corners"][side] = int(val)
+            elif name == "redcards":
+                stats["tarjetas_rojas"][side] = int(val)
             elif name == "foulscommitted" or "foul" in name:
                 stats["faltas"][side] = int(val)
 
@@ -249,6 +458,11 @@ def _stats_vacias():
         "tiros_bloqueados": {"home": 0, "away": 0},
         "corners": {"home": 0, "away": 0},
         "faltas": {"home": 0, "away": 0},
+        "tarjetas_rojas": {"home": 0, "away": 0},
+        "xg_reciente": {"home": 0.0, "away": 0.0},
+        "grandes_ocasiones": {"home": 0, "away": 0},
+        "favorito_es_local": None,
+        "fuente_xg": "sin_datos",
     }
 
 

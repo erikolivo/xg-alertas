@@ -14,7 +14,12 @@ from pathlib import Path
 
 from fetch_data import extraer_xg_y_stats, obtener_score_en_vivo, LIGAS_ESPN
 from telegram_utils import enviar_mensaje_telegram
-from xg_engine import evaluar_alertas, VENTANA_DEDUPLICACION
+from xg_engine import (
+    evaluar_alertas,
+    VENTANA_DEDUPLICACION,
+    UMBRAL_XG_FUERTE,
+    UMBRAL_XG_DOMINANCIA,
+)
 
 DATA_DIR = Path(__file__).parent / "data"
 ARCHIVO_PARTIDOS = DATA_DIR / "partidos_hoy.json"
@@ -22,6 +27,13 @@ ARCHIVO_PARTIDOS = DATA_DIR / "partidos_hoy.json"
 INTERVALO_BASE = 5 * 60
 INTERVALO_MAX = 15 * 60
 DURACION_CICLO = 3 * 60 * 60
+
+# Anti-repeticion: no repetir ninguna alerta del mismo partido antes de N min
+# salvo que el xG haya crecido de forma clara.
+VENTANA_MINIMA_ENTRE_ALERTAS = 10
+AUMENTO_XG_PARA_REALERTAR = 0.30
+# Nunca dos alertas del mismo partido mas cerca que esto, pase lo que pase
+VENTANA_MINIMA_ABSOLUTA = 6
 
 
 def _cargar():
@@ -48,27 +60,77 @@ def _minuto_a_int(minuto):
         return 0
 
 
-def _ya_se_envio_reciente(alertas_enviadas, tipo_alerta, minuto_actual):
+def _debe_enviar_alerta(alertas_enviadas, tipo_alerta, minuto_actual, xg_diff):
+    """
+    Evita repetir alertas del mismo partido.
+
+    - Mismo tipo: bloquea dentro de VENTANA_DEDUPLICACION minutos.
+    - Cualquier tipo: bloquea dentro de VENTANA_MINIMA_ENTRE_ALERTAS minutos.
+    - En ambos casos deja pasar si el xG crecio >= AUMENTO_XG_PARA_REALERTAR.
+    """
     for a in reversed(alertas_enviadas):
-        if a.get("tipo") == tipo_alerta and not a.get("resuelta"):
-            minuto_anterior = _minuto_a_int(a.get("minuto", "0"))
-            if abs(minuto_actual - minuto_anterior) < VENTANA_DEDUPLICACION:
-                return True
-    return False
+        minuto_anterior = _minuto_a_int(a.get("minuto", "0"))
+        delta_min = abs(minuto_actual - minuto_anterior)
+
+        if delta_min < VENTANA_MINIMA_ABSOLUTA:
+            return False
+
+        try:
+            diff_anterior = abs(float(a.get("xg_diff_envio") or 0))
+        except (TypeError, ValueError):
+            diff_anterior = 0.0
+        crecimiento = abs(xg_diff) - diff_anterior
+
+        if a.get("tipo") == tipo_alerta:
+            if delta_min < VENTANA_DEDUPLICACION and crecimiento < AUMENTO_XG_PARA_REALERTAR:
+                return False
+        else:
+            if delta_min < VENTANA_MINIMA_ENTRE_ALERTAS and crecimiento < AUMENTO_XG_PARA_REALERTAR:
+                return False
+
+    return True
 
 
-def _registrar_alerta(partido, tipo_alerta, minuto, xg_home, xg_away, goles_home, goles_away):
+def _confirmar_con_lectura_previa(partido, xg_diff):
+    """
+    Confirmacion: una senal marginal debe repetirse en dos lecturas seguidas.
+    Una dominancia fuerte (>= UMBRAL_XG_FUERTE) se envia de inmediato.
+    """
+    if abs(xg_diff) >= UMBRAL_XG_FUERTE:
+        return True
+
+    snapshots = partido.get("snapshots") or []
+    if not snapshots:
+        return True
+
+    previo = snapshots[-1]
+    try:
+        diff_previo = float(previo.get("xg_home", 0)) - float(previo.get("xg_away", 0))
+    except (TypeError, ValueError):
+        return True
+
+    mismo_lado = (diff_previo * xg_diff) > 0
+    return abs(diff_previo) >= UMBRAL_XG_DOMINANCIA and mismo_lado
+
+
+def _registrar_alerta(partido, alerta, minuto, xg_home, xg_away,
+                      goles_home, goles_away, stats=None):
     if "alertas_enviadas" not in partido:
         partido["alertas_enviadas"] = []
 
-    equipo_dominante = "home" if xg_home >= xg_away else "away"
+    stats = stats or {}
+    xg_diff = (float(xg_home or 0) - float(xg_away or 0))
+    equipo_dominante = "home" if xg_diff >= 0 else "away"
 
     partido["alertas_enviadas"].append({
-        "tipo": tipo_alerta,
+        "tipo": alerta["tipo"],
+        "emoji": alerta.get("emoji", ""),
         "minuto": minuto,
         "xg_home": xg_home,
         "xg_away": xg_away,
+        "xg_diff_envio": round(abs(xg_diff), 2),
         "equipo_dominante": equipo_dominante,
+        "grandes_ocasiones": stats.get("grandes_ocasiones"),
         "goles_home_envio": goles_home,
         "goles_away_envio": goles_away,
         "enviada_en": datetime.datetime.utcnow().isoformat() + "Z",
@@ -92,9 +154,9 @@ def _guardar_snapshot(partido, minuto, xg_home, xg_away, goles_home, goles_away,
 
 
 def _mensaje_con_stats(alerta, stats, goles_home, goles_away, local, visitante):
-    lineas = [alerta["mensaje"]]
+    lineas = alerta["mensaje"].split("\n")
 
-    # Insertar nombres de equipos despues del emoji y tipo
+    # Insertar nombres de equipos despues del encabezado y el tipo de alerta
     lineas.insert(1, f"{local} vs {visitante}")
 
     if stats:
@@ -237,8 +299,10 @@ def _procesar_partido(partido):
     if goles_home is not None and goles_away is not None:
         _verificar_alertas(partido, goles_home, goles_away, "in")
 
-    # 2. Obtener xG (estimado) y stats desde ESPN
-    xg_home, xg_away, stats = extraer_xg_y_stats(match_id)
+    # 2. Obtener xG real (coordenadas) y stats desde ESPN
+    xg_home, xg_away, stats = extraer_xg_y_stats(
+        match_id, liga_slug=liga_slug, minuto_actual=clock
+    )
     if xg_home is None:
         xg_home = 0.0
     if xg_away is None:
@@ -248,45 +312,71 @@ def _procesar_partido(partido):
     if goles_away is None:
         goles_away = 0
 
-    print(f"    xG: {xg_home:.2f} vs {xg_away:.2f} (diff: {xg_home - xg_away:+.2f})")
+    print(f"    xG: {xg_home:.2f} vs {xg_away:.2f} (diff: {xg_home - xg_away:+.2f}) "
+          f"[{stats.get('fuente_xg', '?')}]")
 
     # 3. Minuto desde el reloj de ESPN
     minuto = clock if clock else "?"
+    minuto_int = _minuto_a_int(minuto)
 
-    # 4. Guardar snapshot
-    _guardar_snapshot(partido, minuto, xg_home, xg_away, goles_home, goles_away, stats)
+    # 4. Favorito real (cuotas ESPN) si Fase 1 no lo trajo
+    if partido.get("favorito_es_local") is None:
+        favorito = stats.get("favorito_es_local")
+        if favorito is not None:
+            partido["favorito_es_local"] = favorito
+            partido["favorito"] = local if favorito else visitante
 
-    # 5. Evaluar alertas
-    favorito_es_local = partido.get("favorito_es_local")
-    if favorito_es_local is None:
-        favorito_es_local = True
+    # 5. Contexto para el motor
+    rojas = stats.get("tarjetas_rojas", {}) or {}
+    puerta = stats.get("tiros_puerta", {}) or {}
+    totales = stats.get("tiros_totales", {}) or {}
+    grandes = stats.get("grandes_ocasiones") or {}
 
+    contexto = {
+        "rojas_home": rojas.get("home", 0),
+        "rojas_away": rojas.get("away", 0),
+        "tiros_puerta_home": puerta.get("home", 0),
+        "tiros_puerta_away": puerta.get("away", 0),
+        "tiros_totales_home": totales.get("home", 0),
+        "tiros_totales_away": totales.get("away", 0),
+        "grandes_home": grandes.get("home"),
+        "grandes_away": grandes.get("away"),
+    }
+
+    # 6. Evaluar alertas
     alerta = evaluar_alertas(
         xg_home=xg_home, xg_away=xg_away,
         goles_home=goles_home, goles_away=goles_away,
         minuto=minuto,
-        favorito_es_local=favorito_es_local,
+        favorito_es_local=partido.get("favorito_es_local"),
         historial_alertas=partido.get("alertas_enviadas", []),
+        xg_reciente=stats.get("xg_reciente"),
+        contexto=contexto,
     )
 
-    if alerta:
-        import re
-        try:
-            limpio = re.sub(r"[^0-9+]", "", str(minuto))
-            minuto_int = int(limpio.split("+")[0]) if limpio else 0
-        except (ValueError, TypeError):
-            minuto_int = 0
+    xg_diff = xg_home - xg_away
 
-        if not _ya_se_envio_reciente(partido.get("alertas_enviadas", []), alerta["tipo"], minuto_int):
-            mensaje_completo = _mensaje_con_stats(alerta, stats, goles_home, goles_away, local, visitante)
+    if alerta:
+        if not _confirmar_con_lectura_previa(partido, xg_diff):
+            print(f"  [skip] {alerta['tipo']}: sin confirmacion en la lectura previa")
+        elif not _debe_enviar_alerta(partido.get("alertas_enviadas", []),
+                                     alerta["tipo"], minuto_int, xg_diff):
+            print(f"  [skip] {alerta['tipo']} repetida para {local} vs {visitante}")
+        else:
+            mensaje_completo = _mensaje_con_stats(
+                alerta, stats, goles_home, goles_away, local, visitante
+            )
             alerta["mensaje"] = mensaje_completo
 
-            exito = enviar_mensaje_telegram(mensaje_completo)
-            if exito:
-                _registrar_alerta(partido, alerta["tipo"], minuto, xg_home, xg_away, goles_home, goles_away)
+            if enviar_mensaje_telegram(mensaje_completo):
+                _registrar_alerta(
+                    partido, alerta, minuto, xg_home, xg_away,
+                    goles_home, goles_away, stats,
+                )
                 print(f"  [ALERTA] {alerta['emoji']} {alerta['tipo']} enviada para {local} vs {visitante}")
-        else:
-            print(f"  [skip] {alerta['tipo']} ya enviada recientemente para {local} vs {visitante}")
+
+    # 7. Guardar snapshot (despues de evaluar: la confirmacion usa la lectura previa)
+    _guardar_snapshot(partido, minuto, xg_home, xg_away, goles_home, goles_away, stats)
 
 
 def _ajustar_intervalo(partidos_en_vivo):
