@@ -1,6 +1,6 @@
 {
   "fecha": "2026-11-05",
-  "generado": "2026-11-05T19:43:29.310449+00:00",
+  "generado": "2026-11-05T21:37:09.689766+00:00",
   "total": 4,
   "partidos": [
     {
@@ -19,7 +19,7 @@
       "confianza": "",
       "cuota_local": null,
       "cuota_visitante": null,
-      "seleccionado_en": "2026-11-05T19:43:29.310379+00:00",
+      "seleccionado_en": "2026-11-05T21:37:09.689680+00:00",
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
@@ -41,7 +41,7 @@
       "confianza": "",
       "cuota_local": null,
       "cuota_visitante": null,
-      "seleccionado_en": "2026-11-05T19:43:29.310402+00:00",
+      "seleccionado_en": "2026-11-05T21:37:09.689707+00:00",
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
@@ -63,7 +63,7 @@
       "confianza": "",
       "cuota_local": null,
       "cuota_visitante": null,
-      "seleccionado_en": "2026-11-05T19:43:29.310409+00:00",
+      "seleccionado_en": "2026-11-05T21:37:09.689715+00:00",
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
@@ -85,7 +85,7 @@
       "confianza": "",
       "cuota_local": null,
       "cuota_visitante": null,
-      "seleccionado_en": "2026-11-05T19:43:29.310413+00:00",
+      "seleccionado_en": "2026-11-05T21:37:09.689720+00:00",
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
