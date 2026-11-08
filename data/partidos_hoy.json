@@ -1,6 +1,6 @@
 {
   "fecha": "2026-11-08",
-  "generado": "2026-11-08T20:00:27.184979+00:00",
+  "generado": "2026-11-08T23:15:26.453790+00:00",
   "total": 67,
   "partidos": [
     {
@@ -23,7 +23,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453263+00:00"
     },
     {
       "fixture_id": "401879243",
@@ -45,7 +46,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453278+00:00"
     },
     {
       "fixture_id": "401878759",
@@ -67,7 +69,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453287+00:00"
     },
     {
       "fixture_id": "401879239",
@@ -89,7 +92,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453294+00:00"
     },
     {
       "fixture_id": "401879240",
@@ -111,7 +115,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453301+00:00"
     },
     {
       "fixture_id": "401882814",
@@ -133,7 +138,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453310+00:00"
     },
     {
       "fixture_id": "401882810",
@@ -155,7 +161,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453317+00:00"
     },
     {
       "fixture_id": "401882815",
@@ -177,7 +184,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453323+00:00"
     },
     {
       "fixture_id": "401882807",
@@ -199,7 +207,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453330+00:00"
     },
     {
       "fixture_id": "401882816",
@@ -221,7 +230,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453337+00:00"
     },
     {
       "fixture_id": "401884738",
@@ -243,7 +253,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453344+00:00"
     },
     {
       "fixture_id": "401884741",
@@ -265,7 +276,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453351+00:00"
     },
     {
       "fixture_id": "401884742",
@@ -287,7 +299,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453357+00:00"
     },
     {
       "fixture_id": "401874810",
@@ -309,7 +322,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453364+00:00"
     },
     {
       "fixture_id": "401875018",
@@ -331,7 +345,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453372+00:00"
     },
     {
       "fixture_id": "401874800",
@@ -353,7 +368,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453379+00:00"
     },
     {
       "fixture_id": "401874808",
@@ -375,7 +391,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453386+00:00"
     },
     {
       "fixture_id": "401875003",
@@ -397,7 +414,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453393+00:00"
     },
     {
       "fixture_id": "401876406",
@@ -419,7 +437,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453399+00:00"
     },
     {
       "fixture_id": "401876412",
@@ -441,7 +460,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453419+00:00"
     },
     {
       "fixture_id": "401876410",
@@ -463,7 +483,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453426+00:00"
     },
     {
       "fixture_id": "401876409",
@@ -485,7 +506,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453433+00:00"
     },
     {
       "fixture_id": "401876408",
@@ -507,7 +529,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453440+00:00"
     },
     {
       "fixture_id": "401876404",
@@ -529,7 +552,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453446+00:00"
     },
     {
       "fixture_id": "401875551",
@@ -551,7 +575,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453453+00:00"
     },
     {
       "fixture_id": "401875550",
@@ -573,7 +598,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453460+00:00"
     },
     {
       "fixture_id": "401875548",
@@ -595,7 +621,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453465+00:00"
     },
     {
       "fixture_id": "401875553",
@@ -617,7 +644,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453473+00:00"
     },
     {
       "fixture_id": "401875549",
@@ -639,7 +667,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453480+00:00"
     },
     {
       "fixture_id": "401885398",
@@ -661,7 +690,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453487+00:00"
     },
     {
       "fixture_id": "401885400",
@@ -683,7 +713,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453495+00:00"
     },
     {
       "fixture_id": "401885396",
@@ -705,7 +736,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453502+00:00"
     },
     {
       "fixture_id": "401885394",
@@ -727,7 +759,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453509+00:00"
     },
     {
       "fixture_id": "401885401",
@@ -749,7 +782,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453518+00:00"
     },
     {
       "fixture_id": "401885397",
@@ -771,7 +805,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453525+00:00"
     },
     {
       "fixture_id": "401841668",
@@ -793,7 +828,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453532+00:00"
     },
     {
       "fixture_id": "401921322",
@@ -815,7 +851,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453539+00:00"
     },
     {
       "fixture_id": "401921369",
@@ -837,7 +874,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453546+00:00"
     },
     {
       "fixture_id": "401921323",
@@ -859,7 +897,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453553+00:00"
     },
     {
       "fixture_id": "401921321",
@@ -881,7 +920,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453560+00:00"
     },
     {
       "fixture_id": "401877958",
@@ -903,7 +943,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453567+00:00"
     },
     {
       "fixture_id": "401877770",
@@ -925,7 +966,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453574+00:00"
     },
     {
       "fixture_id": "401877917",
@@ -947,7 +989,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453582+00:00"
     },
     {
       "fixture_id": "401878029",
@@ -969,7 +1012,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453589+00:00"
     },
     {
       "fixture_id": "401878043",
@@ -991,7 +1035,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453596+00:00"
     },
     {
       "fixture_id": "401877893",
@@ -1013,7 +1058,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453603+00:00"
     },
     {
       "fixture_id": "401878034",
@@ -1035,7 +1081,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453610+00:00"
     },
     {
       "fixture_id": "401877919",
@@ -1057,7 +1104,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453617+00:00"
     },
     {
       "fixture_id": "401877838",
@@ -1079,7 +1127,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453624+00:00"
     },
     {
       "fixture_id": "401877890",
@@ -1101,7 +1150,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453631+00:00"
     },
     {
       "fixture_id": "401878024",
@@ -1123,7 +1173,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453638+00:00"
     },
     {
       "fixture_id": "401878067",
@@ -1145,7 +1196,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453645+00:00"
     },
     {
       "fixture_id": "401878070",
@@ -1167,7 +1219,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453652+00:00"
     },
     {
       "fixture_id": "401878031",
@@ -1189,7 +1242,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453659+00:00"
     },
     {
       "fixture_id": "401877908",
@@ -1211,7 +1265,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453666+00:00"
     },
     {
       "fixture_id": "401888253",
@@ -1233,7 +1288,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453673+00:00"
     },
     {
       "fixture_id": "401888372",
@@ -1255,7 +1311,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453680+00:00"
     },
     {
       "fixture_id": "401888254",
@@ -1277,7 +1334,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453687+00:00"
     },
     {
       "fixture_id": "401888251",
@@ -1299,7 +1357,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453695+00:00"
     },
     {
       "fixture_id": "401878946",
@@ -1321,7 +1380,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453701+00:00"
     },
     {
       "fixture_id": "401878945",
@@ -1343,7 +1403,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453708+00:00"
     },
     {
       "fixture_id": "401878943",
@@ -1365,7 +1426,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453715+00:00"
     },
     {
       "fixture_id": "401878944",
@@ -1387,7 +1449,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453722+00:00"
     },
     {
       "fixture_id": "401878339",
@@ -1409,7 +1472,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453728+00:00"
     },
     {
       "fixture_id": "401878343",
@@ -1431,7 +1495,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453735+00:00"
     },
     {
       "fixture_id": "401876903",
@@ -1453,7 +1518,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453741+00:00"
     },
     {
       "fixture_id": "401876902",
@@ -1475,7 +1541,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-08T23:15:26.453747+00:00"
     }
   ]
 }
