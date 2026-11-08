@@ -14,6 +14,7 @@ from pathlib import Path
 
 from fetch_data import extraer_xg_y_stats, obtener_score_en_vivo, LIGAS_ESPN
 from telegram_utils import enviar_mensaje_telegram
+import alertas_log
 from xg_engine import (
     evaluar_alertas,
     VENTANA_DEDUPLICACION,
@@ -122,7 +123,7 @@ def _registrar_alerta(partido, alerta, minuto, xg_home, xg_away,
     xg_diff = (float(xg_home or 0) - float(xg_away or 0))
     equipo_dominante = "home" if xg_diff >= 0 else "away"
 
-    partido["alertas_enviadas"].append({
+    registro = {
         "tipo": alerta["tipo"],
         "emoji": alerta.get("emoji", ""),
         "minuto": minuto,
@@ -133,10 +134,20 @@ def _registrar_alerta(partido, alerta, minuto, xg_home, xg_away,
         "grandes_ocasiones": stats.get("grandes_ocasiones"),
         "goles_home_envio": goles_home,
         "goles_away_envio": goles_away,
-        "enviada_en": datetime.datetime.utcnow().isoformat() + "Z",
+        "enviada_en": datetime.datetime.now(datetime.timezone.utc).isoformat(),
         "resuelta": False,
         "resultado": None,
-    })
+    }
+    partido["alertas_enviadas"].append(registro)
+
+    # Log persistente: sobrevive a los reinicios de la Fase 1.
+    try:
+        alertas_log.registrar_envio(
+            partido, registro, minuto, xg_home, xg_away,
+            goles_home, goles_away, stats,
+        )
+    except Exception as e:
+        print(f"    [!] No se pudo escribir alertas_log: {e}")
 
 
 def _guardar_snapshot(partido, minuto, xg_home, xg_away, goles_home, goles_away, stats):
@@ -194,6 +205,15 @@ def _esta_terminado(partido):
     return partido.get("resultado_final") is not None
 
 
+def _log_resolucion(partido, alerta, goles_home, goles_away, resultado):
+    try:
+        alertas_log.registrar_resolucion(
+            partido, alerta, goles_home, goles_away, resultado
+        )
+    except Exception as e:
+        print(f"    [!] No se pudo registrar la resolucion en alertas_log: {e}")
+
+
 def _verificar_alertas(partido, goles_home, goles_away, estado):
     """
     Verifica si las alertas enviadas resultaron en gol del equipo dominante.
@@ -229,6 +249,7 @@ def _verificar_alertas(partido, goles_home, goles_away, estado):
         if marcó_dominante:
             alerta["resuelta"] = True
             alerta["resultado"] = "acierto"
+            _log_resolucion(partido, alerta, goles_home, goles_away, "acierto")
             msg = (
                 f"✅ ACIERTO\n"
                 f"{equipo_dom} marcó gol después de la alerta\n"
@@ -243,6 +264,7 @@ def _verificar_alertas(partido, goles_home, goles_away, estado):
         if marco_rival:
             alerta["resuelta"] = True
             alerta["resultado"] = "fallo_rival"
+            _log_resolucion(partido, alerta, goles_home, goles_away, "fallo_rival")
             msg = (
                 f"❌ FALLO\n"
                 f"{equipo_rival} (rival) marcó gol\n"
@@ -257,6 +279,7 @@ def _verificar_alertas(partido, goles_home, goles_away, estado):
         if partido_terminado:
             alerta["resuelta"] = True
             alerta["resultado"] = "fallo_sin_gol"
+            _log_resolucion(partido, alerta, goles_home, goles_away, "fallo_sin_gol")
             msg = (
                 f"❌ FALLO\n"
                 f"Partido terminó sin gol de {equipo_dom}\n"

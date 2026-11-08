@@ -69,22 +69,39 @@ def _cargar_existentes():
     return None, []
 
 
+# Solo se refrescan estos campos. El historial del partido
+# (alertas_enviadas, snapshots, resultado_final) NUNCA se toca.
+CAMPOS_METADATA = (
+    "liga_slug", "liga", "liga_pais", "local", "visitante",
+    "home_id", "away_id", "hora_utc", "favorito", "favorito_es_local",
+)
+
+
+def _actualizar_metadata(partido, fx):
+    """Refresca horario/cuotas/nombres conservando alertas y snapshots."""
+    nuevo = _partido_para_vigilar(fx)
+    for campo in CAMPOS_METADATA:
+        valor = nuevo.get(campo)
+        if valor in (None, ""):
+            # No borrar un dato bueno (p. ej. el favorito) porque ESPN deje
+            # de publicar cuotas en una lectura posterior.
+            continue
+        partido[campo] = valor
+    partido["actualizado_en"] = datetime.datetime.now(datetime.timezone.utc).isoformat()
+    partido["version_seleccion"] = VERSION_SELECCION
+
+
 def seleccionar(forzar=False):
     hoy = datetime.date.today()
     fecha_iso = hoy.isoformat()
 
     # Cargar existentes del dia
     data_existente, partidos_existentes = _cargar_existentes()
-    ids_existentes = {p["fixture_id"] for p in partidos_existentes}
+    por_id = {p["fixture_id"]: p for p in partidos_existentes}
 
-    if ids_existentes and not forzar:
-        print(f"[seleccion] Ya hay {len(ids_existentes)} partidos seleccionados hoy. Use --forzar para complementar.")
+    if por_id and not forzar:
+        print(f"[seleccion] Ya hay {len(por_id)} partidos seleccionados hoy. Use --forzar para complementar.")
         return partidos_existentes
-
-    # Si se fuerza, empezar de cero para capturar horas actualizadas
-    if forzar:
-        partidos_existentes = []
-        ids_existentes = set()
 
     print(f"[seleccion] Buscando partidos del dia {fecha_iso} en ESPN...")
     fixtures = obtener_fixtures_por_fecha(fecha_iso)
@@ -92,15 +109,23 @@ def seleccionar(forzar=False):
         print("[seleccion] No se encontraron fixtures en ESPN para hoy.")
         return partidos_existentes
 
-    # Complementar: agregar nuevos sin borrar existentes
     nuevos = 0
+    actualizados = 0
     for fx in fixtures:
         fid = fx["fixture"]["id"]
-        if fid not in ids_existentes:
+        existente = por_id.get(fid)
+        if existente is None:
             partido = _partido_para_vigilar(fx)
             partidos_existentes.append(partido)
-            ids_existentes.add(fid)
+            por_id[fid] = partido
             nuevos += 1
+        elif forzar:
+            # Refrescar metadatos SIN borrar alertas, snapshots ni resultado.
+            _actualizar_metadata(existente, fx)
+            actualizados += 1
+
+    # Los partidos que ya no aparecen en ESPN se conservan: pueden tener
+    # alertas y snapshots que la Fase 4 necesita auditar.
 
     # Guardar
     DATA_DIR.mkdir(exist_ok=True)
@@ -113,7 +138,8 @@ def seleccionar(forzar=False):
     ARCHIVO_SALIDA.write_text(json.dumps(salida, ensure_ascii=False, indent=2), encoding="utf-8")
 
     ligas = set(p["liga"] for p in partidos_existentes)
-    print(f"\n[seleccion] {len(partidos_existentes)} partidos total ({nuevos} nuevos) de {len(ligas)} liga(s).")
+    print(f"\n[seleccion] {len(partidos_existentes)} partidos total "
+          f"({nuevos} nuevos, {actualizados} actualizados) de {len(ligas)} liga(s).")
     for liga in sorted(ligas):
         count = sum(1 for p in partidos_existentes if p["liga"] == liga)
         print(f"  - {liga}: {count}")

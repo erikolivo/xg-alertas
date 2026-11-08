@@ -11,6 +11,7 @@ from pathlib import Path
 
 from telegram_utils import enviar_mensaje_telegram, escapar_html
 from estado_diario import ya_se_hizo, marcar_hecho
+from alertas_log import formatear_resumen
 
 DATA_DIR = Path(__file__).parent / "data"
 DIR_HISTORIAL_DIAS = DATA_DIR / "historial_dias"
@@ -129,6 +130,15 @@ def generar_reporte(fecha=None):
         )
         if alertas:
             lineas.append(f"    Alertas: {len(alertas)}, Aciertos: {aciertos}")
+
+    # Acumulado historico desde el log persistente (sobrevive a Fase 1)
+    try:
+        acumulado = formatear_resumen()
+        if acumulado and "Sin alertas" not in acumulado:
+            lineas.append("")
+            lineas.append(acumulado)
+    except Exception as e:
+        print(f"[reporte] No se pudo leer alertas_log: {e}")
 
     texto = "\n".join(lineas)
 

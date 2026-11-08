@@ -11,6 +11,7 @@ from pathlib import Path
 from fetch_data import obtener_resultado_final, extraer_xg_y_stats
 from estado_diario import ya_se_hizo, marcar_hecho
 from telegram_utils import enviar_mensaje_telegram, escapar_html
+import alertas_log
 
 DATA_DIR = Path(__file__).parent / "data"
 ARCHIVO_PARTIDOS = DATA_DIR / "partidos_hoy.json"
@@ -26,7 +27,17 @@ def calcular_acierto(alerta, goles_local, goles_visitante):
 
     Criterio (mismo que usa el monitor en vivo): el equipo que dominaba en xG
     debia marcar despues del envio de la alerta.
+
+    Si el monitor ya la resolvio en vivo, se respeta ese resultado: el primer
+    gol despues de la alerta decide (evita que el Excel contradiga el mensaje
+    de ACIERTO/FALLO que ya recibio el usuario).
     """
+    resultado = alerta.get("resultado")
+    if resultado == "acierto":
+        return True
+    if resultado in ("fallo_rival", "fallo_sin_gol"):
+        return False
+
     dom = alerta.get("equipo_dominante")
     if dom not in ("home", "away"):
         return None
@@ -197,6 +208,18 @@ def cerrar():
             for alerta in p.get("alertas_enviadas", []):
                 acierto = calcular_acierto(alerta, goles_h, goles_a)
                 alerta["acierto"] = acierto
+
+                # Si el monitor no la resolvio en vivo, cerrarla ahora y
+                # dejarla en el log persistente.
+                if not alerta.get("resuelta") and acierto is not None:
+                    alerta["resuelta"] = True
+                    alerta["resultado"] = "acierto" if acierto else "fallo_sin_gol"
+                    try:
+                        alertas_log.registrar_resolucion(
+                            p, alerta, goles_h, goles_a, alerta["resultado"]
+                        )
+                    except Exception as e:
+                        print(f"  [!] alertas_log: {e}")
 
             print(f"  OK: {local} {goles_h} - {goles_a} {visitante}")
         else:
