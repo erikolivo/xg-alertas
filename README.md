@@ -62,7 +62,9 @@ xG = sigmoid(-1.85 - 0.08·distancia_m + 2.40·ángulo_rad)
 ## Filtros anti-falsos positivos
 
 - **Solo el favorito**: las alertas se emiten cuando domina el equipo favorito
-  según las cuotas de ESPN (`pickcenter`). Si no hay cuotas, no se alerta.
+  según las cuotas de ESPN. Se usa el flag `favorite` cuando existe y, si la liga
+  solo publica el moneyline (Ecuador, Colombia, etc.), la cuota más baja. Si no
+  hay cuotas, no se alerta.
 - **Solo 0-0** para dominancia y cierre.
 - **Dominio reciente**: el diff de los últimos 15 min debe ser ≥ 0.05, salvo
   que el diff acumulado sea ≥ 1.00.

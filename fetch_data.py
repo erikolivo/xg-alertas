@@ -51,14 +51,60 @@ def _fecha_espn(fecha_iso):
     return fecha_iso.replace("-", "")
 
 
+def _cuota_a_decimal(valor):
+    """Convierte una cuota americana (-185, +450) a decimal. None si no vale."""
+    if valor is None:
+        return None
+    texto = str(valor).strip().replace("\u2212", "-")
+    if not texto:
+        return None
+    try:
+        numero = float(texto)
+    except ValueError:
+        return None
+    if abs(numero) >= 100:
+        # Cuota americana
+        return 1.0 + (100.0 / abs(numero)) if numero < 0 else 1.0 + (numero / 100.0)
+    if numero > 1.0:
+        # Ya viene en formato decimal
+        return numero
+    return None
+
+
+def _favorito_de_moneyline(entry):
+    """
+    Fallback para ligas que solo publican el moneyline (sin los flags
+    `favorite`). El favorito es el de cuota decimal mas baja.
+    """
+    moneyline = entry.get("moneyline")
+    if not isinstance(moneyline, dict):
+        return None
+
+    def _precio(lado):
+        datos = moneyline.get(lado)
+        if not isinstance(datos, dict):
+            return None
+        for clave in ("close", "current", "open"):
+            precio = _cuota_a_decimal((datos.get(clave) or {}).get("odds"))
+            if precio:
+                return precio
+        return _cuota_a_decimal(datos.get("odds"))
+
+    home, away = _precio("home"), _precio("away")
+    if not home or not away or abs(home - away) < 0.02:
+        return None
+    return home < away
+
+
 def _favorito_de_odds(odds):
     """
     Devuelve True si el local es favorito, False si lo es el visitante,
     None si no hay cuotas disponibles.
     """
-    for entry in odds or []:
-        if not isinstance(entry, dict):
-            continue
+    entradas = [e for e in (odds or []) if isinstance(e, dict)]
+
+    # 1. ESPN marca explicitamente el favorito en las ligas grandes.
+    for entry in entradas:
         home = entry.get("homeTeamOdds") or {}
         away = entry.get("awayTeamOdds") or {}
         h = home.get("favorite")
@@ -67,6 +113,12 @@ def _favorito_de_odds(odds):
             return True
         if a and not h:
             return False
+
+    # 2. Muchas ligas (Ecuador, Colombia, etc.) solo traen el moneyline.
+    for entry in entradas:
+        favorito = _favorito_de_moneyline(entry)
+        if favorito is not None:
+            return favorito
     return None
 
 

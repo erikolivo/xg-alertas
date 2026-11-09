@@ -55,15 +55,37 @@ def _partido_para_vigilar(fx):
 
 
 def _cargar_existentes():
-    """Carga partidos existentes del dia si el archivo es de hoy."""
+    """
+    Carga los partidos ya guardados.
+
+    Se acepta el archivo aunque su fecha no coincida exactamente con la de hoy:
+    los workflows de GitHub corren en UTC y la maquina local puede estar en otro
+    huso, asi que un desfase de +/- 1 dia es normal. Descartar el archivo
+    significaria perder alertas y snapshots sin auditar.
+    """
     if not ARCHIVO_SALIDA.exists():
         return None, []
     try:
         data = json.loads(ARCHIVO_SALIDA.read_text(encoding="utf-8"))
+        partidos = data.get("partidos", [])
         fecha_archivo = data.get("fecha", "")
-        hoy = datetime.date.today().isoformat()
-        if fecha_archivo == hoy:
-            return data, data.get("partidos", [])
+        hoy = datetime.date.today()
+        try:
+            fecha = datetime.date.fromisoformat(fecha_archivo)
+        except (TypeError, ValueError):
+            fecha = None
+
+        if fecha is None or abs((fecha - hoy).days) <= 1:
+            return data, partidos
+
+        # Archivo de otro dia: conservar solo lo que tenga alertas pendientes
+        # de auditar (la Fase 4 las necesita).
+        pendientes = [
+            p for p in partidos
+            if p.get("alertas_enviadas") and p.get("resultado_final") is None
+        ]
+        if pendientes:
+            return data, pendientes
     except Exception:
         pass
     return None, []
@@ -103,10 +125,26 @@ def seleccionar(forzar=False):
         print(f"[seleccion] Ya hay {len(por_id)} partidos seleccionados hoy. Use --forzar para complementar.")
         return partidos_existentes
 
-    print(f"[seleccion] Buscando partidos del dia {fecha_iso} en ESPN...")
-    fixtures = obtener_fixtures_por_fecha(fecha_iso)
+    # Se piden los partidos de hoy y de manana: la Fase 1 corre de noche y los
+    # workflows van en UTC, asi que el "dia" del archivo y el del reloj local no
+    # siempre coinciden. El monitor filtra por hora_utc, no por fecha.
+    fechas = [fecha_iso, (hoy + datetime.timedelta(days=1)).isoformat()]
+    fixtures = []
+    vistos = set()
+    for fecha in fechas:
+        print(f"[seleccion] Buscando partidos del {fecha} en ESPN...")
+        for fx in obtener_fixtures_por_fecha(fecha):
+            fid = fx["fixture"]["id"]
+            if fid in vistos:
+                continue
+            # Los partidos ya terminados no se pueden vigilar ni auditar.
+            if fx.get("_estado") == "post" and fid not in por_id:
+                continue
+            vistos.add(fid)
+            fixtures.append(fx)
+
     if not fixtures:
-        print("[seleccion] No se encontraron fixtures en ESPN para hoy.")
+        print("[seleccion] No se encontraron fixtures en ESPN.")
         return partidos_existentes
 
     nuevos = 0
@@ -127,10 +165,20 @@ def seleccionar(forzar=False):
     # Los partidos que ya no aparecen en ESPN se conservan: pueden tener
     # alertas y snapshots que la Fase 4 necesita auditar.
 
+    # La fecha del archivo nunca retrocede (UTC vs hora local).
+    fecha_salida = fecha_iso
+    if data_existente:
+        try:
+            previa = datetime.date.fromisoformat(data_existente.get("fecha", ""))
+            if previa > hoy:
+                fecha_salida = previa.isoformat()
+        except (TypeError, ValueError):
+            pass
+
     # Guardar
     DATA_DIR.mkdir(exist_ok=True)
     salida = {
-        "fecha": fecha_iso,
+        "fecha": fecha_salida,
         "generado": datetime.datetime.now(datetime.timezone.utc).isoformat(),
         "total": len(partidos_existentes),
         "partidos": partidos_existentes,
