@@ -23,7 +23,10 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null,
+      "resultado_final": {
+        "goles_home": 2,
+        "goles_away": 1
+      },
       "actualizado_en": "2026-11-09T23:52:52.069020+00:00"
     },
     {
@@ -46,7 +49,10 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null,
+      "resultado_final": {
+        "goles_home": 1,
+        "goles_away": 2
+      },
       "actualizado_en": "2026-11-09T23:52:52.069033+00:00"
     },
     {

@@ -1,0 +1,62 @@
+[
+  {
+    "fixture_id": "401921368",
+    "fecha": "2026-11-09",
+    "liga": "Liga Pro Ecuador",
+    "local": "Mushuc Runa",
+    "visitante": "Delfín",
+    "goles_local": 2,
+    "goles_visitante": 1,
+    "xg_final_home": null,
+    "xg_final_away": null,
+    "favorito": "Mushuc Runa",
+    "favorito_es_local": true,
+    "alertas_enviadas": [],
+    "total_alertas": 0
+  },
+  {
+    "fixture_id": "401921367",
+    "fecha": "2026-11-09",
+    "liga": "Liga Pro Ecuador",
+    "local": "Técnico Universitario",
+    "visitante": "Manta F.C.",
+    "goles_local": 1,
+    "goles_visitante": 2,
+    "xg_final_home": null,
+    "xg_final_away": null,
+    "favorito": "Técnico Universitario",
+    "favorito_es_local": true,
+    "alertas_enviadas": [],
+    "total_alertas": 0
+  },
+  {
+    "fixture_id": "401877901",
+    "fecha": "2026-11-09",
+    "liga": "Liga BetPlay",
+    "local": "Atlético Junior",
+    "visitante": "Cúcuta Deportivo",
+    "goles_local": 2,
+    "goles_visitante": 0,
+    "xg_final_home": 1.62,
+    "xg_final_away": 1.94,
+    "favorito": "Atlético Junior",
+    "favorito_es_local": true,
+    "alertas_enviadas": [],
+    "total_alertas": 0
+  },
+  {
+    "fixture_id": "401876902",
+    "fecha": "2026-11-09",
+    "liga": "Liga MX",
+    "local": "León",
+    "visitante": "Guadalajara",
+    "goles_local": 1,
+    "goles_visitante": 1,
+    "xg_final_home": null,
+    "xg_final_away": null,
+    "favorito": "Guadalajara",
+    "favorito_es_local": false,
+    "alertas_enviadas": [],
+    "total_alertas": 0
+  }
+]
