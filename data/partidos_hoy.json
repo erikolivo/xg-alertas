@@ -68,8 +68,540 @@
       "seleccionado_en": "2026-11-09T01:26:46.239256+00:00",
       "version_seleccion": 3,
       "alertas_enviadas": [],
-      "snapshots": [],
-      "resultado_final": null,
+      "snapshots": [
+        {
+          "minuto": "45'+4'",
+          "xg_home": 0.92,
+          "xg_away": 0.77,
+          "goles_home": 1,
+          "goles_away": 0,
+          "stats": {
+            "posesion": {
+              "home": 52.7,
+              "away": 47.3
+            },
+            "tiros_totales": {
+              "home": 10,
+              "away": 7
+            },
+            "tiros_puerta": {
+              "home": 2,
+              "away": 1
+            },
+            "tiros_bloqueados": {
+              "home": 3,
+              "away": 2
+            },
+            "corners": {
+              "home": 5,
+              "away": 0
+            },
+            "faltas": {
+              "home": 3,
+              "away": 4
+            },
+            "tarjetas_rojas": {
+              "home": 0,
+              "away": 0
+            },
+            "xg_reciente": {
+              "home": 0.19,
+              "away": 0.17
+            },
+            "grandes_ocasiones": {
+              "home": 0,
+              "away": 0
+            },
+            "favorito_es_local": true,
+            "fuente_xg": "coordenadas"
+          },
+          "timestamp": "2026-11-10T01:01:50.288771Z"
+        },
+        {
+          "minuto": "47'",
+          "xg_home": 0.98,
+          "xg_away": 0.77,
+          "goles_home": 1,
+          "goles_away": 0,
+          "stats": {
+            "posesion": {
+              "home": 53.0,
+              "away": 47.0
+            },
+            "tiros_totales": {
+              "home": 11,
+              "away": 7
+            },
+            "tiros_puerta": {
+              "home": 2,
+              "away": 1
+            },
+            "tiros_bloqueados": {
+              "home": 3,
+              "away": 2
+            },
+            "corners": {
+              "home": 5,
+              "away": 0
+            },
+            "faltas": {
+              "home": 3,
+              "away": 4
+            },
+            "tarjetas_rojas": {
+              "home": 0,
+              "away": 0
+            },
+            "xg_reciente": {
+              "home": 0.24,
+              "away": 0.17
+            },
+            "grandes_ocasiones": {
+              "home": 0,
+              "away": 0
+            },
+            "favorito_es_local": true,
+            "fuente_xg": "coordenadas"
+          },
+          "timestamp": "2026-11-10T01:06:50.506302Z"
+        },
+        {
+          "minuto": "52'",
+          "xg_home": 1.3,
+          "xg_away": 0.77,
+          "goles_home": 2,
+          "goles_away": 0,
+          "stats": {
+            "posesion": {
+              "home": 52.2,
+              "away": 47.8
+            },
+            "tiros_totales": {
+              "home": 13,
+              "away": 7
+            },
+            "tiros_puerta": {
+              "home": 4,
+              "away": 1
+            },
+            "tiros_bloqueados": {
+              "home": 3,
+              "away": 2
+            },
+            "corners": {
+              "home": 5,
+              "away": 0
+            },
+            "faltas": {
+              "home": 4,
+              "away": 4
+            },
+            "tarjetas_rojas": {
+              "home": 0,
+              "away": 0
+            },
+            "xg_reciente": {
+              "home": 0.46,
+              "away": 0.17
+            },
+            "grandes_ocasiones": {
+              "home": 0,
+              "away": 0
+            },
+            "favorito_es_local": true,
+            "fuente_xg": "coordenadas"
+          },
+          "timestamp": "2026-11-10T01:11:50.697927Z"
+        },
+        {
+          "minuto": "57'",
+          "xg_home": 1.3,
+          "xg_away": 0.77,
+          "goles_home": 2,
+          "goles_away": 0,
+          "stats": {
+            "posesion": {
+              "home": 53.3,
+              "away": 46.7
+            },
+            "tiros_totales": {
+              "home": 13,
+              "away": 7
+            },
+            "tiros_puerta": {
+              "home": 4,
+              "away": 1
+            },
+            "tiros_bloqueados": {
+              "home": 3,
+              "away": 2
+            },
+            "corners": {
+              "home": 5,
+              "away": 0
+            },
+            "faltas": {
+              "home": 5,
+              "away": 4
+            },
+            "tarjetas_rojas": {
+              "home": 0,
+              "away": 0
+            },
+            "xg_reciente": {
+              "home": 0.38,
+              "away": 0.17
+            },
+            "grandes_ocasiones": {
+              "home": 0,
+              "away": 0
+            },
+            "favorito_es_local": true,
+            "fuente_xg": "coordenadas"
+          },
+          "timestamp": "2026-11-10T01:16:50.857273Z"
+        },
+        {
+          "minuto": "62'",
+          "xg_home": 1.45,
+          "xg_away": 0.8,
+          "goles_home": 2,
+          "goles_away": 0,
+          "stats": {
+            "posesion": {
+              "home": 56.0,
+              "away": 44.0
+            },
+            "tiros_totales": {
+              "home": 15,
+              "away": 8
+            },
+            "tiros_puerta": {
+              "home": 5,
+              "away": 1
+            },
+            "tiros_bloqueados": {
+              "home": 3,
+              "away": 2
+            },
+            "corners": {
+              "home": 5,
+              "away": 0
+            },
+            "faltas": {
+              "home": 5,
+              "away": 4
+            },
+            "tarjetas_rojas": {
+              "home": 0,
+              "away": 0
+            },
+            "xg_reciente": {
+              "home": 0.47,
+              "away": 0.03
+            },
+            "grandes_ocasiones": {
+              "home": 0,
+              "away": 0
+            },
+            "favorito_es_local": true,
+            "fuente_xg": "coordenadas"
+          },
+          "timestamp": "2026-11-10T01:21:51.138015Z"
+        },
+        {
+          "minuto": "67'",
+          "xg_home": 1.45,
+          "xg_away": 0.8,
+          "goles_home": 2,
+          "goles_away": 0,
+          "stats": {
+            "posesion": {
+              "home": 55.1,
+              "away": 44.9
+            },
+            "tiros_totales": {
+              "home": 15,
+              "away": 8
+            },
+            "tiros_puerta": {
+              "home": 5,
+              "away": 1
+            },
+            "tiros_bloqueados": {
+              "home": 3,
+              "away": 2
+            },
+            "corners": {
+              "home": 5,
+              "away": 0
+            },
+            "faltas": {
+              "home": 6,
+              "away": 4
+            },
+            "tarjetas_rojas": {
+              "home": 0,
+              "away": 0
+            },
+            "xg_reciente": {
+              "home": 0.14,
+              "away": 0.03
+            },
+            "grandes_ocasiones": {
+              "home": 0,
+              "away": 0
+            },
+            "favorito_es_local": true,
+            "fuente_xg": "coordenadas"
+          },
+          "timestamp": "2026-11-10T01:26:51.396049Z"
+        },
+        {
+          "minuto": "72'",
+          "xg_home": 1.45,
+          "xg_away": 0.83,
+          "goles_home": 2,
+          "goles_away": 0,
+          "stats": {
+            "posesion": {
+              "home": 52.5,
+              "away": 47.5
+            },
+            "tiros_totales": {
+              "home": 15,
+              "away": 9
+            },
+            "tiros_puerta": {
+              "home": 5,
+              "away": 2
+            },
+            "tiros_bloqueados": {
+              "home": 3,
+              "away": 2
+            },
+            "corners": {
+              "home": 5,
+              "away": 1
+            },
+            "faltas": {
+              "home": 7,
+              "away": 4
+            },
+            "tarjetas_rojas": {
+              "home": 0,
+              "away": 0
+            },
+            "xg_reciente": {
+              "home": 0.02,
+              "away": 0.06
+            },
+            "grandes_ocasiones": {
+              "home": 0,
+              "away": 0
+            },
+            "favorito_es_local": true,
+            "fuente_xg": "coordenadas"
+          },
+          "timestamp": "2026-11-10T01:31:51.745218Z"
+        },
+        {
+          "minuto": "77'",
+          "xg_home": 1.45,
+          "xg_away": 0.96,
+          "goles_home": 2,
+          "goles_away": 0,
+          "stats": {
+            "posesion": {
+              "home": 50.8,
+              "away": 49.2
+            },
+            "tiros_totales": {
+              "home": 15,
+              "away": 11
+            },
+            "tiros_puerta": {
+              "home": 5,
+              "away": 3
+            },
+            "tiros_bloqueados": {
+              "home": 3,
+              "away": 2
+            },
+            "corners": {
+              "home": 5,
+              "away": 1
+            },
+            "faltas": {
+              "home": 8,
+              "away": 4
+            },
+            "tarjetas_rojas": {
+              "home": 0,
+              "away": 0
+            },
+            "xg_reciente": {
+              "home": 0.0,
+              "away": 0.16
+            },
+            "grandes_ocasiones": {
+              "home": 0,
+              "away": 0
+            },
+            "favorito_es_local": true,
+            "fuente_xg": "coordenadas"
+          },
+          "timestamp": "2026-11-10T01:36:51.908270Z"
+        },
+        {
+          "minuto": "82'",
+          "xg_home": 1.62,
+          "xg_away": 0.96,
+          "goles_home": 2,
+          "goles_away": 0,
+          "stats": {
+            "posesion": {
+              "home": 52.7,
+              "away": 47.3
+            },
+            "tiros_totales": {
+              "home": 17,
+              "away": 11
+            },
+            "tiros_puerta": {
+              "home": 5,
+              "away": 3
+            },
+            "tiros_bloqueados": {
+              "home": 4,
+              "away": 2
+            },
+            "corners": {
+              "home": 5,
+              "away": 1
+            },
+            "faltas": {
+              "home": 8,
+              "away": 5
+            },
+            "tarjetas_rojas": {
+              "home": 0,
+              "away": 0
+            },
+            "xg_reciente": {
+              "home": 0.17,
+              "away": 0.16
+            },
+            "grandes_ocasiones": {
+              "home": 0,
+              "away": 0
+            },
+            "favorito_es_local": true,
+            "fuente_xg": "coordenadas"
+          },
+          "timestamp": "2026-11-10T01:41:51.995080Z"
+        },
+        {
+          "minuto": "87'",
+          "xg_home": 1.62,
+          "xg_away": 0.97,
+          "goles_home": 2,
+          "goles_away": 0,
+          "stats": {
+            "posesion": {
+              "home": 51.8,
+              "away": 48.2
+            },
+            "tiros_totales": {
+              "home": 17,
+              "away": 12
+            },
+            "tiros_puerta": {
+              "home": 5,
+              "away": 4
+            },
+            "tiros_bloqueados": {
+              "home": 4,
+              "away": 2
+            },
+            "corners": {
+              "home": 5,
+              "away": 1
+            },
+            "faltas": {
+              "home": 8,
+              "away": 5
+            },
+            "tarjetas_rojas": {
+              "home": 0,
+              "away": 0
+            },
+            "xg_reciente": {
+              "home": 0.17,
+              "away": 0.05
+            },
+            "grandes_ocasiones": {
+              "home": 0,
+              "away": 0
+            },
+            "favorito_es_local": true,
+            "fuente_xg": "coordenadas"
+          },
+          "timestamp": "2026-11-10T01:46:52.441043Z"
+        },
+        {
+          "minuto": "90'+2'",
+          "xg_home": 1.62,
+          "xg_away": 1.94,
+          "goles_home": 2,
+          "goles_away": 0,
+          "stats": {
+            "posesion": {
+              "home": 51.7,
+              "away": 48.3
+            },
+            "tiros_totales": {
+              "home": 17,
+              "away": 14
+            },
+            "tiros_puerta": {
+              "home": 5,
+              "away": 5
+            },
+            "tiros_bloqueados": {
+              "home": 4,
+              "away": 2
+            },
+            "corners": {
+              "home": 5,
+              "away": 3
+            },
+            "faltas": {
+              "home": 9,
+              "away": 5
+            },
+            "tarjetas_rojas": {
+              "home": 0,
+              "away": 0
+            },
+            "xg_reciente": {
+              "home": 0.15,
+              "away": 0.98
+            },
+            "grandes_ocasiones": {
+              "home": 0,
+              "away": 1
+            },
+            "favorito_es_local": true,
+            "fuente_xg": "coordenadas"
+          },
+          "timestamp": "2026-11-10T01:51:52.570028Z"
+        }
+      ],
+      "resultado_final": {
+        "goles_home": 2,
+        "goles_away": 0
+      },
       "actualizado_en": "2026-11-09T23:52:52.069043+00:00"
     },
     {
@@ -92,7 +624,10 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": {
+        "goles_home": 1,
+        "goles_away": 1
+      }
     }
   ]
 }
