@@ -1,6 +1,6 @@
 {
   "fecha": "2026-11-11",
-  "generado": "2026-11-11T01:42:43.682781+00:00",
+  "generado": "2026-11-11T07:17:31.178419+00:00",
   "total": 2,
   "partidos": [
     {
@@ -24,7 +24,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-11T01:42:43.682706+00:00"
+      "actualizado_en": "2026-11-11T07:17:31.178363+00:00"
     },
     {
       "fixture_id": "401877890",
@@ -36,8 +36,8 @@
       "home_id": "7915",
       "away_id": "5480",
       "hora_utc": "00:00",
-      "favorito": "",
-      "favorito_es_local": null,
+      "favorito": "Llaneros FC",
+      "favorito_es_local": true,
       "tipo_pronostico": "monitoreo_automatico",
       "confianza": "",
       "cuota_local": null,
@@ -47,7 +47,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-11T01:42:43.682721+00:00"
+      "actualizado_en": "2026-11-11T07:17:31.178377+00:00"
     }
   ]
 }
