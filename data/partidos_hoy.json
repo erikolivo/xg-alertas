@@ -1,6 +1,6 @@
 {
   "fecha": "2026-11-12",
-  "generado": "2026-11-12T19:42:40.081549+00:00",
+  "generado": "2026-11-12T21:56:40.218964+00:00",
   "total": 3,
   "partidos": [
     {
@@ -12,7 +12,7 @@
       "visitante": "Atlético Junior",
       "home_id": "5485",
       "away_id": "4815",
-      "hora_utc": "22:00",
+      "hora_utc": "23:00",
       "favorito": "Atlético Junior",
       "favorito_es_local": false,
       "tipo_pronostico": "monitoreo_automatico",
@@ -24,7 +24,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-12T19:42:40.081476+00:00"
+      "actualizado_en": "2026-11-12T21:56:40.218910+00:00"
     },
     {
       "fixture_id": "401877890",
@@ -47,7 +47,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-12T19:42:40.081490+00:00"
+      "actualizado_en": "2026-11-12T21:56:40.218924+00:00"
     },
     {
       "fixture_id": "401877838",
@@ -70,7 +70,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-12T19:42:40.081500+00:00"
+      "actualizado_en": "2026-11-12T21:56:40.218933+00:00"
     }
   ]
 }
