@@ -1,6 +1,6 @@
 {
   "fecha": "2026-11-12",
-  "generado": "2026-11-12T01:43:04.913333+00:00",
+  "generado": "2026-11-12T02:42:11.534994+00:00",
   "total": 3,
   "partidos": [
     {
@@ -24,7 +24,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-12T01:43:04.913267+00:00"
+      "actualizado_en": "2026-11-12T02:42:11.534959+00:00"
     },
     {
       "fixture_id": "401877890",
@@ -47,7 +47,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-12T01:43:04.913279+00:00"
+      "actualizado_en": "2026-11-12T02:42:11.534968+00:00"
     },
     {
       "fixture_id": "401877838",
@@ -69,7 +69,8 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null
+      "resultado_final": null,
+      "actualizado_en": "2026-11-12T02:42:11.534973+00:00"
     }
   ]
 }
