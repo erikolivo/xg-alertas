@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-11-11",
-  "generado": "2026-11-11T22:20:18.469468+00:00",
-  "total": 2,
+  "fecha": "2026-11-12",
+  "generado": "2026-11-12T01:43:04.913333+00:00",
+  "total": 3,
   "partidos": [
     {
       "fixture_id": "401878034",
@@ -24,7 +24,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-11T22:20:18.469426+00:00"
+      "actualizado_en": "2026-11-12T01:43:04.913267+00:00"
     },
     {
       "fixture_id": "401877890",
@@ -47,7 +47,29 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-11T22:20:18.469437+00:00"
+      "actualizado_en": "2026-11-12T01:43:04.913279+00:00"
+    },
+    {
+      "fixture_id": "401877838",
+      "liga_slug": "col.1",
+      "liga": "Liga BetPlay",
+      "liga_pais": "Colombia",
+      "local": "Internacional de Bogotá",
+      "visitante": "Independiente Santa Fe",
+      "home_id": "7445",
+      "away_id": "5488",
+      "hora_utc": "01:30",
+      "favorito": "Independiente Santa Fe",
+      "favorito_es_local": false,
+      "tipo_pronostico": "monitoreo_automatico",
+      "confianza": "",
+      "cuota_local": null,
+      "cuota_visitante": null,
+      "seleccionado_en": "2026-11-12T01:43:04.913284+00:00",
+      "version_seleccion": 3,
+      "alertas_enviadas": [],
+      "snapshots": [],
+      "resultado_final": null
     }
   ]
 }
