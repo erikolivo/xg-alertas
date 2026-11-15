@@ -23,7 +23,10 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null,
+      "resultado_final": {
+        "goles_home": 0,
+        "goles_away": 1
+      },
       "actualizado_en": "2026-11-12T21:56:40.218910+00:00"
     },
     {
@@ -98,7 +101,10 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null,
+      "resultado_final": {
+        "goles_home": 0,
+        "goles_away": 0
+      },
       "actualizado_en": "2026-11-14T23:28:20.743379+00:00"
     },
     {
@@ -121,7 +127,10 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null,
+      "resultado_final": {
+        "goles_home": 0,
+        "goles_away": 2
+      },
       "actualizado_en": "2026-11-14T23:28:20.743392+00:00"
     },
     {
@@ -144,7 +153,10 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null,
+      "resultado_final": {
+        "goles_home": 0,
+        "goles_away": 1
+      },
       "actualizado_en": "2026-11-14T23:28:20.743402+00:00"
     },
     {
@@ -167,7 +179,10 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null,
+      "resultado_final": {
+        "goles_home": 1,
+        "goles_away": 0
+      },
       "actualizado_en": "2026-11-14T23:28:20.743409+00:00"
     },
     {
@@ -190,7 +205,10 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null,
+      "resultado_final": {
+        "goles_home": 1,
+        "goles_away": 1
+      },
       "actualizado_en": "2026-11-14T23:28:20.743415+00:00"
     },
     {
@@ -213,7 +231,10 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null,
+      "resultado_final": {
+        "goles_home": 2,
+        "goles_away": 0
+      },
       "actualizado_en": "2026-11-14T23:28:20.743421+00:00"
     },
     {
@@ -236,7 +257,10 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null,
+      "resultado_final": {
+        "goles_home": 2,
+        "goles_away": 2
+      },
       "actualizado_en": "2026-11-14T23:28:20.743427+00:00"
     },
     {
@@ -259,7 +283,10 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null,
+      "resultado_final": {
+        "goles_home": 0,
+        "goles_away": 2
+      },
       "actualizado_en": "2026-11-14T23:28:20.743433+00:00"
     },
     {
@@ -282,7 +309,10 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null,
+      "resultado_final": {
+        "goles_home": 2,
+        "goles_away": 0
+      },
       "actualizado_en": "2026-11-14T23:28:20.743439+00:00"
     },
     {
@@ -305,7 +335,10 @@
       "version_seleccion": 3,
       "alertas_enviadas": [],
       "snapshots": [],
-      "resultado_final": null,
+      "resultado_final": {
+        "goles_home": 0,
+        "goles_away": 1
+      },
       "actualizado_en": "2026-11-14T23:28:20.743444+00:00"
     }
   ]
