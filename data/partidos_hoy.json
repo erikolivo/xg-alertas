@@ -1,6 +1,6 @@
 {
   "fecha": "2026-11-18",
-  "generado": "2026-11-18T20:13:54.174012+00:00",
+  "generado": "2026-11-18T22:43:57.401977+00:00",
   "total": 11,
   "partidos": [
     {
@@ -24,7 +24,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-18T20:13:54.173899+00:00"
+      "actualizado_en": "2026-11-18T22:43:57.401866+00:00"
     },
     {
       "fixture_id": "401841310",
@@ -47,7 +47,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-18T20:13:54.173913+00:00"
+      "actualizado_en": "2026-11-18T22:43:57.401879+00:00"
     },
     {
       "fixture_id": "401841314",
@@ -59,8 +59,8 @@
       "home_id": "2022",
       "away_id": "2029",
       "hora_utc": "23:30",
-      "favorito": "Palmeiras",
-      "favorito_es_local": false,
+      "favorito": "Cruzeiro",
+      "favorito_es_local": true,
       "tipo_pronostico": "monitoreo_automatico",
       "confianza": "",
       "cuota_local": null,
@@ -70,7 +70,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-18T20:13:54.173923+00:00"
+      "actualizado_en": "2026-11-18T22:43:57.401887+00:00"
     },
     {
       "fixture_id": "401841313",
@@ -93,7 +93,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-18T20:13:54.173931+00:00"
+      "actualizado_en": "2026-11-18T22:43:57.401895+00:00"
     },
     {
       "fixture_id": "401841316",
@@ -116,7 +116,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-18T20:13:54.173940+00:00"
+      "actualizado_en": "2026-11-18T22:43:57.401903+00:00"
     },
     {
       "fixture_id": "401841312",
@@ -139,7 +139,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-18T20:13:54.173947+00:00"
+      "actualizado_en": "2026-11-18T22:43:57.401910+00:00"
     },
     {
       "fixture_id": "401841308",
@@ -162,7 +162,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-18T20:13:54.173954+00:00"
+      "actualizado_en": "2026-11-18T22:43:57.401916+00:00"
     },
     {
       "fixture_id": "401841317",
@@ -185,7 +185,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-18T20:13:54.173961+00:00"
+      "actualizado_en": "2026-11-18T22:43:57.401922+00:00"
     },
     {
       "fixture_id": "401841309",
@@ -208,7 +208,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-18T20:13:54.173968+00:00"
+      "actualizado_en": "2026-11-18T22:43:57.401927+00:00"
     },
     {
       "fixture_id": "401933535",
@@ -231,7 +231,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-18T20:13:54.173975+00:00"
+      "actualizado_en": "2026-11-18T22:43:57.401932+00:00"
     },
     {
       "fixture_id": "401933555",
@@ -254,7 +254,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-18T20:13:54.173981+00:00"
+      "actualizado_en": "2026-11-18T22:43:57.401937+00:00"
     }
   ]
 }
