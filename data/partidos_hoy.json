@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-11-17",
-  "generado": "2026-11-17T23:12:50.125214+00:00",
-  "total": 6,
+  "fecha": "2026-11-18",
+  "generado": "2026-11-18T01:55:41.206368+00:00",
+  "total": 11,
   "partidos": [
     {
       "fixture_id": "401841315",
@@ -24,7 +24,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-17T23:12:50.125118+00:00"
+      "actualizado_en": "2026-11-18T01:55:41.206263+00:00"
     },
     {
       "fixture_id": "401841310",
@@ -47,7 +47,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-17T23:12:50.125133+00:00"
+      "actualizado_en": "2026-11-18T01:55:41.206276+00:00"
     },
     {
       "fixture_id": "401841314",
@@ -70,7 +70,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-17T23:12:50.125141+00:00"
+      "actualizado_en": "2026-11-18T01:55:41.206284+00:00"
     },
     {
       "fixture_id": "401841313",
@@ -93,7 +93,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-17T23:12:50.125148+00:00"
+      "actualizado_en": "2026-11-18T01:55:41.206292+00:00"
     },
     {
       "fixture_id": "401841316",
@@ -116,7 +116,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-17T23:12:50.125155+00:00"
+      "actualizado_en": "2026-11-18T01:55:41.206298+00:00"
     },
     {
       "fixture_id": "401841312",
@@ -139,7 +139,117 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-17T23:12:50.125161+00:00"
+      "actualizado_en": "2026-11-18T01:55:41.206305+00:00"
+    },
+    {
+      "fixture_id": "401841308",
+      "liga_slug": "bra.1",
+      "liga": "Brasileirao",
+      "liga_pais": "Brazil",
+      "local": "Vasco da Gama",
+      "visitante": "Internacional",
+      "home_id": "3454",
+      "away_id": "1936",
+      "hora_utc": "22:30",
+      "favorito": "Vasco da Gama",
+      "favorito_es_local": true,
+      "tipo_pronostico": "monitoreo_automatico",
+      "confianza": "",
+      "cuota_local": null,
+      "cuota_visitante": null,
+      "seleccionado_en": "2026-11-18T01:55:41.206308+00:00",
+      "version_seleccion": 3,
+      "alertas_enviadas": [],
+      "snapshots": [],
+      "resultado_final": null
+    },
+    {
+      "fixture_id": "401841317",
+      "liga_slug": "bra.1",
+      "liga": "Brasileirao",
+      "liga_pais": "Brazil",
+      "local": "Vitória",
+      "visitante": "Red Bull Bragantino",
+      "home_id": "3457",
+      "away_id": "6079",
+      "hora_utc": "22:30",
+      "favorito": "Red Bull Bragantino",
+      "favorito_es_local": false,
+      "tipo_pronostico": "monitoreo_automatico",
+      "confianza": "",
+      "cuota_local": null,
+      "cuota_visitante": null,
+      "seleccionado_en": "2026-11-18T01:55:41.206312+00:00",
+      "version_seleccion": 3,
+      "alertas_enviadas": [],
+      "snapshots": [],
+      "resultado_final": null
+    },
+    {
+      "fixture_id": "401841309",
+      "liga_slug": "bra.1",
+      "liga": "Brasileirao",
+      "liga_pais": "Brazil",
+      "local": "São Paulo",
+      "visitante": "Fluminense",
+      "home_id": "2026",
+      "away_id": "3445",
+      "hora_utc": "00:30",
+      "favorito": "São Paulo",
+      "favorito_es_local": true,
+      "tipo_pronostico": "monitoreo_automatico",
+      "confianza": "",
+      "cuota_local": null,
+      "cuota_visitante": null,
+      "seleccionado_en": "2026-11-18T01:55:41.206316+00:00",
+      "version_seleccion": 3,
+      "alertas_enviadas": [],
+      "snapshots": [],
+      "resultado_final": null
+    },
+    {
+      "fixture_id": "401933535",
+      "liga_slug": "usa.1",
+      "liga": "MLS",
+      "liga_pais": "USA",
+      "local": "Orlando City SC",
+      "visitante": "FC Cincinnati",
+      "home_id": "12011",
+      "away_id": "18267",
+      "hora_utc": "00:30",
+      "favorito": "Orlando City SC",
+      "favorito_es_local": true,
+      "tipo_pronostico": "monitoreo_automatico",
+      "confianza": "",
+      "cuota_local": null,
+      "cuota_visitante": null,
+      "seleccionado_en": "2026-11-18T01:55:41.206319+00:00",
+      "version_seleccion": 3,
+      "alertas_enviadas": [],
+      "snapshots": [],
+      "resultado_final": null
+    },
+    {
+      "fixture_id": "401933555",
+      "liga_slug": "usa.1",
+      "liga": "MLS",
+      "liga_pais": "USA",
+      "local": "Seattle Sounders FC",
+      "visitante": "Real Salt Lake",
+      "home_id": "9726",
+      "away_id": "4771",
+      "hora_utc": "03:00",
+      "favorito": "Seattle Sounders FC",
+      "favorito_es_local": true,
+      "tipo_pronostico": "monitoreo_automatico",
+      "confianza": "",
+      "cuota_local": null,
+      "cuota_visitante": null,
+      "seleccionado_en": "2026-11-18T01:55:41.206322+00:00",
+      "version_seleccion": 3,
+      "alertas_enviadas": [],
+      "snapshots": [],
+      "resultado_final": null
     }
   ]
 }
