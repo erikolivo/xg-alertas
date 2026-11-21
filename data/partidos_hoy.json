@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-11-20",
-  "generado": "2026-11-20T22:24:44.629882+00:00",
-  "total": 83,
+  "fecha": "2026-11-21",
+  "generado": "2026-11-21T00:59:11.916807+00:00",
+  "total": 125,
   "partidos": [
     {
       "fixture_id": "401841315",
@@ -553,7 +553,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-20T22:24:44.629434+00:00"
+      "actualizado_en": "2026-11-21T00:59:11.916279+00:00"
     },
     {
       "fixture_id": "401879238",
@@ -576,7 +576,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-20T22:24:44.629441+00:00"
+      "actualizado_en": "2026-11-21T00:59:11.916291+00:00"
     },
     {
       "fixture_id": "401878756",
@@ -599,7 +599,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-20T22:24:44.629447+00:00"
+      "actualizado_en": "2026-11-21T00:59:11.916299+00:00"
     },
     {
       "fixture_id": "401879236",
@@ -622,7 +622,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-20T22:24:44.629453+00:00"
+      "actualizado_en": "2026-11-21T00:59:11.916306+00:00"
     },
     {
       "fixture_id": "401879235",
@@ -645,7 +645,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-20T22:24:44.629459+00:00"
+      "actualizado_en": "2026-11-21T00:59:11.916313+00:00"
     },
     {
       "fixture_id": "401878754",
@@ -668,7 +668,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-20T22:24:44.629465+00:00"
+      "actualizado_en": "2026-11-21T00:59:11.916319+00:00"
     },
     {
       "fixture_id": "401879232",
@@ -691,7 +691,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-20T22:24:44.629471+00:00"
+      "actualizado_en": "2026-11-21T00:59:11.916325+00:00"
     },
     {
       "fixture_id": "401882806",
@@ -714,7 +714,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-20T22:24:44.629478+00:00"
+      "actualizado_en": "2026-11-21T00:59:11.916332+00:00"
     },
     {
       "fixture_id": "401882799",
@@ -737,7 +737,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-20T22:24:44.629485+00:00"
+      "actualizado_en": "2026-11-21T00:59:11.916337+00:00"
     },
     {
       "fixture_id": "401882797",
@@ -760,7 +760,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-20T22:24:44.629492+00:00"
+      "actualizado_en": "2026-11-21T00:59:11.916343+00:00"
     },
     {
       "fixture_id": "401882798",
@@ -783,7 +783,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-20T22:24:44.629499+00:00"
+      "actualizado_en": "2026-11-21T00:59:11.916349+00:00"
     },
     {
       "fixture_id": "401884732",
@@ -806,7 +806,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-20T22:24:44.629505+00:00"
+      "actualizado_en": "2026-11-21T00:59:11.916356+00:00"
     },
     {
       "fixture_id": "401884735",
@@ -829,7 +829,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-20T22:24:44.629512+00:00"
+      "actualizado_en": "2026-11-21T00:59:11.916363+00:00"
     },
     {
       "fixture_id": "401884731",
@@ -852,7 +852,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-20T22:24:44.629519+00:00"
+      "actualizado_en": "2026-11-21T00:59:11.916370+00:00"
     },
     {
       "fixture_id": "401884734",
@@ -875,7 +875,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-20T22:24:44.629526+00:00"
+      "actualizado_en": "2026-11-21T00:59:11.916376+00:00"
     },
     {
       "fixture_id": "401884728",
@@ -898,7 +898,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-20T22:24:44.629532+00:00"
+      "actualizado_en": "2026-11-21T00:59:11.916381+00:00"
     },
     {
       "fixture_id": "401884729",
@@ -921,7 +921,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-20T22:24:44.629539+00:00"
+      "actualizado_en": "2026-11-21T00:59:11.916387+00:00"
     },
     {
       "fixture_id": "401875056",
@@ -944,7 +944,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-20T22:24:44.629546+00:00"
+      "actualizado_en": "2026-11-21T00:59:11.916393+00:00"
     },
     {
       "fixture_id": "401874981",
@@ -967,7 +967,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-20T22:24:44.629553+00:00"
+      "actualizado_en": "2026-11-21T00:59:11.916400+00:00"
     },
     {
       "fixture_id": "401874967",
@@ -990,7 +990,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-20T22:24:44.629560+00:00"
+      "actualizado_en": "2026-11-21T00:59:11.916406+00:00"
     },
     {
       "fixture_id": "401875067",
@@ -1013,7 +1013,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-20T22:24:44.629566+00:00"
+      "actualizado_en": "2026-11-21T00:59:11.916411+00:00"
     },
     {
       "fixture_id": "401876398",
@@ -1036,7 +1036,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-20T22:24:44.629574+00:00"
+      "actualizado_en": "2026-11-21T00:59:11.916418+00:00"
     },
     {
       "fixture_id": "401876399",
@@ -1059,7 +1059,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-20T22:24:44.629581+00:00"
+      "actualizado_en": "2026-11-21T00:59:11.916425+00:00"
     },
     {
       "fixture_id": "401876403",
@@ -1082,7 +1082,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-20T22:24:44.629589+00:00"
+      "actualizado_en": "2026-11-21T00:59:11.916432+00:00"
     },
     {
       "fixture_id": "401876402",
@@ -1105,7 +1105,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-20T22:24:44.629596+00:00"
+      "actualizado_en": "2026-11-21T00:59:11.916437+00:00"
     },
     {
       "fixture_id": "401876396",
@@ -1128,7 +1128,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-20T22:24:44.629603+00:00"
+      "actualizado_en": "2026-11-21T00:59:11.916442+00:00"
     },
     {
       "fixture_id": "401875541",
@@ -1151,7 +1151,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-20T22:24:44.629610+00:00"
+      "actualizado_en": "2026-11-21T00:59:11.916448+00:00"
     },
     {
       "fixture_id": "401875544",
@@ -1174,7 +1174,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-20T22:24:44.629616+00:00"
+      "actualizado_en": "2026-11-21T00:59:11.916454+00:00"
     },
     {
       "fixture_id": "401875543",
@@ -1197,7 +1197,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-20T22:24:44.629624+00:00"
+      "actualizado_en": "2026-11-21T00:59:11.916461+00:00"
     },
     {
       "fixture_id": "401875546",
@@ -1220,7 +1220,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-20T22:24:44.629631+00:00"
+      "actualizado_en": "2026-11-21T00:59:11.916467+00:00"
     },
     {
       "fixture_id": "401875539",
@@ -1243,7 +1243,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-20T22:24:44.629638+00:00"
+      "actualizado_en": "2026-11-21T00:59:11.916472+00:00"
     },
     {
       "fixture_id": "401841322",
@@ -1266,7 +1266,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-20T22:24:44.629645+00:00"
+      "actualizado_en": "2026-11-21T00:59:11.916479+00:00"
     },
     {
       "fixture_id": "401841327",
@@ -1289,7 +1289,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-20T22:24:44.629651+00:00"
+      "actualizado_en": "2026-11-21T00:59:11.916486+00:00"
     },
     {
       "fixture_id": "401841325",
@@ -1312,7 +1312,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-20T22:24:44.629657+00:00"
+      "actualizado_en": "2026-11-21T00:59:11.916492+00:00"
     },
     {
       "fixture_id": "401933758",
@@ -1335,7 +1335,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-20T22:24:44.629664+00:00"
+      "actualizado_en": "2026-11-21T00:59:11.916499+00:00"
     },
     {
       "fixture_id": "401933755",
@@ -1358,7 +1358,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-20T22:24:44.629671+00:00"
+      "actualizado_en": "2026-11-21T00:59:11.916505+00:00"
     },
     {
       "fixture_id": "401921364",
@@ -1381,7 +1381,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-20T22:24:44.629678+00:00"
+      "actualizado_en": "2026-11-21T00:59:11.916511+00:00"
     },
     {
       "fixture_id": "401921326",
@@ -1404,7 +1404,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-20T22:24:44.629686+00:00"
+      "actualizado_en": "2026-11-21T00:59:11.916517+00:00"
     },
     {
       "fixture_id": "401934689",
@@ -1427,7 +1427,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-20T22:24:44.629693+00:00"
+      "actualizado_en": "2026-11-21T00:59:11.916523+00:00"
     },
     {
       "fixture_id": "401888247",
@@ -1450,7 +1450,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-20T22:24:44.629701+00:00"
+      "actualizado_en": "2026-11-21T00:59:11.916530+00:00"
     },
     {
       "fixture_id": "401888369",
@@ -1473,7 +1473,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-20T22:24:44.629707+00:00"
+      "actualizado_en": "2026-11-21T00:59:11.916536+00:00"
     },
     {
       "fixture_id": "401888245",
@@ -1496,7 +1496,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-20T22:24:44.629714+00:00"
+      "actualizado_en": "2026-11-21T00:59:11.916542+00:00"
     },
     {
       "fixture_id": "401888244",
@@ -1519,7 +1519,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-20T22:24:44.629721+00:00"
+      "actualizado_en": "2026-11-21T00:59:11.916548+00:00"
     },
     {
       "fixture_id": "401878940",
@@ -1542,7 +1542,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-20T22:24:44.629728+00:00"
+      "actualizado_en": "2026-11-21T00:59:11.916553+00:00"
     },
     {
       "fixture_id": "401878939",
@@ -1565,7 +1565,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-20T22:24:44.629735+00:00"
+      "actualizado_en": "2026-11-21T00:59:11.916559+00:00"
     },
     {
       "fixture_id": "401878935",
@@ -1588,7 +1588,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-20T22:24:44.629742+00:00"
+      "actualizado_en": "2026-11-21T00:59:11.916564+00:00"
     },
     {
       "fixture_id": "401878938",
@@ -1611,7 +1611,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-20T22:24:44.629749+00:00"
+      "actualizado_en": "2026-11-21T00:59:11.916570+00:00"
     },
     {
       "fixture_id": "401878338",
@@ -1634,7 +1634,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-20T22:24:44.629756+00:00"
+      "actualizado_en": "2026-11-21T00:59:11.916576+00:00"
     },
     {
       "fixture_id": "401878336",
@@ -1657,7 +1657,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-20T22:24:44.629762+00:00"
+      "actualizado_en": "2026-11-21T00:59:11.916582+00:00"
     },
     {
       "fixture_id": "401878335",
@@ -1680,7 +1680,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-20T22:24:44.629768+00:00"
+      "actualizado_en": "2026-11-21T00:59:11.916587+00:00"
     },
     {
       "fixture_id": "401878334",
@@ -1703,7 +1703,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-20T22:24:44.629775+00:00"
+      "actualizado_en": "2026-11-21T00:59:11.916593+00:00"
     },
     {
       "fixture_id": "401878337",
@@ -1726,7 +1726,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-20T22:24:44.629781+00:00"
+      "actualizado_en": "2026-11-21T00:59:11.916598+00:00"
     },
     {
       "fixture_id": "401878333",
@@ -1749,7 +1749,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-20T22:24:44.629788+00:00"
+      "actualizado_en": "2026-11-21T00:59:11.916603+00:00"
     },
     {
       "fixture_id": "401933733",
@@ -1772,7 +1772,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-20T22:24:44.629794+00:00"
+      "actualizado_en": "2026-11-21T00:59:11.916608+00:00"
     },
     {
       "fixture_id": "401933732",
@@ -1795,7 +1795,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-20T22:24:44.629800+00:00"
+      "actualizado_en": "2026-11-21T00:59:11.916613+00:00"
     },
     {
       "fixture_id": "401933739",
@@ -1818,7 +1818,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-20T22:24:44.629807+00:00"
+      "actualizado_en": "2026-11-21T00:59:11.916619+00:00"
     },
     {
       "fixture_id": "401877050",
@@ -1841,7 +1841,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-20T22:24:44.629813+00:00"
+      "actualizado_en": "2026-11-21T00:59:11.916626+00:00"
     },
     {
       "fixture_id": "401877051",
@@ -1864,7 +1864,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-20T22:24:44.629819+00:00"
+      "actualizado_en": "2026-11-21T00:59:11.916631+00:00"
     },
     {
       "fixture_id": "401877049",
@@ -1887,7 +1887,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-20T22:24:44.629826+00:00"
+      "actualizado_en": "2026-11-21T00:59:11.916635+00:00"
     },
     {
       "fixture_id": "401877048",
@@ -1910,7 +1910,931 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-20T22:24:44.629831+00:00"
+      "actualizado_en": "2026-11-21T00:59:11.916641+00:00"
+    },
+    {
+      "fixture_id": "401879234",
+      "liga_slug": "eng.1",
+      "liga": "Premier League",
+      "liga_pais": "England",
+      "local": "Hull City",
+      "visitante": "Brighton & Hove Albion",
+      "home_id": "306",
+      "away_id": "331",
+      "hora_utc": "14:00",
+      "favorito": "Brighton & Hove Albion",
+      "favorito_es_local": false,
+      "tipo_pronostico": "monitoreo_automatico",
+      "confianza": "",
+      "cuota_local": null,
+      "cuota_visitante": null,
+      "seleccionado_en": "2026-11-21T00:59:11.916644+00:00",
+      "version_seleccion": 3,
+      "alertas_enviadas": [],
+      "snapshots": [],
+      "resultado_final": null
+    },
+    {
+      "fixture_id": "401878755",
+      "liga_slug": "eng.1",
+      "liga": "Premier League",
+      "liga_pais": "England",
+      "local": "Liverpool",
+      "visitante": "Manchester United",
+      "home_id": "364",
+      "away_id": "360",
+      "hora_utc": "16:30",
+      "favorito": "Liverpool",
+      "favorito_es_local": true,
+      "tipo_pronostico": "monitoreo_automatico",
+      "confianza": "",
+      "cuota_local": null,
+      "cuota_visitante": null,
+      "seleccionado_en": "2026-11-21T00:59:11.916647+00:00",
+      "version_seleccion": 3,
+      "alertas_enviadas": [],
+      "snapshots": [],
+      "resultado_final": null
+    },
+    {
+      "fixture_id": "401882804",
+      "liga_slug": "esp.1",
+      "liga": "La Liga",
+      "liga_pais": "Spain",
+      "local": "Barcelona",
+      "visitante": "Villarreal",
+      "home_id": "83",
+      "away_id": "102",
+      "hora_utc": "13:00",
+      "favorito": "Barcelona",
+      "favorito_es_local": true,
+      "tipo_pronostico": "monitoreo_automatico",
+      "confianza": "",
+      "cuota_local": null,
+      "cuota_visitante": null,
+      "seleccionado_en": "2026-11-21T00:59:11.916651+00:00",
+      "version_seleccion": 3,
+      "alertas_enviadas": [],
+      "snapshots": [],
+      "resultado_final": null
+    },
+    {
+      "fixture_id": "401882800",
+      "liga_slug": "esp.1",
+      "liga": "La Liga",
+      "liga_pais": "Spain",
+      "local": "Racing Santander",
+      "visitante": "Real Sociedad",
+      "home_id": "87",
+      "away_id": "89",
+      "hora_utc": "15:15",
+      "favorito": "Real Sociedad",
+      "favorito_es_local": false,
+      "tipo_pronostico": "monitoreo_automatico",
+      "confianza": "",
+      "cuota_local": null,
+      "cuota_visitante": null,
+      "seleccionado_en": "2026-11-21T00:59:11.916656+00:00",
+      "version_seleccion": 3,
+      "alertas_enviadas": [],
+      "snapshots": [],
+      "resultado_final": null
+    },
+    {
+      "fixture_id": "401882801",
+      "liga_slug": "esp.1",
+      "liga": "La Liga",
+      "liga_pais": "Spain",
+      "local": "Osasuna",
+      "visitante": "Málaga",
+      "home_id": "97",
+      "away_id": "99",
+      "hora_utc": "17:30",
+      "favorito": "Osasuna",
+      "favorito_es_local": true,
+      "tipo_pronostico": "monitoreo_automatico",
+      "confianza": "",
+      "cuota_local": null,
+      "cuota_visitante": null,
+      "seleccionado_en": "2026-11-21T00:59:11.916659+00:00",
+      "version_seleccion": 3,
+      "alertas_enviadas": [],
+      "snapshots": [],
+      "resultado_final": null
+    },
+    {
+      "fixture_id": "401882803",
+      "liga_slug": "esp.1",
+      "liga": "La Liga",
+      "liga_pais": "Spain",
+      "local": "Getafe",
+      "visitante": "Atlético Madrid",
+      "home_id": "2922",
+      "away_id": "1068",
+      "hora_utc": "20:00",
+      "favorito": "Atlético Madrid",
+      "favorito_es_local": false,
+      "tipo_pronostico": "monitoreo_automatico",
+      "confianza": "",
+      "cuota_local": null,
+      "cuota_visitante": null,
+      "seleccionado_en": "2026-11-21T00:59:11.916663+00:00",
+      "version_seleccion": 3,
+      "alertas_enviadas": [],
+      "snapshots": [],
+      "resultado_final": null
+    },
+    {
+      "fixture_id": "401884733",
+      "liga_slug": "ger.1",
+      "liga": "Bundesliga",
+      "liga_pais": "Germany",
+      "local": "FC Augsburg",
+      "visitante": "Mainz",
+      "home_id": "3841",
+      "away_id": "2950",
+      "hora_utc": "14:30",
+      "favorito": "Mainz",
+      "favorito_es_local": false,
+      "tipo_pronostico": "monitoreo_automatico",
+      "confianza": "",
+      "cuota_local": null,
+      "cuota_visitante": null,
+      "seleccionado_en": "2026-11-21T00:59:11.916666+00:00",
+      "version_seleccion": 3,
+      "alertas_enviadas": [],
+      "snapshots": [],
+      "resultado_final": null
+    },
+    {
+      "fixture_id": "401884730",
+      "liga_slug": "ger.1",
+      "liga": "Bundesliga",
+      "liga_pais": "Germany",
+      "local": "Werder Bremen",
+      "visitante": "Hamburg SV",
+      "home_id": "137",
+      "away_id": "127",
+      "hora_utc": "16:30",
+      "favorito": "",
+      "favorito_es_local": null,
+      "tipo_pronostico": "monitoreo_automatico",
+      "confianza": "",
+      "cuota_local": null,
+      "cuota_visitante": null,
+      "seleccionado_en": "2026-11-21T00:59:11.916669+00:00",
+      "version_seleccion": 3,
+      "alertas_enviadas": [],
+      "snapshots": [],
+      "resultado_final": null
+    },
+    {
+      "fixture_id": "401875008",
+      "liga_slug": "ita.1",
+      "liga": "Serie A",
+      "liga_pais": "Italy",
+      "local": "Juventus",
+      "visitante": "Venezia",
+      "home_id": "111",
+      "away_id": "17530",
+      "hora_utc": "11:30",
+      "favorito": "Juventus",
+      "favorito_es_local": true,
+      "tipo_pronostico": "monitoreo_automatico",
+      "confianza": "",
+      "cuota_local": null,
+      "cuota_visitante": null,
+      "seleccionado_en": "2026-11-21T00:59:11.916673+00:00",
+      "version_seleccion": 3,
+      "alertas_enviadas": [],
+      "snapshots": [],
+      "resultado_final": null
+    },
+    {
+      "fixture_id": "401875047",
+      "liga_slug": "ita.1",
+      "liga": "Serie A",
+      "liga_pais": "Italy",
+      "local": "Bologna",
+      "visitante": "Udinese",
+      "home_id": "107",
+      "away_id": "118",
+      "hora_utc": "14:00",
+      "favorito": "Bologna",
+      "favorito_es_local": true,
+      "tipo_pronostico": "monitoreo_automatico",
+      "confianza": "",
+      "cuota_local": null,
+      "cuota_visitante": null,
+      "seleccionado_en": "2026-11-21T00:59:11.916676+00:00",
+      "version_seleccion": 3,
+      "alertas_enviadas": [],
+      "snapshots": [],
+      "resultado_final": null
+    },
+    {
+      "fixture_id": "401874960",
+      "liga_slug": "ita.1",
+      "liga": "Serie A",
+      "liga_pais": "Italy",
+      "local": "Sassuolo",
+      "visitante": "Genoa",
+      "home_id": "3997",
+      "away_id": "3263",
+      "hora_utc": "14:00",
+      "favorito": "Genoa",
+      "favorito_es_local": false,
+      "tipo_pronostico": "monitoreo_automatico",
+      "confianza": "",
+      "cuota_local": null,
+      "cuota_visitante": null,
+      "seleccionado_en": "2026-11-21T00:59:11.916679+00:00",
+      "version_seleccion": 3,
+      "alertas_enviadas": [],
+      "snapshots": [],
+      "resultado_final": null
+    },
+    {
+      "fixture_id": "401874989",
+      "liga_slug": "ita.1",
+      "liga": "Serie A",
+      "liga_pais": "Italy",
+      "local": "AC Milan",
+      "visitante": "Frosinone",
+      "home_id": "103",
+      "away_id": "4057",
+      "hora_utc": "17:00",
+      "favorito": "AC Milan",
+      "favorito_es_local": true,
+      "tipo_pronostico": "monitoreo_automatico",
+      "confianza": "",
+      "cuota_local": null,
+      "cuota_visitante": null,
+      "seleccionado_en": "2026-11-21T00:59:11.916682+00:00",
+      "version_seleccion": 3,
+      "alertas_enviadas": [],
+      "snapshots": [],
+      "resultado_final": null
+    },
+    {
+      "fixture_id": "401875001",
+      "liga_slug": "ita.1",
+      "liga": "Serie A",
+      "liga_pais": "Italy",
+      "local": "Atalanta",
+      "visitante": "Internazionale",
+      "home_id": "105",
+      "away_id": "110",
+      "hora_utc": "19:45",
+      "favorito": "Internazionale",
+      "favorito_es_local": false,
+      "tipo_pronostico": "monitoreo_automatico",
+      "confianza": "",
+      "cuota_local": null,
+      "cuota_visitante": null,
+      "seleccionado_en": "2026-11-21T00:59:11.916685+00:00",
+      "version_seleccion": 3,
+      "alertas_enviadas": [],
+      "snapshots": [],
+      "resultado_final": null
+    },
+    {
+      "fixture_id": "401876397",
+      "liga_slug": "fra.1",
+      "liga": "Ligue 1",
+      "liga_pais": "France",
+      "local": "Paris FC",
+      "visitante": "Angers",
+      "home_id": "6851",
+      "away_id": "7868",
+      "hora_utc": "14:00",
+      "favorito": "Paris FC",
+      "favorito_es_local": true,
+      "tipo_pronostico": "monitoreo_automatico",
+      "confianza": "",
+      "cuota_local": null,
+      "cuota_visitante": null,
+      "seleccionado_en": "2026-11-21T00:59:11.916687+00:00",
+      "version_seleccion": 3,
+      "alertas_enviadas": [],
+      "snapshots": [],
+      "resultado_final": null
+    },
+    {
+      "fixture_id": "401876401",
+      "liga_slug": "fra.1",
+      "liga": "Ligue 1",
+      "liga_pais": "France",
+      "local": "Lorient",
+      "visitante": "Stade Rennais",
+      "home_id": "273",
+      "away_id": "169",
+      "hora_utc": "16:15",
+      "favorito": "Stade Rennais",
+      "favorito_es_local": false,
+      "tipo_pronostico": "monitoreo_automatico",
+      "confianza": "",
+      "cuota_local": null,
+      "cuota_visitante": null,
+      "seleccionado_en": "2026-11-21T00:59:11.916689+00:00",
+      "version_seleccion": 3,
+      "alertas_enviadas": [],
+      "snapshots": [],
+      "resultado_final": null
+    },
+    {
+      "fixture_id": "401876400",
+      "liga_slug": "fra.1",
+      "liga": "Ligue 1",
+      "liga_pais": "France",
+      "local": "Marseille",
+      "visitante": "Le Mans",
+      "home_id": "176",
+      "away_id": "2697",
+      "hora_utc": "19:45",
+      "favorito": "Marseille",
+      "favorito_es_local": true,
+      "tipo_pronostico": "monitoreo_automatico",
+      "confianza": "",
+      "cuota_local": null,
+      "cuota_visitante": null,
+      "seleccionado_en": "2026-11-21T00:59:11.916692+00:00",
+      "version_seleccion": 3,
+      "alertas_enviadas": [],
+      "snapshots": [],
+      "resultado_final": null
+    },
+    {
+      "fixture_id": "401875545",
+      "liga_slug": "ned.1",
+      "liga": "Eredivisie",
+      "liga_pais": "Netherlands",
+      "local": "FC Twente",
+      "visitante": "Willem II",
+      "home_id": "152",
+      "away_id": "156",
+      "hora_utc": "11:15",
+      "favorito": "FC Twente",
+      "favorito_es_local": true,
+      "tipo_pronostico": "monitoreo_automatico",
+      "confianza": "",
+      "cuota_local": null,
+      "cuota_visitante": null,
+      "seleccionado_en": "2026-11-21T00:59:11.916695+00:00",
+      "version_seleccion": 3,
+      "alertas_enviadas": [],
+      "snapshots": [],
+      "resultado_final": null
+    },
+    {
+      "fixture_id": "401875547",
+      "liga_slug": "ned.1",
+      "liga": "Eredivisie",
+      "liga_pais": "Netherlands",
+      "local": "Ajax Amsterdam",
+      "visitante": "ADO Den Haag",
+      "home_id": "139",
+      "away_id": "2726",
+      "hora_utc": "13:30",
+      "favorito": "Ajax Amsterdam",
+      "favorito_es_local": true,
+      "tipo_pronostico": "monitoreo_automatico",
+      "confianza": "",
+      "cuota_local": null,
+      "cuota_visitante": null,
+      "seleccionado_en": "2026-11-21T00:59:11.916697+00:00",
+      "version_seleccion": 3,
+      "alertas_enviadas": [],
+      "snapshots": [],
+      "resultado_final": null
+    },
+    {
+      "fixture_id": "401875540",
+      "liga_slug": "ned.1",
+      "liga": "Eredivisie",
+      "liga_pais": "Netherlands",
+      "local": "Sparta Rotterdam",
+      "visitante": "AZ Alkmaar",
+      "home_id": "151",
+      "away_id": "140",
+      "hora_utc": "13:30",
+      "favorito": "AZ Alkmaar",
+      "favorito_es_local": false,
+      "tipo_pronostico": "monitoreo_automatico",
+      "confianza": "",
+      "cuota_local": null,
+      "cuota_visitante": null,
+      "seleccionado_en": "2026-11-21T00:59:11.916700+00:00",
+      "version_seleccion": 3,
+      "alertas_enviadas": [],
+      "snapshots": [],
+      "resultado_final": null
+    },
+    {
+      "fixture_id": "401875542",
+      "liga_slug": "ned.1",
+      "liga": "Eredivisie",
+      "liga_pais": "Netherlands",
+      "local": "Go Ahead Eagles",
+      "visitante": "Fortuna Sittard",
+      "home_id": "3706",
+      "away_id": "143",
+      "hora_utc": "15:45",
+      "favorito": "Go Ahead Eagles",
+      "favorito_es_local": true,
+      "tipo_pronostico": "monitoreo_automatico",
+      "confianza": "",
+      "cuota_local": null,
+      "cuota_visitante": null,
+      "seleccionado_en": "2026-11-21T00:59:11.916703+00:00",
+      "version_seleccion": 3,
+      "alertas_enviadas": [],
+      "snapshots": [],
+      "resultado_final": null
+    },
+    {
+      "fixture_id": "401841318",
+      "liga_slug": "bra.1",
+      "liga": "Brasileirao",
+      "liga_pais": "Brazil",
+      "local": "Athletico-PR",
+      "visitante": "Remo",
+      "home_id": "3458",
+      "away_id": "4936",
+      "hora_utc": "19:00",
+      "favorito": "Athletico-PR",
+      "favorito_es_local": true,
+      "tipo_pronostico": "monitoreo_automatico",
+      "confianza": "",
+      "cuota_local": null,
+      "cuota_visitante": null,
+      "seleccionado_en": "2026-11-21T00:59:11.916705+00:00",
+      "version_seleccion": 3,
+      "alertas_enviadas": [],
+      "snapshots": [],
+      "resultado_final": null
+    },
+    {
+      "fixture_id": "401841324",
+      "liga_slug": "bra.1",
+      "liga": "Brasileirao",
+      "liga_pais": "Brazil",
+      "local": "Fluminense",
+      "visitante": "Mirassol",
+      "home_id": "3445",
+      "away_id": "9169",
+      "hora_utc": "21:30",
+      "favorito": "Fluminense",
+      "favorito_es_local": true,
+      "tipo_pronostico": "monitoreo_automatico",
+      "confianza": "",
+      "cuota_local": null,
+      "cuota_visitante": null,
+      "seleccionado_en": "2026-11-21T00:59:11.916707+00:00",
+      "version_seleccion": 3,
+      "alertas_enviadas": [],
+      "snapshots": [],
+      "resultado_final": null
+    },
+    {
+      "fixture_id": "401841321",
+      "liga_slug": "bra.1",
+      "liga": "Brasileirao",
+      "liga_pais": "Brazil",
+      "local": "Red Bull Bragantino",
+      "visitante": "Vasco da Gama",
+      "home_id": "6079",
+      "away_id": "3454",
+      "hora_utc": "22:30",
+      "favorito": "Red Bull Bragantino",
+      "favorito_es_local": true,
+      "tipo_pronostico": "monitoreo_automatico",
+      "confianza": "",
+      "cuota_local": null,
+      "cuota_visitante": null,
+      "seleccionado_en": "2026-11-21T00:59:11.916710+00:00",
+      "version_seleccion": 3,
+      "alertas_enviadas": [],
+      "snapshots": [],
+      "resultado_final": null
+    },
+    {
+      "fixture_id": "401933759",
+      "liga_slug": "arg.1",
+      "liga": "Liga Argentina",
+      "liga_pais": "Argentina",
+      "local": "Rosario Central",
+      "visitante": "Gimnasia (Mendoza)",
+      "home_id": "17",
+      "away_id": "11972",
+      "hora_utc": "19:00",
+      "favorito": "Rosario Central",
+      "favorito_es_local": true,
+      "tipo_pronostico": "monitoreo_automatico",
+      "confianza": "",
+      "cuota_local": null,
+      "cuota_visitante": null,
+      "seleccionado_en": "2026-11-21T00:59:11.916712+00:00",
+      "version_seleccion": 3,
+      "alertas_enviadas": [],
+      "snapshots": [],
+      "resultado_final": null
+    },
+    {
+      "fixture_id": "401933761",
+      "liga_slug": "arg.1",
+      "liga": "Liga Argentina",
+      "liga_pais": "Argentina",
+      "local": "River Plate",
+      "visitante": "Lanús",
+      "home_id": "16",
+      "away_id": "12",
+      "hora_utc": "22:00",
+      "favorito": "River Plate",
+      "favorito_es_local": true,
+      "tipo_pronostico": "monitoreo_automatico",
+      "confianza": "",
+      "cuota_local": null,
+      "cuota_visitante": null,
+      "seleccionado_en": "2026-11-21T00:59:11.916715+00:00",
+      "version_seleccion": 3,
+      "alertas_enviadas": [],
+      "snapshots": [],
+      "resultado_final": null
+    },
+    {
+      "fixture_id": "401933762",
+      "liga_slug": "arg.1",
+      "liga": "Liga Argentina",
+      "liga_pais": "Argentina",
+      "local": "Instituto (Córdoba)",
+      "visitante": "Huracán",
+      "home_id": "2975",
+      "away_id": "10",
+      "hora_utc": "01:00",
+      "favorito": "Instituto (Córdoba)",
+      "favorito_es_local": true,
+      "tipo_pronostico": "monitoreo_automatico",
+      "confianza": "",
+      "cuota_local": null,
+      "cuota_visitante": null,
+      "seleccionado_en": "2026-11-21T00:59:11.916718+00:00",
+      "version_seleccion": 3,
+      "alertas_enviadas": [],
+      "snapshots": [],
+      "resultado_final": null
+    },
+    {
+      "fixture_id": "401921363",
+      "liga_slug": "ecu.1",
+      "liga": "Liga Pro Ecuador",
+      "liga_pais": "Ecuador",
+      "local": "Manta F.C.",
+      "visitante": "Delfín",
+      "home_id": "10307",
+      "away_id": "1011",
+      "hora_utc": "16:30",
+      "favorito": "Manta F.C.",
+      "favorito_es_local": true,
+      "tipo_pronostico": "monitoreo_automatico",
+      "confianza": "",
+      "cuota_local": null,
+      "cuota_visitante": null,
+      "seleccionado_en": "2026-11-21T00:59:11.916721+00:00",
+      "version_seleccion": 3,
+      "alertas_enviadas": [],
+      "snapshots": [],
+      "resultado_final": null
+    },
+    {
+      "fixture_id": "401921333",
+      "liga_slug": "ecu.1",
+      "liga": "Liga Pro Ecuador",
+      "liga_pais": "Ecuador",
+      "local": "Orense",
+      "visitante": "Mushuc Runa",
+      "home_id": "20695",
+      "away_id": "17176",
+      "hora_utc": "19:00",
+      "favorito": "",
+      "favorito_es_local": null,
+      "tipo_pronostico": "monitoreo_automatico",
+      "confianza": "",
+      "cuota_local": null,
+      "cuota_visitante": null,
+      "seleccionado_en": "2026-11-21T00:59:11.916724+00:00",
+      "version_seleccion": 3,
+      "alertas_enviadas": [],
+      "snapshots": [],
+      "resultado_final": null
+    },
+    {
+      "fixture_id": "401921327",
+      "liga_slug": "ecu.1",
+      "liga": "Liga Pro Ecuador",
+      "liga_pais": "Ecuador",
+      "local": "Liga de Quito",
+      "visitante": "Aucas",
+      "home_id": "4816",
+      "away_id": "6017",
+      "hora_utc": "21:30",
+      "favorito": "Liga de Quito",
+      "favorito_es_local": true,
+      "tipo_pronostico": "monitoreo_automatico",
+      "confianza": "",
+      "cuota_local": null,
+      "cuota_visitante": null,
+      "seleccionado_en": "2026-11-21T00:59:11.916726+00:00",
+      "version_seleccion": 3,
+      "alertas_enviadas": [],
+      "snapshots": [],
+      "resultado_final": null
+    },
+    {
+      "fixture_id": "401888243",
+      "liga_slug": "tur.1",
+      "liga": "Superliga Turca",
+      "liga_pais": "Turkey",
+      "local": "Erzurum BB",
+      "visitante": "Goztepe",
+      "home_id": "19267",
+      "away_id": "789",
+      "hora_utc": "10:30",
+      "favorito": "",
+      "favorito_es_local": null,
+      "tipo_pronostico": "monitoreo_automatico",
+      "confianza": "",
+      "cuota_local": null,
+      "cuota_visitante": null,
+      "seleccionado_en": "2026-11-21T00:59:11.916730+00:00",
+      "version_seleccion": 3,
+      "alertas_enviadas": [],
+      "snapshots": [],
+      "resultado_final": null
+    },
+    {
+      "fixture_id": "401888248",
+      "liga_slug": "tur.1",
+      "liga": "Superliga Turca",
+      "liga_pais": "Turkey",
+      "local": "Kasimpasa",
+      "visitante": "Alanyaspor",
+      "home_id": "6870",
+      "away_id": "9078",
+      "hora_utc": "13:00",
+      "favorito": "Kasimpasa",
+      "favorito_es_local": true,
+      "tipo_pronostico": "monitoreo_automatico",
+      "confianza": "",
+      "cuota_local": null,
+      "cuota_visitante": null,
+      "seleccionado_en": "2026-11-21T00:59:11.916732+00:00",
+      "version_seleccion": 3,
+      "alertas_enviadas": [],
+      "snapshots": [],
+      "resultado_final": null
+    },
+    {
+      "fixture_id": "401888246",
+      "liga_slug": "tur.1",
+      "liga": "Superliga Turca",
+      "liga_pais": "Turkey",
+      "local": "Konyaspor",
+      "visitante": "Besiktas",
+      "home_id": "7648",
+      "away_id": "1895",
+      "hora_utc": "13:00",
+      "favorito": "Besiktas",
+      "favorito_es_local": false,
+      "tipo_pronostico": "monitoreo_automatico",
+      "confianza": "",
+      "cuota_local": null,
+      "cuota_visitante": null,
+      "seleccionado_en": "2026-11-21T00:59:11.916735+00:00",
+      "version_seleccion": 3,
+      "alertas_enviadas": [],
+      "snapshots": [],
+      "resultado_final": null
+    },
+    {
+      "fixture_id": "401888249",
+      "liga_slug": "tur.1",
+      "liga": "Superliga Turca",
+      "liga_pais": "Turkey",
+      "local": "Trabzonspor",
+      "visitante": "Eyupspor",
+      "home_id": "997",
+      "away_id": "20729",
+      "hora_utc": "16:00",
+      "favorito": "Trabzonspor",
+      "favorito_es_local": true,
+      "tipo_pronostico": "monitoreo_automatico",
+      "confianza": "",
+      "cuota_local": null,
+      "cuota_visitante": null,
+      "seleccionado_en": "2026-11-21T00:59:11.916738+00:00",
+      "version_seleccion": 3,
+      "alertas_enviadas": [],
+      "snapshots": [],
+      "resultado_final": null
+    },
+    {
+      "fixture_id": "401878942",
+      "liga_slug": "bel.1",
+      "liga": "Jupiler Pro League",
+      "liga_pais": "Belgium",
+      "local": "Waasland-Beveren",
+      "visitante": "KAA Gent",
+      "home_id": "13450",
+      "away_id": "3611",
+      "hora_utc": "12:30",
+      "favorito": "KAA Gent",
+      "favorito_es_local": false,
+      "tipo_pronostico": "monitoreo_automatico",
+      "confianza": "",
+      "cuota_local": null,
+      "cuota_visitante": null,
+      "seleccionado_en": "2026-11-21T00:59:11.916741+00:00",
+      "version_seleccion": 3,
+      "alertas_enviadas": [],
+      "snapshots": [],
+      "resultado_final": null
+    },
+    {
+      "fixture_id": "401878936",
+      "liga_slug": "bel.1",
+      "liga": "Jupiler Pro League",
+      "liga_pais": "Belgium",
+      "local": "KV Kortrijk",
+      "visitante": "Union St.-Gilloise",
+      "home_id": "5786",
+      "away_id": "5807",
+      "hora_utc": "15:00",
+      "favorito": "Union St.-Gilloise",
+      "favorito_es_local": false,
+      "tipo_pronostico": "monitoreo_automatico",
+      "confianza": "",
+      "cuota_local": null,
+      "cuota_visitante": null,
+      "seleccionado_en": "2026-11-21T00:59:11.916744+00:00",
+      "version_seleccion": 3,
+      "alertas_enviadas": [],
+      "snapshots": [],
+      "resultado_final": null
+    },
+    {
+      "fixture_id": "401878941",
+      "liga_slug": "bel.1",
+      "liga": "Jupiler Pro League",
+      "liga_pais": "Belgium",
+      "local": "Anderlecht",
+      "visitante": "OH Leuven",
+      "home_id": "441",
+      "away_id": "5579",
+      "hora_utc": "17:30",
+      "favorito": "Anderlecht",
+      "favorito_es_local": true,
+      "tipo_pronostico": "monitoreo_automatico",
+      "confianza": "",
+      "cuota_local": null,
+      "cuota_visitante": null,
+      "seleccionado_en": "2026-11-21T00:59:11.916747+00:00",
+      "version_seleccion": 3,
+      "alertas_enviadas": [],
+      "snapshots": [],
+      "resultado_final": null
+    },
+    {
+      "fixture_id": "401878934",
+      "liga_slug": "bel.1",
+      "liga": "Jupiler Pro League",
+      "liga_pais": "Belgium",
+      "local": "Lommel SK",
+      "visitante": "Standard Liege",
+      "home_id": "22269",
+      "away_id": "559",
+      "hora_utc": "18:15",
+      "favorito": "Standard Liege",
+      "favorito_es_local": false,
+      "tipo_pronostico": "monitoreo_automatico",
+      "confianza": "",
+      "cuota_local": null,
+      "cuota_visitante": null,
+      "seleccionado_en": "2026-11-21T00:59:11.916750+00:00",
+      "version_seleccion": 3,
+      "alertas_enviadas": [],
+      "snapshots": [],
+      "resultado_final": null
+    },
+    {
+      "fixture_id": "401933731",
+      "liga_slug": "usa.1",
+      "liga": "MLS",
+      "liga_pais": "USA",
+      "local": "Nashville SC",
+      "visitante": "FC Cincinnati",
+      "home_id": "18986",
+      "away_id": "18267",
+      "hora_utc": "21:00",
+      "favorito": "Nashville SC",
+      "favorito_es_local": true,
+      "tipo_pronostico": "monitoreo_automatico",
+      "confianza": "",
+      "cuota_local": null,
+      "cuota_visitante": null,
+      "seleccionado_en": "2026-11-21T00:59:11.916753+00:00",
+      "version_seleccion": 3,
+      "alertas_enviadas": [],
+      "snapshots": [],
+      "resultado_final": null
+    },
+    {
+      "fixture_id": "401933730",
+      "liga_slug": "usa.1",
+      "liga": "MLS",
+      "liga_pais": "USA",
+      "local": "Chicago Fire FC",
+      "visitante": "Charlotte FC",
+      "home_id": "182",
+      "away_id": "21300",
+      "hora_utc": "23:30",
+      "favorito": "Chicago Fire FC",
+      "favorito_es_local": true,
+      "tipo_pronostico": "monitoreo_automatico",
+      "confianza": "",
+      "cuota_local": null,
+      "cuota_visitante": null,
+      "seleccionado_en": "2026-11-21T00:59:11.916756+00:00",
+      "version_seleccion": 3,
+      "alertas_enviadas": [],
+      "snapshots": [],
+      "resultado_final": null
+    },
+    {
+      "fixture_id": "401933729",
+      "liga_slug": "usa.1",
+      "liga": "MLS",
+      "liga_pais": "USA",
+      "local": "Vancouver Whitecaps",
+      "visitante": "Real Salt Lake",
+      "home_id": "9727",
+      "away_id": "4771",
+      "hora_utc": "01:30",
+      "favorito": "Vancouver Whitecaps",
+      "favorito_es_local": true,
+      "tipo_pronostico": "monitoreo_automatico",
+      "confianza": "",
+      "cuota_local": null,
+      "cuota_visitante": null,
+      "seleccionado_en": "2026-11-21T00:59:11.916758+00:00",
+      "version_seleccion": 3,
+      "alertas_enviadas": [],
+      "snapshots": [],
+      "resultado_final": null
+    },
+    {
+      "fixture_id": "401877047",
+      "liga_slug": "mex.1",
+      "liga": "Liga MX",
+      "liga_pais": "Mexico",
+      "local": "Guadalajara",
+      "visitante": "Cruz Azul",
+      "home_id": "219",
+      "away_id": "218",
+      "hora_utc": "23:07",
+      "favorito": "Guadalajara",
+      "favorito_es_local": true,
+      "tipo_pronostico": "monitoreo_automatico",
+      "confianza": "",
+      "cuota_local": null,
+      "cuota_visitante": null,
+      "seleccionado_en": "2026-11-21T00:59:11.916760+00:00",
+      "version_seleccion": 3,
+      "alertas_enviadas": [],
+      "snapshots": [],
+      "resultado_final": null
+    },
+    {
+      "fixture_id": "401877046",
+      "liga_slug": "mex.1",
+      "liga": "Liga MX",
+      "liga_pais": "Mexico",
+      "local": "Querétaro",
+      "visitante": "Necaxa",
+      "home_id": "222",
+      "away_id": "229",
+      "hora_utc": "01:10",
+      "favorito": "Querétaro",
+      "favorito_es_local": true,
+      "tipo_pronostico": "monitoreo_automatico",
+      "confianza": "",
+      "cuota_local": null,
+      "cuota_visitante": null,
+      "seleccionado_en": "2026-11-21T00:59:11.916762+00:00",
+      "version_seleccion": 3,
+      "alertas_enviadas": [],
+      "snapshots": [],
+      "resultado_final": null
     }
   ]
 }
