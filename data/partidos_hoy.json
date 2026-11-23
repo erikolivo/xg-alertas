@@ -1,6 +1,6 @@
 {
   "fecha": "2026-11-23",
-  "generado": "2026-11-23T11:33:16.105579+00:00",
+  "generado": "2026-11-23T21:09:51.715603+00:00",
   "total": 140,
   "partidos": [
     {
@@ -2899,7 +2899,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-23T11:33:16.105444+00:00"
+      "actualizado_en": "2026-11-23T21:09:51.715484+00:00"
     },
     {
       "fixture_id": "401882802",
@@ -2922,7 +2922,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-23T11:33:16.105456+00:00"
+      "actualizado_en": "2026-11-23T21:09:51.715496+00:00"
     },
     {
       "fixture_id": "401875009",
@@ -2945,7 +2945,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-23T11:33:16.105465+00:00"
+      "actualizado_en": "2026-11-23T21:09:51.715503+00:00"
     },
     {
       "fixture_id": "401841323",
@@ -2968,7 +2968,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-23T11:33:16.105472+00:00"
+      "actualizado_en": "2026-11-23T21:09:51.715510+00:00"
     },
     {
       "fixture_id": "401841326",
@@ -2991,7 +2991,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-23T11:33:16.105478+00:00"
+      "actualizado_en": "2026-11-23T21:09:51.715516+00:00"
     },
     {
       "fixture_id": "401841320",
@@ -3014,7 +3014,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-23T11:33:16.105483+00:00"
+      "actualizado_en": "2026-11-23T21:09:51.715522+00:00"
     },
     {
       "fixture_id": "401933756",
@@ -3037,7 +3037,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-23T11:33:16.105489+00:00"
+      "actualizado_en": "2026-11-23T21:09:51.715529+00:00"
     },
     {
       "fixture_id": "401888370",
@@ -3060,7 +3060,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-23T11:33:16.105495+00:00"
+      "actualizado_en": "2026-11-23T21:09:51.715535+00:00"
     },
     {
       "fixture_id": "401933728",
@@ -3072,8 +3072,8 @@
       "home_id": "21812",
       "away_id": "18966",
       "hora_utc": "01:00",
-      "favorito": "St. Louis CITY SC",
-      "favorito_es_local": true,
+      "favorito": "LAFC",
+      "favorito_es_local": false,
       "tipo_pronostico": "monitoreo_automatico",
       "confianza": "",
       "cuota_local": null,
@@ -3083,7 +3083,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-23T11:33:16.105501+00:00"
+      "actualizado_en": "2026-11-23T21:09:51.715541+00:00"
     },
     {
       "fixture_id": "401841335",
@@ -3106,7 +3106,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-23T11:33:16.105505+00:00"
+      "actualizado_en": "2026-11-23T21:09:51.715546+00:00"
     },
     {
       "fixture_id": "401934688",
@@ -3129,7 +3129,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-23T11:33:16.105511+00:00"
+      "actualizado_en": "2026-11-23T21:09:51.715552+00:00"
     },
     {
       "fixture_id": "401934706",
@@ -3152,7 +3152,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-23T11:33:16.105516+00:00"
+      "actualizado_en": "2026-11-23T21:09:51.715557+00:00"
     },
     {
       "fixture_id": "401878348",
@@ -3175,7 +3175,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-23T11:33:16.105521+00:00"
+      "actualizado_en": "2026-11-23T21:09:51.715562+00:00"
     },
     {
       "fixture_id": "401878345",
@@ -3198,7 +3198,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-23T11:33:16.105525+00:00"
+      "actualizado_en": "2026-11-23T21:09:51.715566+00:00"
     },
     {
       "fixture_id": "401933738",
@@ -3221,7 +3221,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-23T11:33:16.105529+00:00"
+      "actualizado_en": "2026-11-23T21:09:51.715570+00:00"
     }
   ]
 }
