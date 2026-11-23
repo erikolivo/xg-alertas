@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-11-22",
-  "generado": "2026-11-22T21:21:11.809040+00:00",
-  "total": 134,
+  "fecha": "2026-11-23",
+  "generado": "2026-11-23T00:31:36.968256+00:00",
+  "total": 140,
   "partidos": [
     {
       "fixture_id": "401841315",
@@ -2899,7 +2899,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-22T21:21:11.808951+00:00"
+      "actualizado_en": "2026-11-23T00:31:36.968113+00:00"
     },
     {
       "fixture_id": "401882802",
@@ -2922,7 +2922,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-22T21:21:11.808956+00:00"
+      "actualizado_en": "2026-11-23T00:31:36.968129+00:00"
     },
     {
       "fixture_id": "401875009",
@@ -2945,7 +2945,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-22T21:21:11.808962+00:00"
+      "actualizado_en": "2026-11-23T00:31:36.968139+00:00"
     },
     {
       "fixture_id": "401841323",
@@ -2968,7 +2968,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-22T21:21:11.808968+00:00"
+      "actualizado_en": "2026-11-23T00:31:36.968147+00:00"
     },
     {
       "fixture_id": "401841326",
@@ -2991,7 +2991,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-22T21:21:11.808974+00:00"
+      "actualizado_en": "2026-11-23T00:31:36.968155+00:00"
     },
     {
       "fixture_id": "401841320",
@@ -3014,7 +3014,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-22T21:21:11.808980+00:00"
+      "actualizado_en": "2026-11-23T00:31:36.968162+00:00"
     },
     {
       "fixture_id": "401933756",
@@ -3037,7 +3037,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-22T21:21:11.808986+00:00"
+      "actualizado_en": "2026-11-23T00:31:36.968170+00:00"
     },
     {
       "fixture_id": "401888370",
@@ -3060,7 +3060,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-22T21:21:11.808993+00:00"
+      "actualizado_en": "2026-11-23T00:31:36.968178+00:00"
     },
     {
       "fixture_id": "401933728",
@@ -3083,7 +3083,139 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-22T21:21:11.808999+00:00"
+      "actualizado_en": "2026-11-23T00:31:36.968185+00:00"
+    },
+    {
+      "fixture_id": "401841335",
+      "liga_slug": "bra.1",
+      "liga": "Brasileirao",
+      "liga_pais": "Brazil",
+      "local": "Chapecoense",
+      "visitante": "Palmeiras",
+      "home_id": "9318",
+      "away_id": "2029",
+      "hora_utc": "21:00",
+      "favorito": "Palmeiras",
+      "favorito_es_local": false,
+      "tipo_pronostico": "monitoreo_automatico",
+      "confianza": "",
+      "cuota_local": null,
+      "cuota_visitante": null,
+      "seleccionado_en": "2026-11-23T00:31:36.968188+00:00",
+      "version_seleccion": 3,
+      "alertas_enviadas": [],
+      "snapshots": [],
+      "resultado_final": null
+    },
+    {
+      "fixture_id": "401934688",
+      "liga_slug": "col.1",
+      "liga": "Liga BetPlay",
+      "liga_pais": "Colombia",
+      "local": "Millonarios",
+      "visitante": "Atlético Bucaramanga",
+      "home_id": "5484",
+      "away_id": "6137",
+      "hora_utc": "23:20",
+      "favorito": "Millonarios",
+      "favorito_es_local": true,
+      "tipo_pronostico": "monitoreo_automatico",
+      "confianza": "",
+      "cuota_local": null,
+      "cuota_visitante": null,
+      "seleccionado_en": "2026-11-23T00:31:36.968194+00:00",
+      "version_seleccion": 3,
+      "alertas_enviadas": [],
+      "snapshots": [],
+      "resultado_final": null
+    },
+    {
+      "fixture_id": "401934706",
+      "liga_slug": "col.1",
+      "liga": "Liga BetPlay",
+      "liga_pais": "Colombia",
+      "local": "América de Cali",
+      "visitante": "Deportivo Cali",
+      "home_id": "8109",
+      "away_id": "2672",
+      "hora_utc": "01:30",
+      "favorito": "América de Cali",
+      "favorito_es_local": true,
+      "tipo_pronostico": "monitoreo_automatico",
+      "confianza": "",
+      "cuota_local": null,
+      "cuota_visitante": null,
+      "seleccionado_en": "2026-11-23T00:31:36.968198+00:00",
+      "version_seleccion": 3,
+      "alertas_enviadas": [],
+      "snapshots": [],
+      "resultado_final": null
+    },
+    {
+      "fixture_id": "401878348",
+      "liga_slug": "sco.1",
+      "liga": "Scottish Premiership",
+      "liga_pais": "Scotland",
+      "local": "Hibernian",
+      "visitante": "Dundee",
+      "home_id": "258",
+      "away_id": "261",
+      "hora_utc": "19:45",
+      "favorito": "Hibernian",
+      "favorito_es_local": true,
+      "tipo_pronostico": "monitoreo_automatico",
+      "confianza": "",
+      "cuota_local": null,
+      "cuota_visitante": null,
+      "seleccionado_en": "2026-11-23T00:31:36.968202+00:00",
+      "version_seleccion": 3,
+      "alertas_enviadas": [],
+      "snapshots": [],
+      "resultado_final": null
+    },
+    {
+      "fixture_id": "401878345",
+      "liga_slug": "sco.1",
+      "liga": "Scottish Premiership",
+      "liga_pais": "Scotland",
+      "local": "Rangers",
+      "visitante": "Aberdeen",
+      "home_id": "257",
+      "away_id": "263",
+      "hora_utc": "20:00",
+      "favorito": "Rangers",
+      "favorito_es_local": true,
+      "tipo_pronostico": "monitoreo_automatico",
+      "confianza": "",
+      "cuota_local": null,
+      "cuota_visitante": null,
+      "seleccionado_en": "2026-11-23T00:31:36.968206+00:00",
+      "version_seleccion": 3,
+      "alertas_enviadas": [],
+      "snapshots": [],
+      "resultado_final": null
+    },
+    {
+      "fixture_id": "401933738",
+      "liga_slug": "usa.1",
+      "liga": "MLS",
+      "liga_pais": "USA",
+      "local": "San Jose Earthquakes",
+      "visitante": "Houston Dynamo FC",
+      "home_id": "191",
+      "away_id": "6077",
+      "hora_utc": "03:00",
+      "favorito": "San Jose Earthquakes",
+      "favorito_es_local": true,
+      "tipo_pronostico": "monitoreo_automatico",
+      "confianza": "",
+      "cuota_local": null,
+      "cuota_visitante": null,
+      "seleccionado_en": "2026-11-23T00:31:36.968209+00:00",
+      "version_seleccion": 3,
+      "alertas_enviadas": [],
+      "snapshots": [],
+      "resultado_final": null
     }
   ]
 }
