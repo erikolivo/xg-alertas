@@ -1,6 +1,6 @@
 {
   "fecha": "2026-11-23",
-  "generado": "2026-11-23T21:09:51.715603+00:00",
+  "generado": "2026-11-23T23:38:12.463530+00:00",
   "total": 140,
   "partidos": [
     {
@@ -2899,7 +2899,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-23T21:09:51.715484+00:00"
+      "actualizado_en": "2026-11-23T23:38:12.463339+00:00"
     },
     {
       "fixture_id": "401882802",
@@ -2922,7 +2922,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-23T21:09:51.715496+00:00"
+      "actualizado_en": "2026-11-23T23:38:12.463358+00:00"
     },
     {
       "fixture_id": "401875009",
@@ -2945,7 +2945,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-23T21:09:51.715503+00:00"
+      "actualizado_en": "2026-11-23T23:38:12.463369+00:00"
     },
     {
       "fixture_id": "401841323",
@@ -2968,7 +2968,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-23T21:09:51.715510+00:00"
+      "actualizado_en": "2026-11-23T23:38:12.463380+00:00"
     },
     {
       "fixture_id": "401841326",
@@ -2991,7 +2991,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-23T21:09:51.715516+00:00"
+      "actualizado_en": "2026-11-23T23:38:12.463389+00:00"
     },
     {
       "fixture_id": "401841320",
@@ -3014,7 +3014,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-23T21:09:51.715522+00:00"
+      "actualizado_en": "2026-11-23T23:38:12.463399+00:00"
     },
     {
       "fixture_id": "401933756",
@@ -3037,7 +3037,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-23T21:09:51.715529+00:00"
+      "actualizado_en": "2026-11-23T23:38:12.463407+00:00"
     },
     {
       "fixture_id": "401888370",
@@ -3060,7 +3060,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-23T21:09:51.715535+00:00"
+      "actualizado_en": "2026-11-23T23:38:12.463415+00:00"
     },
     {
       "fixture_id": "401933728",
@@ -3083,7 +3083,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-23T21:09:51.715541+00:00"
+      "actualizado_en": "2026-11-23T23:38:12.463423+00:00"
     },
     {
       "fixture_id": "401841335",
@@ -3106,7 +3106,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-23T21:09:51.715546+00:00"
+      "actualizado_en": "2026-11-23T23:38:12.463431+00:00"
     },
     {
       "fixture_id": "401934688",
@@ -3129,7 +3129,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-23T21:09:51.715552+00:00"
+      "actualizado_en": "2026-11-23T23:38:12.463439+00:00"
     },
     {
       "fixture_id": "401934706",
@@ -3152,7 +3152,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-23T21:09:51.715557+00:00"
+      "actualizado_en": "2026-11-23T23:38:12.463446+00:00"
     },
     {
       "fixture_id": "401878348",
@@ -3175,7 +3175,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-23T21:09:51.715562+00:00"
+      "actualizado_en": "2026-11-23T23:38:12.463453+00:00"
     },
     {
       "fixture_id": "401878345",
@@ -3198,7 +3198,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-23T21:09:51.715566+00:00"
+      "actualizado_en": "2026-11-23T23:38:12.463458+00:00"
     },
     {
       "fixture_id": "401933738",
@@ -3221,7 +3221,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-23T21:09:51.715570+00:00"
+      "actualizado_en": "2026-11-23T23:38:12.463464+00:00"
     }
   ]
 }
