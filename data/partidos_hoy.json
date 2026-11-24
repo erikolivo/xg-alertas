@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-11-23",
-  "generado": "2026-11-23T23:38:12.463530+00:00",
-  "total": 140,
+  "fecha": "2026-11-24",
+  "generado": "2026-11-24T02:39:12.523833+00:00",
+  "total": 145,
   "partidos": [
     {
       "fixture_id": "401841315",
@@ -3106,7 +3106,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-23T23:38:12.463431+00:00"
+      "actualizado_en": "2026-11-24T02:39:12.523764+00:00"
     },
     {
       "fixture_id": "401934688",
@@ -3129,7 +3129,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-23T23:38:12.463439+00:00"
+      "actualizado_en": "2026-11-24T02:39:12.523774+00:00"
     },
     {
       "fixture_id": "401934706",
@@ -3152,7 +3152,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-23T23:38:12.463446+00:00"
+      "actualizado_en": "2026-11-24T02:39:12.523780+00:00"
     },
     {
       "fixture_id": "401878348",
@@ -3175,7 +3175,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-23T23:38:12.463453+00:00"
+      "actualizado_en": "2026-11-24T02:39:12.523787+00:00"
     },
     {
       "fixture_id": "401878345",
@@ -3198,7 +3198,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-23T23:38:12.463458+00:00"
+      "actualizado_en": "2026-11-24T02:39:12.523791+00:00"
     },
     {
       "fixture_id": "401933738",
@@ -3221,7 +3221,117 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-23T23:38:12.463464+00:00"
+      "actualizado_en": "2026-11-24T02:39:12.523795+00:00"
+    },
+    {
+      "fixture_id": "401841319",
+      "liga_slug": "bra.1",
+      "liga": "Brasileirao",
+      "liga_pais": "Brazil",
+      "local": "Atlético-MG",
+      "visitante": "Corinthians",
+      "home_id": "7632",
+      "away_id": "874",
+      "hora_utc": "23:00",
+      "favorito": "Atlético-MG",
+      "favorito_es_local": true,
+      "tipo_pronostico": "monitoreo_automatico",
+      "confianza": "",
+      "cuota_local": null,
+      "cuota_visitante": null,
+      "seleccionado_en": "2026-11-24T02:39:12.523797+00:00",
+      "version_seleccion": 3,
+      "alertas_enviadas": [],
+      "snapshots": [],
+      "resultado_final": null
+    },
+    {
+      "fixture_id": "401933757",
+      "liga_slug": "arg.1",
+      "liga": "Liga Argentina",
+      "liga_pais": "Argentina",
+      "local": "Boca Juniors",
+      "visitante": "Independiente Rivadavia",
+      "home_id": "5",
+      "away_id": "9744",
+      "hora_utc": "00:00",
+      "favorito": "Boca Juniors",
+      "favorito_es_local": true,
+      "tipo_pronostico": "monitoreo_automatico",
+      "confianza": "",
+      "cuota_local": null,
+      "cuota_visitante": null,
+      "seleccionado_en": "2026-11-24T02:39:12.523801+00:00",
+      "version_seleccion": 3,
+      "alertas_enviadas": [],
+      "snapshots": [],
+      "resultado_final": null
+    },
+    {
+      "fixture_id": "401921355",
+      "liga_slug": "ecu.1",
+      "liga": "Liga Pro Ecuador",
+      "liga_pais": "Ecuador",
+      "local": "Barcelona SC",
+      "visitante": "Independiente del Valle",
+      "home_id": "2686",
+      "away_id": "17086",
+      "hora_utc": "00:00",
+      "favorito": "Independiente del Valle",
+      "favorito_es_local": false,
+      "tipo_pronostico": "monitoreo_automatico",
+      "confianza": "",
+      "cuota_local": null,
+      "cuota_visitante": null,
+      "seleccionado_en": "2026-11-24T02:39:12.523804+00:00",
+      "version_seleccion": 3,
+      "alertas_enviadas": [],
+      "snapshots": [],
+      "resultado_final": null
+    },
+    {
+      "fixture_id": "401934687",
+      "liga_slug": "col.1",
+      "liga": "Liga BetPlay",
+      "liga_pais": "Colombia",
+      "local": "Independiente Santa Fe",
+      "visitante": "Once Caldas",
+      "home_id": "5488",
+      "away_id": "2919",
+      "hora_utc": "23:20",
+      "favorito": "Independiente Santa Fe",
+      "favorito_es_local": true,
+      "tipo_pronostico": "monitoreo_automatico",
+      "confianza": "",
+      "cuota_local": null,
+      "cuota_visitante": null,
+      "seleccionado_en": "2026-11-24T02:39:12.523806+00:00",
+      "version_seleccion": 3,
+      "alertas_enviadas": [],
+      "snapshots": [],
+      "resultado_final": null
+    },
+    {
+      "fixture_id": "401934705",
+      "liga_slug": "col.1",
+      "liga": "Liga BetPlay",
+      "liga_pais": "Colombia",
+      "local": "Atlético Nacional",
+      "visitante": "Independiente Medellín",
+      "home_id": "5264",
+      "away_id": "2690",
+      "hora_utc": "01:30",
+      "favorito": "Atlético Nacional",
+      "favorito_es_local": true,
+      "tipo_pronostico": "monitoreo_automatico",
+      "confianza": "",
+      "cuota_local": null,
+      "cuota_visitante": null,
+      "seleccionado_en": "2026-11-24T02:39:12.523808+00:00",
+      "version_seleccion": 3,
+      "alertas_enviadas": [],
+      "snapshots": [],
+      "resultado_final": null
     }
   ]
 }
