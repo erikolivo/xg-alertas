@@ -1,6 +1,6 @@
 {
   "fecha": "2026-11-25",
-  "generado": "2026-11-25T11:54:41.566879+00:00",
+  "generado": "2026-11-25T19:06:00.550621+00:00",
   "total": 150,
   "partidos": [
     {
@@ -3244,7 +3244,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-25T11:54:41.566759+00:00"
+      "actualizado_en": "2026-11-25T19:06:00.550494+00:00"
     },
     {
       "fixture_id": "401933757",
@@ -3267,7 +3267,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-25T11:54:41.566774+00:00"
+      "actualizado_en": "2026-11-25T19:06:00.550511+00:00"
     },
     {
       "fixture_id": "401921355",
@@ -3290,7 +3290,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-25T11:54:41.566784+00:00"
+      "actualizado_en": "2026-11-25T19:06:00.550521+00:00"
     },
     {
       "fixture_id": "401934687",
@@ -3313,7 +3313,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-25T11:54:41.566792+00:00"
+      "actualizado_en": "2026-11-25T19:06:00.550528+00:00"
     },
     {
       "fixture_id": "401934705",
@@ -3336,7 +3336,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-25T11:54:41.566800+00:00"
+      "actualizado_en": "2026-11-25T19:06:00.550535+00:00"
     },
     {
       "fixture_id": "401931986",
@@ -3359,7 +3359,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-25T11:54:41.566807+00:00"
+      "actualizado_en": "2026-11-25T19:06:00.550542+00:00"
     },
     {
       "fixture_id": "401931998",
@@ -3382,7 +3382,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-25T11:54:41.566814+00:00"
+      "actualizado_en": "2026-11-25T19:06:00.550549+00:00"
     },
     {
       "fixture_id": "401841329",
@@ -3405,7 +3405,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-25T11:54:41.566822+00:00"
+      "actualizado_en": "2026-11-25T19:06:00.550556+00:00"
     },
     {
       "fixture_id": "401931982",
@@ -3417,8 +3417,8 @@
       "home_id": "234",
       "away_id": "219",
       "hora_utc": "01:00",
-      "favorito": "",
-      "favorito_es_local": null,
+      "favorito": "Guadalajara",
+      "favorito_es_local": false,
       "tipo_pronostico": "monitoreo_automatico",
       "confianza": "",
       "cuota_local": null,
@@ -3428,7 +3428,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-25T11:54:41.566829+00:00"
+      "actualizado_en": "2026-11-25T19:06:00.550563+00:00"
     },
     {
       "fixture_id": "401931995",
@@ -3451,7 +3451,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-25T11:54:41.566836+00:00"
+      "actualizado_en": "2026-11-25T19:06:00.550570+00:00"
     }
   ]
 }
