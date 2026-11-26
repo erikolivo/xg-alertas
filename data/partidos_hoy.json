@@ -1,7 +1,7 @@
 {
   "fecha": "2026-11-26",
-  "generado": "2026-11-26T11:43:27.005823+00:00",
-  "total": 165,
+  "generado": "2026-11-26T18:56:41.306670+00:00",
+  "total": 167,
   "partidos": [
     {
       "fixture_id": "401841315",
@@ -3405,7 +3405,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-26T11:43:27.005650+00:00"
+      "actualizado_en": "2026-11-26T18:56:41.306508+00:00"
     },
     {
       "fixture_id": "401931982",
@@ -3428,7 +3428,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-26T11:43:27.005665+00:00"
+      "actualizado_en": "2026-11-26T18:56:41.306520+00:00"
     },
     {
       "fixture_id": "401931995",
@@ -3451,7 +3451,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-26T11:43:27.005675+00:00"
+      "actualizado_en": "2026-11-26T18:56:41.306529+00:00"
     },
     {
       "fixture_id": "401879225",
@@ -3474,7 +3474,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-26T11:43:27.005682+00:00"
+      "actualizado_en": "2026-11-26T18:56:41.306536+00:00"
     },
     {
       "fixture_id": "401882791",
@@ -3497,7 +3497,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-26T11:43:27.005689+00:00"
+      "actualizado_en": "2026-11-26T18:56:41.306543+00:00"
     },
     {
       "fixture_id": "401884720",
@@ -3520,7 +3520,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-26T11:43:27.005696+00:00"
+      "actualizado_en": "2026-11-26T18:56:41.306550+00:00"
     },
     {
       "fixture_id": "401875004",
@@ -3543,7 +3543,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-26T11:43:27.005703+00:00"
+      "actualizado_en": "2026-11-26T18:56:41.306556+00:00"
     },
     {
       "fixture_id": "401876392",
@@ -3566,7 +3566,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-26T11:43:27.005709+00:00"
+      "actualizado_en": "2026-11-26T18:56:41.306561+00:00"
     },
     {
       "fixture_id": "401875536",
@@ -3589,7 +3589,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-26T11:43:27.005715+00:00"
+      "actualizado_en": "2026-11-26T18:56:41.306567+00:00"
     },
     {
       "fixture_id": "401885389",
@@ -3612,7 +3612,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-26T11:43:27.005722+00:00"
+      "actualizado_en": "2026-11-26T18:56:41.306573+00:00"
     },
     {
       "fixture_id": "401841337",
@@ -3635,7 +3635,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-26T11:43:27.005727+00:00"
+      "actualizado_en": "2026-11-26T18:56:41.306578+00:00"
     },
     {
       "fixture_id": "401921332",
@@ -3658,7 +3658,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-26T11:43:27.005734+00:00"
+      "actualizado_en": "2026-11-26T18:56:41.306584+00:00"
     },
     {
       "fixture_id": "401921361",
@@ -3670,8 +3670,8 @@
       "home_id": "4812",
       "away_id": "10307",
       "hora_utc": "21:30",
-      "favorito": "",
-      "favorito_es_local": null,
+      "favorito": "Deportivo Cuenca",
+      "favorito_es_local": true,
       "tipo_pronostico": "monitoreo_automatico",
       "confianza": "",
       "cuota_local": null,
@@ -3681,7 +3681,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-26T11:43:27.005741+00:00"
+      "actualizado_en": "2026-11-26T18:56:41.306590+00:00"
     },
     {
       "fixture_id": "401888241",
@@ -3704,7 +3704,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-26T11:43:27.005747+00:00"
+      "actualizado_en": "2026-11-26T18:56:41.306604+00:00"
     },
     {
       "fixture_id": "401888240",
@@ -3727,7 +3727,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-26T11:43:27.005753+00:00"
+      "actualizado_en": "2026-11-26T18:56:41.306610+00:00"
     },
     {
       "fixture_id": "401878930",
@@ -3750,7 +3750,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-26T11:43:27.005758+00:00"
+      "actualizado_en": "2026-11-26T18:56:41.306616+00:00"
     },
     {
       "fixture_id": "401933727",
@@ -3773,7 +3773,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-26T11:43:27.005764+00:00"
+      "actualizado_en": "2026-11-26T18:56:41.306621+00:00"
     },
     {
       "fixture_id": "401933725",
@@ -3796,7 +3796,51 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-26T11:43:27.005770+00:00"
+      "actualizado_en": "2026-11-26T18:56:41.306626+00:00"
+    },
+    {
+      "fixture_id": "401936055",
+      "liga_slug": "col.1",
+      "liga": "Liga BetPlay",
+      "liga_pais": "Colombia",
+      "local": "Deportivo Cali",
+      "visitante": "Atlético Bucaramanga",
+      "home_id": "2672",
+      "away_id": "6137",
+      "hora_utc": "23:35",
+      "favorito": "Deportivo Cali",
+      "favorito_es_local": true,
+      "tipo_pronostico": "monitoreo_automatico",
+      "confianza": "",
+      "cuota_local": null,
+      "cuota_visitante": null,
+      "seleccionado_en": "2026-11-26T18:56:41.306593+00:00",
+      "version_seleccion": 3,
+      "alertas_enviadas": [],
+      "snapshots": [],
+      "resultado_final": null
+    },
+    {
+      "fixture_id": "401936054",
+      "liga_slug": "col.1",
+      "liga": "Liga BetPlay",
+      "liga_pais": "Colombia",
+      "local": "Millonarios",
+      "visitante": "América de Cali",
+      "home_id": "5484",
+      "away_id": "8109",
+      "hora_utc": "01:40",
+      "favorito": "",
+      "favorito_es_local": null,
+      "tipo_pronostico": "monitoreo_automatico",
+      "confianza": "",
+      "cuota_local": null,
+      "cuota_visitante": null,
+      "seleccionado_en": "2026-11-26T18:56:41.306598+00:00",
+      "version_seleccion": 3,
+      "alertas_enviadas": [],
+      "snapshots": [],
+      "resultado_final": null
     }
   ]
 }
