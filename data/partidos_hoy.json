@@ -1,6 +1,6 @@
 {
   "fecha": "2026-11-27",
-  "generado": "2026-11-27T03:56:32.093505+00:00",
+  "generado": "2026-11-27T09:10:19.812071+00:00",
   "total": 220,
   "partidos": [
     {
@@ -3474,7 +3474,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.092943+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.811606+00:00"
     },
     {
       "fixture_id": "401882791",
@@ -3497,7 +3497,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.092957+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.811619+00:00"
     },
     {
       "fixture_id": "401884720",
@@ -3520,7 +3520,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.092968+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.811629+00:00"
     },
     {
       "fixture_id": "401875004",
@@ -3543,7 +3543,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.092976+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.811660+00:00"
     },
     {
       "fixture_id": "401876392",
@@ -3566,7 +3566,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.092984+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.811667+00:00"
     },
     {
       "fixture_id": "401875536",
@@ -3589,7 +3589,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.092992+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.811674+00:00"
     },
     {
       "fixture_id": "401885389",
@@ -3612,7 +3612,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.093000+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.811681+00:00"
     },
     {
       "fixture_id": "401841337",
@@ -3635,7 +3635,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.093007+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.811687+00:00"
     },
     {
       "fixture_id": "401921332",
@@ -3658,7 +3658,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.093015+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.811694+00:00"
     },
     {
       "fixture_id": "401921361",
@@ -3681,7 +3681,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.093022+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.811701+00:00"
     },
     {
       "fixture_id": "401888241",
@@ -3693,8 +3693,8 @@
       "home_id": "9078",
       "away_id": "7648",
       "hora_utc": "17:00",
-      "favorito": "Konyaspor",
-      "favorito_es_local": false,
+      "favorito": "Alanyaspor",
+      "favorito_es_local": true,
       "tipo_pronostico": "monitoreo_automatico",
       "confianza": "",
       "cuota_local": null,
@@ -3704,7 +3704,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.093045+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.811721+00:00"
     },
     {
       "fixture_id": "401888240",
@@ -3727,7 +3727,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.093052+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.811728+00:00"
     },
     {
       "fixture_id": "401878930",
@@ -3750,7 +3750,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.093060+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.811734+00:00"
     },
     {
       "fixture_id": "401933727",
@@ -3762,8 +3762,8 @@
       "home_id": "183",
       "away_id": "20232",
       "hora_utc": "01:00",
-      "favorito": "Inter Miami CF",
-      "favorito_es_local": false,
+      "favorito": "Columbus Crew",
+      "favorito_es_local": true,
       "tipo_pronostico": "monitoreo_automatico",
       "confianza": "",
       "cuota_local": null,
@@ -3773,7 +3773,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.093068+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.811740+00:00"
     },
     {
       "fixture_id": "401933725",
@@ -3796,7 +3796,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.093075+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.811746+00:00"
     },
     {
       "fixture_id": "401936055",
@@ -3819,7 +3819,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.093030+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.811708+00:00"
     },
     {
       "fixture_id": "401936054",
@@ -3842,7 +3842,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.093038+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.811715+00:00"
     },
     {
       "fixture_id": "401879227",
@@ -3865,7 +3865,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.093081+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.811751+00:00"
     },
     {
       "fixture_id": "401879226",
@@ -3888,7 +3888,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.093088+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.811757+00:00"
     },
     {
       "fixture_id": "401878752",
@@ -3911,7 +3911,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.093094+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.811763+00:00"
     },
     {
       "fixture_id": "401882796",
@@ -3934,7 +3934,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.093101+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.811769+00:00"
     },
     {
       "fixture_id": "401882790",
@@ -3957,7 +3957,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.093108+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.811775+00:00"
     },
     {
       "fixture_id": "401882793",
@@ -3980,7 +3980,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.093115+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.811781+00:00"
     },
     {
       "fixture_id": "401882789",
@@ -4003,7 +4003,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.093121+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.811786+00:00"
     },
     {
       "fixture_id": "401884721",
@@ -4026,7 +4026,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.093161+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.811792+00:00"
     },
     {
       "fixture_id": "401884722",
@@ -4049,7 +4049,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.093174+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.811799+00:00"
     },
     {
       "fixture_id": "401884723",
@@ -4072,7 +4072,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.093182+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.811805+00:00"
     },
     {
       "fixture_id": "401884719",
@@ -4095,7 +4095,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.093190+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.811811+00:00"
     },
     {
       "fixture_id": "401884726",
@@ -4118,7 +4118,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.093196+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.811816+00:00"
     },
     {
       "fixture_id": "401875081",
@@ -4141,7 +4141,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.093203+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.811821+00:00"
     },
     {
       "fixture_id": "401874826",
@@ -4164,7 +4164,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.093210+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.811827+00:00"
     },
     {
       "fixture_id": "401874977",
@@ -4187,7 +4187,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.093217+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.811832+00:00"
     },
     {
       "fixture_id": "401876394",
@@ -4210,7 +4210,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.093224+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.811837+00:00"
     },
     {
       "fixture_id": "401876391",
@@ -4233,7 +4233,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.093231+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.811843+00:00"
     },
     {
       "fixture_id": "401876390",
@@ -4256,7 +4256,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.093238+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.811849+00:00"
     },
     {
       "fixture_id": "401876388",
@@ -4279,7 +4279,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.093246+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.811854+00:00"
     },
     {
       "fixture_id": "401876387",
@@ -4302,7 +4302,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.093252+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.811859+00:00"
     },
     {
       "fixture_id": "401875537",
@@ -4325,7 +4325,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.093259+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.811864+00:00"
     },
     {
       "fixture_id": "401875531",
@@ -4348,7 +4348,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.093266+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.811869+00:00"
     },
     {
       "fixture_id": "401875530",
@@ -4371,7 +4371,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.093273+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.811875+00:00"
     },
     {
       "fixture_id": "401885392",
@@ -4394,7 +4394,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.093280+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.811879+00:00"
     },
     {
       "fixture_id": "401885388",
@@ -4417,7 +4417,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.093287+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.811884+00:00"
     },
     {
       "fixture_id": "401885393",
@@ -4440,7 +4440,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.093293+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.811890+00:00"
     },
     {
       "fixture_id": "401885385",
@@ -4463,7 +4463,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.093300+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.811895+00:00"
     },
     {
       "fixture_id": "401841336",
@@ -4486,7 +4486,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.093307+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.811901+00:00"
     },
     {
       "fixture_id": "401936353",
@@ -4509,7 +4509,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.093313+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.811906+00:00"
     },
     {
       "fixture_id": "401936413",
@@ -4521,8 +4521,8 @@
       "home_id": "2975",
       "away_id": "16",
       "hora_utc": "01:00",
-      "favorito": "",
-      "favorito_es_local": null,
+      "favorito": "River Plate",
+      "favorito_es_local": false,
       "tipo_pronostico": "monitoreo_automatico",
       "confianza": "",
       "cuota_local": null,
@@ -4532,7 +4532,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.093320+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.811911+00:00"
     },
     {
       "fixture_id": "401921319",
@@ -4555,7 +4555,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.093327+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.811916+00:00"
     },
     {
       "fixture_id": "401921317",
@@ -4578,7 +4578,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.093333+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.811921+00:00"
     },
     {
       "fixture_id": "401921318",
@@ -4601,7 +4601,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.093341+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.811926+00:00"
     },
     {
       "fixture_id": "401936045",
@@ -4613,8 +4613,8 @@
       "home_id": "5488",
       "away_id": "5264",
       "hora_utc": "00:30",
-      "favorito": "",
-      "favorito_es_local": null,
+      "favorito": "Independiente Santa Fe",
+      "favorito_es_local": true,
       "tipo_pronostico": "monitoreo_automatico",
       "confianza": "",
       "cuota_local": null,
@@ -4624,7 +4624,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.093347+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.811931+00:00"
     },
     {
       "fixture_id": "401888236",
@@ -4647,7 +4647,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.093353+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.811936+00:00"
     },
     {
       "fixture_id": "401888368",
@@ -4670,7 +4670,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.093360+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.811941+00:00"
     },
     {
       "fixture_id": "401878929",
@@ -4693,7 +4693,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.093367+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.811946+00:00"
     },
     {
       "fixture_id": "401878932",
@@ -4716,7 +4716,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.093374+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.811950+00:00"
     },
     {
       "fixture_id": "401878931",
@@ -4739,7 +4739,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.093380+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.811955+00:00"
     },
     {
       "fixture_id": "401878933",
@@ -4762,7 +4762,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.093387+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.811960+00:00"
     },
     {
       "fixture_id": "401878332",
@@ -4785,7 +4785,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.093394+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.811966+00:00"
     },
     {
       "fixture_id": "401878331",
@@ -4808,7 +4808,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.093400+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.811971+00:00"
     },
     {
       "fixture_id": "401878328",
@@ -4831,7 +4831,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.093407+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.811977+00:00"
     },
     {
       "fixture_id": "401878327",
@@ -4854,7 +4854,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.093414+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.811981+00:00"
     },
     {
       "fixture_id": "401878329",
@@ -4877,7 +4877,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.093421+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.811987+00:00"
     },
     {
       "fixture_id": "401933737",
@@ -4900,7 +4900,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.093427+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.811992+00:00"
     },
     {
       "fixture_id": "401933724",
@@ -4923,7 +4923,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.093433+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.811997+00:00"
     },
     {
       "fixture_id": "401933723",
@@ -4946,7 +4946,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.093440+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.812001+00:00"
     },
     {
       "fixture_id": "401933722",
@@ -4969,7 +4969,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.093445+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.812006+00:00"
     },
     {
       "fixture_id": "401933726",
@@ -4992,7 +4992,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.093452+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.812011+00:00"
     },
     {
       "fixture_id": "401933721",
@@ -5015,7 +5015,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.093458+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.812016+00:00"
     },
     {
       "fixture_id": "401931997",
@@ -5027,8 +5027,8 @@
       "home_id": "216",
       "away_id": "223",
       "hora_utc": "01:00",
-      "favorito": "",
-      "favorito_es_local": null,
+      "favorito": "Toluca",
+      "favorito_es_local": false,
       "tipo_pronostico": "monitoreo_automatico",
       "confianza": "",
       "cuota_local": null,
@@ -5038,7 +5038,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.093464+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.812021+00:00"
     },
     {
       "fixture_id": "401931996",
@@ -5061,7 +5061,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-27T03:56:32.093469+00:00"
+      "actualizado_en": "2026-11-27T09:10:19.812025+00:00"
     }
   ]
 }
