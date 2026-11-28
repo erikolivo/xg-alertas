@@ -1,6 +1,6 @@
 {
   "fecha": "2026-11-28",
-  "generado": "2026-11-28T08:31:02.758619+00:00",
+  "generado": "2026-11-28T11:11:28.520872+00:00",
   "total": 266,
   "partidos": [
     {
@@ -3865,7 +3865,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.757841+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520175+00:00"
     },
     {
       "fixture_id": "401879226",
@@ -3888,7 +3888,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.757856+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520189+00:00"
     },
     {
       "fixture_id": "401878752",
@@ -3911,7 +3911,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.757866+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520198+00:00"
     },
     {
       "fixture_id": "401882796",
@@ -3934,7 +3934,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.757875+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520207+00:00"
     },
     {
       "fixture_id": "401882790",
@@ -3957,7 +3957,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.757884+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520215+00:00"
     },
     {
       "fixture_id": "401882793",
@@ -3980,7 +3980,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.757891+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520222+00:00"
     },
     {
       "fixture_id": "401882789",
@@ -4003,7 +4003,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.757899+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520229+00:00"
     },
     {
       "fixture_id": "401884721",
@@ -4026,7 +4026,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.757908+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520237+00:00"
     },
     {
       "fixture_id": "401884722",
@@ -4049,7 +4049,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.757916+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520244+00:00"
     },
     {
       "fixture_id": "401884723",
@@ -4072,7 +4072,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.757925+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520252+00:00"
     },
     {
       "fixture_id": "401884719",
@@ -4084,8 +4084,8 @@
       "home_id": "3307",
       "away_id": "133",
       "hora_utc": "14:30",
-      "favorito": "SC Paderborn 07",
-      "favorito_es_local": true,
+      "favorito": "Schalke 04",
+      "favorito_es_local": false,
       "tipo_pronostico": "monitoreo_automatico",
       "confianza": "",
       "cuota_local": null,
@@ -4095,7 +4095,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.757933+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520258+00:00"
     },
     {
       "fixture_id": "401884726",
@@ -4118,7 +4118,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.757940+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520265+00:00"
     },
     {
       "fixture_id": "401875081",
@@ -4141,7 +4141,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.757947+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520272+00:00"
     },
     {
       "fixture_id": "401874826",
@@ -4164,7 +4164,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.757954+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520278+00:00"
     },
     {
       "fixture_id": "401874977",
@@ -4187,7 +4187,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.757961+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520284+00:00"
     },
     {
       "fixture_id": "401876394",
@@ -4210,7 +4210,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.757969+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520291+00:00"
     },
     {
       "fixture_id": "401876391",
@@ -4233,7 +4233,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.757977+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520296+00:00"
     },
     {
       "fixture_id": "401876390",
@@ -4256,7 +4256,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.757984+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520302+00:00"
     },
     {
       "fixture_id": "401876388",
@@ -4279,7 +4279,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.757991+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520308+00:00"
     },
     {
       "fixture_id": "401876387",
@@ -4302,7 +4302,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.757998+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520320+00:00"
     },
     {
       "fixture_id": "401875537",
@@ -4325,7 +4325,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758005+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520328+00:00"
     },
     {
       "fixture_id": "401875531",
@@ -4348,7 +4348,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758012+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520334+00:00"
     },
     {
       "fixture_id": "401875530",
@@ -4371,7 +4371,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758020+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520341+00:00"
     },
     {
       "fixture_id": "401885392",
@@ -4394,7 +4394,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758027+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520348+00:00"
     },
     {
       "fixture_id": "401885388",
@@ -4417,7 +4417,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758034+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520354+00:00"
     },
     {
       "fixture_id": "401885393",
@@ -4440,7 +4440,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758041+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520360+00:00"
     },
     {
       "fixture_id": "401885385",
@@ -4463,7 +4463,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758049+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520368+00:00"
     },
     {
       "fixture_id": "401841336",
@@ -4486,7 +4486,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758057+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520375+00:00"
     },
     {
       "fixture_id": "401936353",
@@ -4509,7 +4509,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758064+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520381+00:00"
     },
     {
       "fixture_id": "401936413",
@@ -4532,7 +4532,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758072+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520388+00:00"
     },
     {
       "fixture_id": "401921319",
@@ -4555,7 +4555,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758079+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520394+00:00"
     },
     {
       "fixture_id": "401921317",
@@ -4578,7 +4578,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758087+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520400+00:00"
     },
     {
       "fixture_id": "401921318",
@@ -4601,7 +4601,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758094+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520406+00:00"
     },
     {
       "fixture_id": "401936045",
@@ -4624,7 +4624,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758102+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520412+00:00"
     },
     {
       "fixture_id": "401888236",
@@ -4647,7 +4647,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758109+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520419+00:00"
     },
     {
       "fixture_id": "401888368",
@@ -4670,7 +4670,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758116+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520426+00:00"
     },
     {
       "fixture_id": "401878929",
@@ -4693,7 +4693,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758122+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520433+00:00"
     },
     {
       "fixture_id": "401878932",
@@ -4716,7 +4716,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758129+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520439+00:00"
     },
     {
       "fixture_id": "401878931",
@@ -4739,7 +4739,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758135+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520445+00:00"
     },
     {
       "fixture_id": "401878933",
@@ -4762,7 +4762,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758142+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520451+00:00"
     },
     {
       "fixture_id": "401878332",
@@ -4785,7 +4785,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758149+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520458+00:00"
     },
     {
       "fixture_id": "401878331",
@@ -4808,7 +4808,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758157+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520464+00:00"
     },
     {
       "fixture_id": "401878328",
@@ -4831,7 +4831,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758164+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520470+00:00"
     },
     {
       "fixture_id": "401878327",
@@ -4854,7 +4854,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758171+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520475+00:00"
     },
     {
       "fixture_id": "401878329",
@@ -4877,7 +4877,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758177+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520481+00:00"
     },
     {
       "fixture_id": "401933737",
@@ -4900,7 +4900,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758185+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520488+00:00"
     },
     {
       "fixture_id": "401933724",
@@ -4923,7 +4923,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758193+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520494+00:00"
     },
     {
       "fixture_id": "401933723",
@@ -4946,7 +4946,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758201+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520500+00:00"
     },
     {
       "fixture_id": "401933722",
@@ -4969,7 +4969,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758208+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520506+00:00"
     },
     {
       "fixture_id": "401933726",
@@ -4992,7 +4992,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758215+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520513+00:00"
     },
     {
       "fixture_id": "401933721",
@@ -5015,7 +5015,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758222+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520519+00:00"
     },
     {
       "fixture_id": "401931997",
@@ -5038,7 +5038,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758230+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520525+00:00"
     },
     {
       "fixture_id": "401931996",
@@ -5061,7 +5061,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758237+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520531+00:00"
     },
     {
       "fixture_id": "401879229",
@@ -5084,7 +5084,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758243+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520536+00:00"
     },
     {
       "fixture_id": "401879231",
@@ -5107,7 +5107,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758250+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520542+00:00"
     },
     {
       "fixture_id": "401879230",
@@ -5130,7 +5130,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758258+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520548+00:00"
     },
     {
       "fixture_id": "401879228",
@@ -5153,7 +5153,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758265+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520555+00:00"
     },
     {
       "fixture_id": "401879224",
@@ -5176,7 +5176,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758272+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520560+00:00"
     },
     {
       "fixture_id": "401878753",
@@ -5199,7 +5199,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758279+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520566+00:00"
     },
     {
       "fixture_id": "401882787",
@@ -5222,7 +5222,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758285+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520571+00:00"
     },
     {
       "fixture_id": "401882794",
@@ -5245,7 +5245,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758291+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520576+00:00"
     },
     {
       "fixture_id": "401882795",
@@ -5268,7 +5268,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758299+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520582+00:00"
     },
     {
       "fixture_id": "401882788",
@@ -5291,7 +5291,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758305+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520587+00:00"
     },
     {
       "fixture_id": "401884724",
@@ -5314,7 +5314,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758312+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520594+00:00"
     },
     {
       "fixture_id": "401884725",
@@ -5337,7 +5337,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758318+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520616+00:00"
     },
     {
       "fixture_id": "401884727",
@@ -5360,7 +5360,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758325+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520627+00:00"
     },
     {
       "fixture_id": "401875031",
@@ -5383,7 +5383,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758332+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520645+00:00"
     },
     {
       "fixture_id": "401874992",
@@ -5406,7 +5406,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758340+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520652+00:00"
     },
     {
       "fixture_id": "401874769",
@@ -5429,7 +5429,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758346+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520658+00:00"
     },
     {
       "fixture_id": "401874994",
@@ -5452,7 +5452,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758353+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520664+00:00"
     },
     {
       "fixture_id": "401876393",
@@ -5475,7 +5475,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758361+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520670+00:00"
     },
     {
       "fixture_id": "401876386",
@@ -5498,7 +5498,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758368+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520676+00:00"
     },
     {
       "fixture_id": "401876389",
@@ -5521,7 +5521,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758375+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520682+00:00"
     },
     {
       "fixture_id": "401875538",
@@ -5544,7 +5544,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758382+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520688+00:00"
     },
     {
       "fixture_id": "401875535",
@@ -5567,7 +5567,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758389+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520694+00:00"
     },
     {
       "fixture_id": "401875534",
@@ -5590,7 +5590,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758396+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520700+00:00"
     },
     {
       "fixture_id": "401875532",
@@ -5613,7 +5613,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758402+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520706+00:00"
     },
     {
       "fixture_id": "401875533",
@@ -5636,7 +5636,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758409+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520711+00:00"
     },
     {
       "fixture_id": "401885390",
@@ -5659,7 +5659,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758416+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520717+00:00"
     },
     {
       "fixture_id": "401885387",
@@ -5682,7 +5682,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758422+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520722+00:00"
     },
     {
       "fixture_id": "401841333",
@@ -5705,7 +5705,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758429+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520728+00:00"
     },
     {
       "fixture_id": "401841332",
@@ -5728,7 +5728,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758436+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520734+00:00"
     },
     {
       "fixture_id": "401841334",
@@ -5751,7 +5751,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758443+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520739+00:00"
     },
     {
       "fixture_id": "401841331",
@@ -5774,7 +5774,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758450+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520745+00:00"
     },
     {
       "fixture_id": "401841330",
@@ -5797,7 +5797,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758457+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520751+00:00"
     },
     {
       "fixture_id": "401841328",
@@ -5820,7 +5820,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758464+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520757+00:00"
     },
     {
       "fixture_id": "401936373",
@@ -5843,7 +5843,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758470+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520763+00:00"
     },
     {
       "fixture_id": "401936657",
@@ -5866,7 +5866,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758478+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520769+00:00"
     },
     {
       "fixture_id": "401936044",
@@ -5889,7 +5889,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758485+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520776+00:00"
     },
     {
       "fixture_id": "401888367",
@@ -5912,7 +5912,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758492+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520781+00:00"
     },
     {
       "fixture_id": "401888242",
@@ -5935,7 +5935,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758498+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520787+00:00"
     },
     {
       "fixture_id": "401888238",
@@ -5958,7 +5958,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758504+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520792+00:00"
     },
     {
       "fixture_id": "401878926",
@@ -5981,7 +5981,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758511+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520797+00:00"
     },
     {
       "fixture_id": "401878928",
@@ -6004,7 +6004,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758517+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520802+00:00"
     },
     {
       "fixture_id": "401878927",
@@ -6027,7 +6027,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758524+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520806+00:00"
     },
     {
       "fixture_id": "401878925",
@@ -6050,7 +6050,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758531+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520813+00:00"
     },
     {
       "fixture_id": "401878330",
@@ -6073,7 +6073,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758537+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520819+00:00"
     },
     {
       "fixture_id": "401931983",
@@ -6096,7 +6096,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758543+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520823+00:00"
     },
     {
       "fixture_id": "401932000",
@@ -6119,7 +6119,7 @@
       "alertas_enviadas": [],
       "snapshots": [],
       "resultado_final": null,
-      "actualizado_en": "2026-11-28T08:31:02.758549+00:00"
+      "actualizado_en": "2026-11-28T11:11:28.520828+00:00"
     }
   ]
 }
